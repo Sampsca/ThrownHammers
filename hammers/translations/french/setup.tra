@@ -1,147 +1,153 @@
 @1 = ~Marteaux de jet~
 @2 = ~Ce mod n'est pas compatible avec votre jeu : verifiez votre repertoire d'installation.~
-@3 = ~Dague +2 de Meraera~
-@4 = ~Dague de retour +2 : "Dague de Meraera"
-C'est une mage-érudite des Olin Gisiae ("les gardiens des secrets") qui enchanta cette dague. Elle y emprisonna l'essence d'un démon mineur et lui ordonna de revenir à son lanceur. Des runes arcanes s'enroulent autour de son pommeau mais leur signification - si tant est qu'elles en aient une - est un secret bien gardé, comme la plupart du savoir des Olin Gisiae.
+@3 = ~Dague de Meraera +2~
+@4 = ~C'est une mage-érudite des Olin Gisiae ("les gardiens des secrets") qui enchanta cette dague. Elle y emprisonna l'essence d'un démon mineur et lui ordonna de revenir à son lanceur. Des runes arcanes s'enroulent autour de son pommeau mais leur signification - si tant est qu'elles en aient une - est un secret bien gardé, comme la plupart du savoir des Olin Gisiae.
 
 PARAMETRES :
 
-Capacité spéciale : revient dans la main du lanceur
-Capacité d'équipement : 1 attaque supplémentaire par round
+Capacités de combat :
+- revient dans la main du lanceur
+- confère 1 attaque supplémentaire par round
 
 TAC0 : +2
-Dégâts : 1D6 +2
-Type de dégâts : perforant
-Poids :  3
+Dégâts : 1d6 +2 (1d6 +2 en mêlée)
+Type de dégâts : projectile (perforant)
 Facteur de vitesse : 2
 Type de compétence : dague
-Type : arme à 1 main
-Force nécessaire : 4
+Type : arme à une main
+Nécessite : 4 en Force
+Poids : 3
+
 Inutilisable par :
  Clerc~
-
-@5 = ~Marteau +2 de Gethlun~
+@5 = ~Marteau de Gethlun +2~
 @6 = ~Il s'agit du marteau légendaire d'un seigneur des tempêtes de Talos nommé Gethlun, dont certains disent qu'il atteignit le statut de demi-dieu. Créé il y a bien longtemps par un forgeron duergar, le marteau de Gethlun possède de grands pouvoirs. Il accorde une résistance à l'électricité, revient dans la main du lanceur après avoir été jeté, ne peut être détruit, et c'est Talos en personne qui lui conféra la capacité de contrôler les éclairs.
 
 PARAMETRES :
 
-Capacités spéciales :
-  Revient dans la main du lanceur
-  Éclair 3 fois par jour
-  Appel de la foudre 3 fois par jour
+Capacités d'équipement :
+- bonus de 20% à la résistance à l'électricité
 
-Capacité d'équipement : +20% de résistance à l'électricité
+Capacités de combat :
+- revient dans la main du lanceur
+
+Capacités de charge :
+- Éclair 3 fois par jour
+- Appel de la foudre 3 fois par jour
 
 TAC0 : +2
-Dégâts : 2D4 +2
-Type de dégâts : contondant
-Poids :  4
+Dégâts : 2d4 +2 (1d4 +3 en mêlée)
+Type de dégâts : projectile (contondant)
 Facteur de vitesse : 2
 Type de compétence : marteau de guerre
 Type : arme à 1 main
-Force nécessaire : 15
+Nécessite : 15 en Force
+Poids : 4
+
 Inutilisable par :
  Druide
  Mage
  Voleur
  Moine~
-
-@7 = ~Marteau +2 d'Essembra~
+@7 = ~Marteau d'Essembra +2~
 @8 = ~Le marteau d'Essembra porte le nom du lieu où il a été créé, dans les Vaux. Cette arme d'hast est constituée d'une tête de marteau équipée d'une pointe à l'arrière, montée sur un long manche d'environ trois mètres. Une longue pointe semblable à une lance permet à son porteur de maintenir ses ennemis à distance et de changer de tactique en portant une estocade meurtrière. Il s'agit d'une des armes d'hast les plus lourdes qui soit, et est plutôt lente. L'arme est entièrement en acier, manche inclus, et est décorée de sculptures ainsi que de dorures de métaux précieux. Ce marteau d'Essembra bien précis est imprégné d'un enchantement puissant qui peut mettre à terre un ennemi ou le faire fuir, complètement terrorisé.
 
 PARAMETRES :
 
-Capacités spéciales :
-  5% de chance d'assommer
-  10% de chance de provoquer un sort d'horreur
+Capacités de combat :
+- 5% de chance d'assommer
+- 10% de chance de provoquer un sort d'Horreur
 
 TAC0 : +2
-Dégâts : 1D8 +2
-Type de dégâts : contondant/perforant
-Poids :  8
+Dégâts : 1d8 +2 (contondant/perforant)
 Facteur de vitesse : 7
 Type de compétence : marteau de guerre
-Type : arme à 2 mains
-Force nécessaire : 9
+Type : arme à deux mains
+Nécessite : 9 en Force
+Poids : 8
+
 Inutilisable par :
  Druide
  Mage
  Voleur
  Moine~
-
 @9 = ~Aegis-Fang +3~
 @10 = ~Aegis-Fang +5~
-@11 = ~Marteau des Nains +5 : "Aegis-Fang"
-Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, et son plus puissant enchantement ne fonctionne qu'entre les mains du jeune guerrier. Pour n'importe qui d'autre, Aegis-Fang est un marteau de guerre +3.
+@11 = ~Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, et son plus puissant enchantement ne fonctionne qu'entre les mains du jeune guerrier. Pour n'importe qui d'autre, Aegis-Fang est un marteau de guerre +3.
 
 PARAMETRES :
 
-Capacité spéciale : revient dans la main du lanceur
+Capacités de combat :
+- revient dans la main du lanceur
 
 TAC0 : +5
-Dégâts : 2D4 +5
-Type de dégâts : contondant
-Poids :  3
+Dégâts : 2d4 +5 (2d4 +7 en mêlée)
+Type de dégâts : projectile (contondant)
 Facteur de vitesse : 1
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 18
+Type : arme à une main
+Nécessite : 18 en Force
+Poids : 3
+
 Utilisable uniquement par :
  Wulfgar~
-@12 = ~Marteau de Guerre +3 : "Aegis-Fang"
-Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance.  Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
+@12 = ~Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance.  Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
 
 PARAMETRES :
 
-Capacité spéciale : revient dans la main du lanceur
+Capacités de combat :
+- revient dans la main du lanceur
 
 TAC0 : +3
-Dégâts : 2D4 +3
-Type de dégâts : contondant
-Poids :  3
+Dégâts : 2d4 +3 (2d4 +3 en mêlée)
+Type de dégâts : projectile (contondant)
 Facteur de vitesse : 2
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 18
+Type : arme à une main
+Nécessite : 18 en Force
+Poids : 3
+
 Inutilisable par :
  Druide
  Mage
  Voleur
  Moine~
 @13 = ~Aegis-Fang +4~
-@14 = ~Marteau de Guerre +4 : "Aegis-Fang"
-Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance. Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
+@14 = ~Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance. Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
 
 PARAMETRES :
 
-Capacité spéciale : revient dans la main du lanceur
+Capacités de combat :
+- revient dans la main du lanceur
 
 TAC0 : +4
-Dégâts : 2D4 +4
-Type de dégâts : contondant
-Poids :  3
+Dégâts : 2d4 +4 (contondant)
 Facteur de vitesse : 5
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 18
+Type : arme à une main
+Nécessite : 18 en Force
+Poids : 3
+
 Utilisable uniquement par :
  Guerrier
  Barbare~
-@15 = ~Marteau de guerre +3 : "Marteau des Nains"
-Ce marteau - à ne pas confondre avec le "lanceur de nains" de facture elfique - ne peut être utilisé que par des nains. Entre les mains d'un guerrier ou d'un prêtre nain, ce marteau peut être lancé sur un adversaire. La magie du marteau le ramène dans la main de son porteur. S'il touche un adversaire, il fait deux fois plus de dégâts qu'un marteau de guerre normal. Contre les géants et les ogres, le marteau occasionne un bonus supplémentaire de huit points de dégâts, à cause de la haine fervente que les nains vouent à ces créatures.
+@15 = ~Ce marteau - à ne pas confondre avec le "lanceur de nains" de facture elfique - ne peut être utilisé que par des nains. Entre les mains d'un guerrier ou d'un prêtre nain, ce marteau peut être lancé sur un adversaire. La magie du marteau le ramène dans la main de son porteur. S'il touche un adversaire, il fait deux fois plus de dégâts qu'un marteau de guerre normal. Contre les géants et les ogres, le marteau occasionne un bonus supplémentaire de huit points de dégâts, à cause de la haine fervente que les nains vouent à ces créatures.
 
 PARAMETRES :
 
-Capacité spéciale : revient dans la main du lanceur
+Capacités de combat :
+- revient dans la main du lanceur
 
 TAC0 : +3
-Dégâts : 2D4 +3, +8 contre les géants et les ogres
-Type de dégâts : contondant
-Poids :  4
+Dégâts : 2d4 +3, +8 contre les géants et les ogres
+Type de dégâts (mêlée) : contondant
+Type de dégâts (jet) : projectile
 Facteur de vitesse : 1
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 9
+Type : arme à une main
+Nécessite : 9 en Force
+Poids : 4
+
 Utilisable uniquement par :
  Nains
  Clerc
@@ -151,13 +157,14 @@ Utilisable uniquement par :
 
 PARAMETRES :
 
-Dégâts : 1D4 +1 (1D3 +1 en mêlée)
-Type de dégâts : contondant
-Poids :  4
+Dégâts : 1d4 +1 (1d3 +1 en mêlée)
+Type de dégâts : projectile (contondant)
 Facteur de vitesse : 3
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 9
+Type : arme à une main
+Nécessite : 9 en Force
+Poids : 4
+
 Inutilisable par :
  Druide
  Mage
@@ -167,13 +174,14 @@ Inutilisable par :
 PARAMETRES :
 
 TAC0 : +1
-Dégâts : 1D4 +1
+Dégâts : 1d4 +1 (1d3 +1 en mêlée)
 Type de dégâts : projectile (contondant)
-Poids :  4
-Facteur de vitesse : 1
+Facteur de vitesse : 3
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 9
+Type : arme à une main
+Nécessite : 9 en Force
+Poids : 4
+
 Inutilisable par :
  Druide
  Mage
@@ -184,13 +192,14 @@ Inutilisable par :
 PARAMETRES :
 
 TAC0 : +1
-Dégâts : 1D4 +2 (1D3 +2 en mêlée)
+Dégâts : 1d4 +2 (1d3 +2 en mêlée)
 Type de dégâts : projectile (contondant)
-Poids :  2
 Facteur de vitesse : 1
 Type de compétence : marteau de guerre
-Type : arme à 1 main
-Force nécessaire : 9
+Type : arme à une main
+Nécessite : 9 en Force
+Poids : 2
+
 Inutilisable par :
  Druide
  Mage
@@ -201,13 +210,15 @@ Inutilisable par :
 PARAMETRES :
 
 TAC0 : +1
-Dégâts : 1D6 +2 (1D6 +1 en mêlée)
+Dégâts : 1d6 +2 (1d6 +1 en mêlée)
 Type de dégâts : projectile (tranchant)
 Poids :  2
 Facteur de vitesse : 3
 Type de compétence : hache
-Type : arme à 1 main
-Force nécessaire : 4
+Type : arme à une main
+Nécessite : 4 en Force
+Poids : 2
+
 Inutilisable par :
  Druide
  Clerc
@@ -219,12 +230,13 @@ Inutilisable par :
 PARAMETRES :
 
 TAC0 : +1
-Dégâts : 1D4 +1 (1D3 +1 en mêlée)
+Dégâts : 1d4 +1 (1d3 +1 en mêlée)
 Type de dégâts : projectile (perforant)
 Facteur de vitesse : 1
 Type de compétence : dague
-Type : arme à 1 main
-Force nécessaire : 3
+Type : arme à une main
+Nécessite : 3 en Force
+
 Inutilisable par :
  Clerc~
 @25 = ~Marteau des Nains +3~
@@ -236,58 +248,95 @@ Inutilisable par :
 @31 = ~Marteaux spirituels de jet~
 
 // WeiDU prompts
-@-1000 = ~Le mod %TP2_FILE_NAME% contient~
-@-1001 = ~composants optionnels distincts.
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
 Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
 au niveau general plutot que de repondre aux questions pour chacun.
-~
-@-1002 = ~Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
-Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? ~
-@-1003 = ~Que faut-il faire de tous les composants qui sont DEJA installes ?
-Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? ~
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? "
 
-@-1004 = ~S'IL VOUS PLAIT, envoyez par e-mail le fichier~
-@-1005 = ~a~
-@-1006 = ~Installer le composant [~
-@-1007 = ~] ?
-[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? ~
-@-1008 = ~] ?
-[I]nstaller, [N]e pas installer ou [Q]uitter ? ~
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
 
-@-1009 = ~Entrez une partie du nom du module : ~
-@-1010 = ~Reinstallation du composant [~
-@-1011 = ~] ~
-@-1012 = ~Reinstallation dans la langue~
-@-1013 = ~Suppression de l'ancienne installation de [~
-@-1014 = ~] au prealable...~
-@-1015 = ~SUPPRESSION REUSSIE DE L'ANCIEN~
-@-1016 = ~Installation en cours~
-@-1017 = ~ERREUR pendant l'installation de [~
-@-1018 = ~], retour a l'etat anterieur~
-@-1019 = ~INSTALLATION REUSSIE                  ~
-@-1020 = ~Saute~
-@-1021 = ~Suppression de [~
-@-1022 = ~] (composant #~
-@-1023 = ~)~
-@-1024 = ~SUPPRESSION REUSSIE DE [~
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
 
-@-1025 = ~] ?
-[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :~
-@-1026 = ~] ?
-[N]e pas installer, [Q]uitter ou choisir un parmi :~
-@-1027 = ~ (installe actuellement)~
+@-1009= "Entrez une partie du nom du module : "
 
-@-1028 = ~Souhaitez-vous afficher les composants de [~
-@-1029 = ~] ?
-[Y]Oui, [N]on? ~
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
 
-@-1030 = ~] ?
-choisir un parmi :~
-@-1031 = ~] ?
-[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :~
-@-1032 = ~INSTALLATION ECHOUEE A CAUSE D'ERREURS~
-@-1033 = ~INSTALLATION AVEC DES ALERTES         ~
-@-1034 = ~Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on~
-@-1035 = ~Dans la langue~
-@-1036 = ~Saute le GROUPE [~
-@-1037 = ~] pour cause d'absence des pre-requis.~
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["
+
+@-1025= "] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :"
+@-1026= "] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :"
+@-1027= " (installe actuellement)"
+
+@-1028= "Souhaitez-vous afficher les composants de ["
+@-1029= "] ?
+[Y]Oui, [N]on ? "
+
+@-1030= "] ?
+choisir un parmi :"
+@-1031= "] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :"
+@-1032= "INSTALLATION ECHOUEE A CAUSE D'ERREURS"
+@-1033= "INSTALLATION AVEC DES ALERTES"
+@-1034= "Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on"
+@-1035= "Dans la langue"
+
+@-1036= "Saute le GROUPE ["
+@-1037= "] pour cause d'absence des pre-requis."
+
+@-1038= "dem[A]nder pour chaque composant, tout [S]auter, ou choisir une selection pre-definie :"
+@-1039= "dem[A]nder pour chaque composant, [R]einstaller la configuration courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection pre-definie :"
+
+@-1040= "
+Veuillez choisir la langue dans laquelle vous souhaitez jouer au jeu.
+Si par la suite vous desirez jouer au jeu dans une langue differente, il vous
+faudra editer le fichier weidu.conf et reinstaller vos mods.
+"
+@-1041= "Tcheque"
+@-1042= "Allemand"
+@-1043= "Anglais"
+@-1044= "Espagnol"
+@-1045= "Francais"
+@-1046= "Italien"
+@-1047= "Polonais"
+@-1048= "Portugais"
+@-1049= "Turc"
+@-1050= "Japonais"
+@-1051= "Coreen"
+@-1052= "Chinois simplifie"
+@-1053= "Russe"
+@-1054= "Ukrainien"
+
+@-1060= "
+Ce jeu est disponible en plusieurs langues mais WeiDU ne sait pas laquelle a ete choisie quand ce mod a ete installe.
+
+Veuillez indiquer quelle langue du jeu a ete utilisee quand vous avez installe ce mod. Votre choix servira jusqu'a ce que WeiDU s'arrete mais ne sera pas memorise.
+"
+@-1061= "
+Utilisation de"
+@-1062= " et "
