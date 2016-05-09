@@ -1,357 +1,1281 @@
 BACKUP ~hammers/backup~
-AUTHOR ~www.shsforums.net/index.php?showtopic=34099~
-VERSION ~v1~
-README ~hammers/hammers-%LANGUAGE%.html~
+AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
+VERSION ~v3~
+README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
+
+ALWAYS
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~projectl.ids~ BEGIN
+    COPY ~hammers/lib/projectl.ids~ ~override~
+  END
+
+  OUTER_SET t-psa = IDS_OF_SYMBOL (projectl PSHAMMA) + 1
+  OUTER_SET t-psb = IDS_OF_SYMBOL (projectl PSHAMMB) + 1
+  OUTER_SET t-psg = IDS_OF_SYMBOL (projectl PSHAMMG) + 1
+  OUTER_SET t-psn = IDS_OF_SYMBOL (projectl PSHAMMN) + 1
+  OUTER_SET t-pso = IDS_OF_SYMBOL (projectl PSHAMMO) + 1
+  OUTER_SPRINT ipth ~items~
+  OUTER_SPRINT ttc ~~
+  ACTION_IF FILE_EXISTS_IN_GAME ~fw0125.are~ BEGIN //Tutu
+    OUTER_SPRINT tsu ~_~
+    OUTER_SPRINT tsh ~_~
+    OUTER_SPRINT tss ~_~
+    OUTER_SPRINT plt ~tutu~
+    OUTER_SPRINT pva ~bg2~
+    ACTION_IF FILE_EXISTS_IN_GAME ~fw2003.are~ BEGIN //TotSC
+      OUTER_SPRINT ttc ~totsc~
+    END
+  END ELSE BEGIN
+    OUTER_SPRINT tsu ~~
+    OUTER_SPRINT tsh ~h~
+    OUTER_SPRINT tss ~s~
+    ACTION_IF FILE_EXISTS_IN_GAME ~ar7200.are~ BEGIN //BGT
+      OUTER_SPRINT plt ~bgt~
+      OUTER_SPRINT ttc ~totsc~
+      OUTER_SPRINT pva ~bg2~
+    END ELSE BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~tc1300.are~ BEGIN //Classic Adventures
+        OUTER_SPRINT plt ~ca~
+        OUTER_SPRINT pva ~bg2~
+      END ELSE BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~ar0083.are~ BEGIN //BG2
+          OUTER_SPRINT plt ~bg2~
+          OUTER_SPRINT pva ~bg2~
+        END ELSE BEGIN
+          ACTION_IF FILE_EXISTS_IN_GAME ~ar2116.are~ BEGIN //IWD
+            OUTER_SPRINT plt ~iwd~
+            OUTER_SPRINT pva ~idb~
+          END ELSE BEGIN
+            ACTION_IF FILE_EXISTS_IN_GAME ~ar6050.are~ BEGIN //IWD2
+              OUTER_SPRINT plt ~iwd2~
+              OUTER_SPRINT ipth ~iwd2~
+              OUTER_SPRINT pva ~iwd2~
+            END ELSE BEGIN
+              ACTION_IF FILE_EXISTS_IN_GAME ~ar0125.are~ BEGIN //BG1
+                OUTER_SPRINT plt ~bg1~
+                OUTER_SPRINT pva ~idb~
+                ACTION_IF FILE_EXISTS_IN_GAME ~ar2003.are~ BEGIN //TotSC
+                  OUTER_SPRINT ttc ~totsc~
+                END
+              END
+            END
+          END
+        END
+      END
+    END
+  END
+
+  OUTER_PATCH wlib BEGIN
+    WRITE_LONG 0x0 0x090a0d20
+    READ_ASCII 0x0 ws(4) //detects any whitespace
+  END
+
+  COPY_EXISTING ~tooltip.2da~ ~override~
+    COUNT_2DA_COLS cl
+    COUNT_2DA_ROWS 1 rw
+    SPRINT cz ~~
+    SPRINT rx ~          ~
+    SPRINT ry ~-1~
+    SPRINT rz ~~
+    PATCH_IF cl < 5 BEGIN
+      SPRINT rz ~$ $ 4~
+      FOR (i = 0; i < (rw - 3); i += 1) BEGIN //Cycle through rows
+        SPRINT rz ~%rz%~ ^ ~%rx%~ ^ ~%ry%~
+      END
+    END ELSE BEGIN
+      FOR (i = 3; i < (cl - 1); i += 1) BEGIN //Cycle through columns
+        SPRINT cz ~%cz%~ ^ ~%rx%~ ^ ~%ry%~
+      END
+    END
+  BUT_ONLY
+
+  INCLUDE ~hammers/lib/t-add_spl_itm_hdr.tpa~
+END
 
 AUTO_TRA ~hammers/%s~
-LANGUAGE ~English~ ~english~ ~hammers/english/setup.tra~
+LANGUAGE ~English~  ~english~ ~hammers/english/setup.tra~
+LANGUAGE ~Deutsch~  ~german~  ~hammers/german/setup.tra~
+LANGUAGE ~Fran‡ais~ ~french~  ~hammers/french/setup.tra~
+LANGUAGE ~Espa¤ol~  ~spanish~ ~hammers/spanish/setup.tra~
+LANGUAGE ~Italiano~ ~italian~ ~hammers/italian/setup.tra~
+LANGUAGE ~Russian~  ~russian~ ~hammers/russian/setup.tra~
+LANGUAGE ~Polski~   ~polish~  ~hammers/polish/setup.tra~
 
+//! Main component //////////////////////////////////////////////////////////
 BEGIN @1 //Thrown Hammers
+REQUIRE_PREDICATE NOT (GAME_IS ~pst~) @2 //This mod is not compatible with your game
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~fw0125.are~) AND (FILE_EXISTS_IN_GAME ~ar6200.are~) THEN BEGIN //Tutu-ToB
-  OUTER_SPRINT ~tsu~ ~_~ //Tutu underscore
-  OUTER_SPRINT ~cws~ ~%tsu%inn2616~ //Candlekeep Inn
-END ELSE BEGIN
-  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~fw0125.are~) AND (FILE_EXISTS_IN_GAME ~ar6200.are~) THEN BEGIN //BG2-ToB
-    OUTER_SPRINT ~tsu~ ~~ //No underscore
-    OUTER_SPRINT ~cws~ ~ribald~ //Adventurer's Mart store
-  END ELSE BEGIN
-    FAIL @2 //This mod is not compatible with your game: it requires (Easy)Tutu, BGT or BG2 with ToB.
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~missile.ids~ BEGIN
+  COPY ~hammers/lib/missile.ids~ ~override~
+END
+
+COPY ~hammers/bams/pshamma.bam~ ~override~
+     ~hammers/bams/pshammb.bam~ ~override~
+     ~hammers/bams/pshammg.bam~ ~override~
+     ~hammers/bams/pshammn.bam~ ~override~
+     ~hammers/bams/pshammo.bam~ ~override~
+     ~hammers/bams/t-aegisi.bam~ ~override~
+     ~hammers/bams/t-aegist.bam~ ~override~
+     ~hammers/bams/t-tham06.bam~ ~override~
+     ~hammers/bams/t-tshm01.bam~ ~override~
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+    READ_LONG 0x8 dl //Uncompressed data length
+    DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
+  END
+
+ACTION_IF t-psa < 1 BEGIN
+  ADD_PROJECTILE ~hammers/pros/PSHAMMA.pro~
+END
+ACTION_IF t-psb < 1 BEGIN
+  ADD_PROJECTILE ~hammers/pros/PSHAMMB.pro~
+END
+ACTION_IF t-psg < 1 BEGIN
+  ADD_PROJECTILE ~hammers/pros/PSHAMMG.pro~
+END
+ACTION_IF t-psn < 1 BEGIN
+  ADD_PROJECTILE ~hammers/pros/PSHAMMN.pro~
+END
+ACTION_IF t-pso < 1 BEGIN
+  ADD_PROJECTILE ~hammers/pros/PSHAMMO.pro~
+END
+
+COPY_EXISTING ~missile.ids~ ~override~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMA~ ~Hammer Green~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMB~ ~Hammer Blue~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMG~ ~Hammer Grey~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMN~ ~Hammer Brown~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMO~ ~Hammer Orange~
+BUT_ONLY
+
+ACTION_IF cl < 5 BEGIN
+  APPEND_COL ~tooltip.2da~ ~%rz%~
+END
+
+ACTION_FOR_EACH hn IN ~aegis~ ~aegis2~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%hn%.itm~ BEGIN //Aegis-Fang
+    COPY_EXISTING ~%hn%.itm~ ~override~
+      py = 0
+      pz = 0
+      j_0 = ` 0
+      j_1 = ` 0
+      j_2 = ` 0
+      j_3 = ` 0
+      t1 = ` 0
+      t2 = ` 0
+      t3 = ` 0
+      SPRINT sz ~%SOURCE_RES%~
+      TO_UPPER sz
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        SAY NAME1 #6345
+        PATCH_IF (~%sz%~ STRING_EQUAL ~AEGIS~ = 1) BEGIN
+          SAY NAME2 @10
+          SAY DESC @11
+        END ELSE BEGIN
+          SAY NAME2 @9
+          SAY DESC @12
+        END
+        WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
+        WRITE_ASCII 0x3a ~t-aegisi~ #8 //Inventory icon
+        WRITE_LONG 0x60 3 //Enchantment
+        READ_LONG 0x64 hf //Extended header offset
+        READ_SHORT 0x68 hc //Extended header count
+        READ_LONG 0x6a fb //Equipping effect offset
+        READ_SHORT 0x70 qc //Equipping effect count
+        FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+          READ_BYTE (0x38 * i1 + hf) pt //Attack type
+          READ_SHORT (0x38 * i1 + hf + 0xe) rg //Range
+          PATCH_IF rg > 30 BEGIN
+            WRITE_SHORT (0x38 * i1 + hf + 0xe) 30
+          END
+          PATCH_IF pt = 2 BEGIN
+            pz = 1
+            SET $j(~%i1%~) = 15527 //Thrown
+            WRITE_ASCII (0x38 * i1 + hf + 4) ~t-aegist~ #8 //Use icon 1
+            WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%PSHAMMA%~ //Projectile animation
+          END ELSE PATCH_IF pt = 1 BEGIN
+            py = 1
+            SET $j(~%i1%~) = 15529 //Melee
+            WRITE_ASCII (0x38 * i1 + hf + 4) ~t-aegisi~ #8 //Use icon 2
+            WRITE_SHORT (0x38 * i1 + hf + 0x2a) 1 //Projectile animation (none)
+          END
+        END
+        PATCH_IF pz = 0 BEGIN
+          LPF t-add_spl_itm_header
+            INT_VAR
+            t-atk_type = 2
+            t-range    = 30
+            t-projectl = %PSHAMMA%
+            STR_VAR
+            t-bam      = ~t-aegist~
+            RET t1 = t-tool_1 t2 = t-tool_2 t3 = t-tool_3
+          END
+        END
+        PATCH_IF py = 0 BEGIN
+          LPF t-add_spl_itm_header
+            INT_VAR
+            t-atk_type = 1
+            t-range    = 1
+            t-projectl = 1
+            STR_VAR
+            t-bam      = ~t-aegisi~
+            RET t1 = t-tool_1 t2 = t-tool_2 t3 = t-tool_3
+          END
+        END
+        PATCH_IF t1 != (0 - 1) BEGIN
+          j_1 = t1
+        END
+        PATCH_IF t2 != (0 - 1) BEGIN
+          j_2 = t2
+        END
+        PATCH_IF t3 != (0 - 1) BEGIN
+          j_3 = t3
+        END
+        READ_LONG 0x6a fb //Update equipping effect offset
+        READ_SHORT 0x70 qc //Update equipping effect count
+        FOR (i2 = 0; i2 < qc; i2 += 1) BEGIN //Cycle through equipping effects
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 2) != 1 BEGIN //Target
+            WRITE_BYTE (0x30 * i2 + fb + 2) 1 //Self
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 0xc) != 2 BEGIN //Timing mode
+            WRITE_BYTE (0x30 * i2 + fb + 0xc) 2 //While equipped
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 0xe) != 0 BEGIN //Duration
+            WRITE_BYTE (0x30 * i2 + fb + 0xe) 0
+          END
+        END
+      END
+      READ_SHORT 0x68 hc //Update header count
+    BUT_ONLY
+    ACTION_IF hc > 1 BEGIN
+      APPEND ~tooltip.2da~ ~%sz%            %j_0%        %j_1%       %j_2% %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
+    END
   END
 END
 
-COPY ~hammers/bams~ ~override~ //Animations
-
-ACTION_IF FILE_EXISTS_IN_GAME ~c6wulf.cre~ THEN BEGIN //Wulfgar
-  COPY_EXISTING ~c6wulf.cre~ ~override~
-                ~c6wulf2.cre~ ~override~
-    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
-      REMOVE_CRE_ITEM ~aegis2~
-    END
-  BUT_ONLY_IF_IT_CHANGES
-END
-
-ADD_PROJECTILE ~hammers/pros/PSHAMMA.pro~ //Green War Hammer
-ACTION_IF FILE_EXISTS_IN_GAME ~aegis.itm~ THEN BEGIN //Aegis-Fang
-  COPY_EXISTING ~aegis.itm~ ~override~
+ACTION_IF FILE_EXISTS_IN_GAME ~aegisfa.itm~ BEGIN //Aegis-Fang +4 (RoT)
+  COPY_EXISTING ~aegisfa.itm~ ~override~
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
-      SAY NAME1 #6345
-      SAY NAME2 @10
-      SAY DESC @11
-      READ_BYTE 0x18 fl //Flags 1
-      WRITE_BYTE 0x18 (fl BOR 0b00000100) //Movable
-      WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
-      WRITE_ASCII 0x3a ~T-AEGISI~ #8 //Inventory icon
-      WRITE_ASCII 0x76 ~T-AEGIST~ #8 //Use icon 1
-      WRITE_ASCII 0xae ~T-AEGISI~ #8 //Use icon 2
-      WRITE_SHORT 0x9c ~%PSHAMMA%~ //Projectile animation
+      SAY NAME2 @13
+      SAY DESC @14
+      READ_LONG 0x64 hf //Extended header offset
+      READ_SHORT 0x68 hc //Extended header count
+      FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+        READ_BYTE (0x38 * i1 + hf) pt //Attack type
+        PATCH_IF pt = 2 BEGIN
+          WRITE_ASCII (0x38 * i1 + hf + 4) ~t-aegist~ #8 //Use icon 1
+          WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%PSHAMMA%~ //Projectile animation
+          WRITE_SHORT (0x38 * i1 + hf + 0x2c) 100 //Overhand
+          WRITE_SHORT (0x38 * i1 + hf + 0x2e) 0 //Backhand
+        END ELSE PATCH_IF pt = 1 BEGIN
+          WRITE_SHORT (0x38 * i1 + hf + 0x2a) 1 //Projectile animation (none)
+        END
+      END
     END
-  BUT_ONLY_IF_IT_CHANGES
+  BUT_ONLY
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~aegis2.itm~ THEN BEGIN //Aegis-Fang
-  COPY_EXISTING ~aegis2.itm~ ~override~
-    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
-      SAY NAME2 @10
-      SAY DESC @12
-      WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
-      WRITE_ASCII 0x3a ~T-AEGISI~ #8 //Inventory icon
-      WRITE_ASCII 0x76 ~T-AEGISI~ #8 //Use icon 1
+ACTION_FOR_EACH hn IN ~bhmo01_e~ ~bhmo01_h~ ~cbmtthhm~ ~cmhaq02~ ~dshamm04~ ~dshamm05~ ~dshamm06~ ~hamm06~ ~hamm06b~ ~o!bom058~ ~o!bom059~ ~s#hamm01~ ~s#hamm02~ ~sghamm2~ ~w#hamm06~ ~wulfhmr~ ~xham001~ ~zham02~ BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%hn%.itm~ BEGIN
+    COPY_EXISTING ~%hn%.itm~ ~override~
+      py = 0
+      pz = 0
+      j_0 = ` 0
+      j_1 = ` 0
+      j_2 = ` 0
+      j_3 = ` 0
+      t1 = ` 0
+      t2 = ` 0
+      t3 = ` 0
+      SPRINT sz ~%SOURCE_RES%~
+      TO_UPPER sz
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~hamm06~ = 1) OR (~%SOURCE_RES%~ STRING_EQUAL_CASE ~w#hamm06~ = 1) BEGIN
+          SAY DESC @15 //Dwarven Thrower +3
+        END
+        PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~cbmtthhm~ = 1) BEGIN //Masterwork Throwing Hammer
+          SAY UNIDENTIFIED_DESC @17
+          SAY DESC @18
+        END
+        READ_LONG 0x64 hf //Extended header offset
+        READ_SHORT 0x68 hc //Extended header count
+        READ_LONG 0x6a fb //Equipping effect offset
+        READ_SHORT 0x70 qc //Equipping effect count
+        FOR (i = 0; i < hc; i += 1) BEGIN //Cycle through headers
+          READ_BYTE (0x38 * i + hf) pt //Attack type
+          PATCH_IF pt =  1 BEGIN
+            SET $j(~%i%~) = 15529 //Melee
+            WRITE_SHORT (0x38 * i + hf + 0x2a) 1 //Projectile animation (none)
+          END ELSE PATCH_IF pt =  2 BEGIN
+            READ_ASCII (0x38 * i + hf + 4) t-bam
+            SET $j(~%i%~) = 15527 //Thrown
+            PATCH_IF (~%t-bam%~ STRING_EQUAL_CASE ~ihamm05~ = 1) OR (~%t-bam%~ STRING_EQUAL_CASE ~ihamm06~ = 1) BEGIN
+              WRITE_ASCII (0x38 * i + hf + 4) ~t-tham06~ #8 //Use icon 1
+            END ELSE BEGIN
+              WRITE_ASCII (0x38 * i + hf + 4) ~t-tham03~ #8
+            END
+            PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+              WRITE_SHORT (0x38 * i + hf + 0x2a) ~%PSHAMMG%~ //Projectile animation
+            END
+          END
+          READ_SHORT (0x38 * i + hf + 0xe) rg //Range
+          PATCH_IF rg > 30 BEGIN
+            WRITE_SHORT (0x38 * i + hf + 0xe) 30
+          END
+        END
+        FOR (i2 = 0; i2 < qc; i2 += 1) BEGIN //Cycle through equipping effects
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 2) != 1 BEGIN //Target
+            WRITE_BYTE (0x30 * i2 + fb + 2) 1 //Self
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 0xc) != 2 BEGIN //Timing mode
+            WRITE_BYTE (0x30 * i2 + fb + 0xc) 2 //While equipped
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 0xe) != 0 BEGIN //Duration
+            WRITE_BYTE (0x30 * i2 + fb + 0xe) 0
+          END
+        END
+      END
+    BUT_ONLY
+    ACTION_IF hc > 1 BEGIN
+      APPEND ~tooltip.2da~ ~%sz%           %j_0%        %j_1%       %j_2% %j_3%%cz%~ UNLESS ~^%sz%[%ws%]~
     END
-  BUT_ONLY_IF_IT_CHANGES
+  END
 END
 
-COPY ~hammers/items/lddagg01.itm~ ~override~ //Yarash's Dagger
+//! Thrown Spiritual Hammers ////////////////////////////////////////////////
+BEGIN @31 //Thrown Spiritual Hammers
+DESIGNATED 15
+REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
+
+ACTION_FOR_EACH ~hn~ IN ~shamme1~ ~shamme2~ ~shamme3~ ~shammn~ ~shammn2~ ~shammn3~ ~shammr~ ~shammr2~ ~shammr3~ ~shammr4~ ~shammr5~ BEGIN //Spiritual Hammers
+  ACTION_IF FILE_EXISTS_IN_GAME ~%hn%.itm~ BEGIN
+    COPY_EXISTING ~%hn%.itm~ ~override~
+      py = 0
+      pz = 0
+      j_0 = ` 0
+      j_1 = ` 0
+      j_2 = ` 0
+      j_3 = ` 0
+      t1 = ` 0
+      t2 = ` 0
+      t3 = ` 0
+      SPRINT sz ~%SOURCE_RES%~
+      TO_UPPER sz
+      PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+        WRITE_ASCII 0x10 ~~ #8 //Replacement item
+        WRITE_SHORT 0x1c 0x15 //Item type (hammer)
+        PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+          WRITE_BYTE 0x31 0x61 //Proficiency (war hammer)
+        END
+        WRITE_ASCII 0x44 ~ghamm01~ #8 //Ground icon
+        PATCH_IF (~%plt%~ STRING_EQUAL ~iwd2~ = 0)  BEGIN
+          WRITE_ASCII 0x58 ~chamm03~ #8 //Description icon
+        END
+        READ_LONG 0x64 hf //Extended header offset
+        READ_SHORT 0x68 hc //Extended header count
+        READ_LONG 0x6a fb //Effects offset
+        READ_SHORT 0x70 qc //Equipping effect count
+        PATCH_IF hc > 1 BEGIN
+          PATCH_INCLUDE ~hammers/lib/t-spl_hdr_del.tpp~
+        END
+        WRITE_BYTE hf 2 //Attack type
+        WRITE_SHORT (hf + 0xe) 30 //Range
+        WRITE_SHORT (hf + 0x12) 2 //Speed
+        WRITE_SHORT (hf + 0x1c) 4 //Damage type
+        READ_SHORT (hf + 0x1e) xn //Effect count
+        READ_SHORT (hf + 0x20) xf //Effect offset
+        FOR (i1 = 0; i1 < xn; i1 += 1) BEGIN //Cycle through header effects
+          PATCH_IF (BYTE_AT ((0x30 * i1) + (0x30 * xf) + fb + 0xc) = 0) AND (LONG_AT ((0x30 * i1) + (0x30 * xf) + fb + 0xe) = 0) BEGIN
+            WRITE_BYTE ((0x30 * i1) + (0x30 * xf) + fb + 0xc) 1 //Timing mode (instantaneous)
+          END
+        END
+        PATCH_FOR_EACH prm2 IN 16 20 21 BEGIN
+          LAUNCH_PATCH_FUNCTION ADD_ITEM_EFFECT
+            INT_VAR opcode = 7
+            target = 1
+            duration = 2
+            parameter1 = 21
+            parameter2 = prm2
+            header = 1
+            type = 99
+          END
+        END
+        PATCH_FOR_EACH prm2 IN 16 20 21 BEGIN
+          LAUNCH_PATCH_FUNCTION ADD_ITEM_EFFECT
+            INT_VAR opcode = 9
+            target = 1
+            duration = 2
+            parameter1 = 1179671552
+            parameter2 = prm2
+            header = 1
+            type = 99
+          END
+        END
+        LAUNCH_PATCH_FUNCTION ADD_ITEM_EQEFFECT
+          INT_VAR opcode = 1
+          target = 1
+          timing = 2
+          parameter1 = 1
+        END
+        WRITE_BYTE (hf + 0x26) 0 //Use strength
+        PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+          WRITE_SHORT (hf + 0x2a) t-psb //Projectile animation
+        END
+        WRITE_SHORT (hf + 0x2c) 100 //Overhand
+        WRITE_SHORT (hf + 0x2e) 0 //Backhand
+        WRITE_SHORT (hf + 0x30) 0 //Thrust
+        READ_LONG 0x6a fb //Equipping effect offset
+        READ_SHORT 0x70 qc //Equipping effect count
+        FOR (i2 = 0; i2 < qc; i2 += 1) BEGIN //Cycle through equipping effects
+          PATCH_IF SHORT_AT (0x30 * i2 + fb) = 7 BEGIN //Opcode
+            WRITE_SHORT (0x30 * i2 + fb + 4) 68 //Color (shiny blue) 31?
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 2) != 1 BEGIN //Target
+            WRITE_BYTE (0x30 * i2 + fb + 2) 1 //Self
+          END
+          PATCH_IF BYTE_AT (0x30 * i2 + fb + 0xc) != 2 BEGIN //Timing mode
+            WRITE_BYTE (0x30 * i2 + fb + 0xc) 2 //While equipped
+          END
+          PATCH_IF LONG_AT (0x30 * i2 + fb + 0xe) != 0 BEGIN //Duration
+            WRITE_LONG (0x30 * i2 + fb + 0xe) 0
+          END
+        END
+      END
+    BUT_ONLY
+  END
+END
+
+//! Normal throwing hammers /////////////////////////////////////////////////
+BEGIN @28 //Normal throwing hammers
+DESIGNATED 25
+REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
+REQUIRE_PREDICATE NOT (GAME_IS ~iwd2~) @27 //IWD2 already has such items
+
+COPY ~hammers/bams/t-dham03.bam~ ~override~
+     ~hammers/bams/t-gham03.bam~ ~override~
+     ~hammers/bams/t-iham03.bam~ ~override~
+     ~hammers/bams/t-tham03.bam~ ~override~
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+    READ_LONG 0x8 dl //Uncompressed data length
+    DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
+  END
+
+COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
+  READ_SHORT 0x38 sk //Stack amount
+BUT_ONLY
+
+COPY ~hammers/items/t-hamm03.itm~ ~override~ //Throwing Hammer
+  SAY NAME1 @16
+  SAY NAME2 @16
+  SAY UNIDENTIFIED_DESC @17
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 12 //Strength
+    WRITE_BYTE 0x2c 6 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+  END
+  WRITE_SHORT 0x38 sk //Stack amount
+  READ_LONG 0x64 hf //Extended header offset
+  READ_SHORT 0x68 hc //Extended header count
+  FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+    READ_BYTE (0x38 * i1 + hf) pt //Attack type
+    PATCH_IF pt = 2 BEGIN
+      PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+      PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psg%~ //Projectile animation
+      END
+    END
+  END
+
+APPEND ~tooltip.2da~ ~T-HAMM03          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM03~
+
+ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  ACTION_FOR_EACH hz IN ~%tsu%friend~ ~%tsu%inn2616~ ~%tsu%inn3304~ ~%tsu%sto1112~ ~%tsu%sto4803~ ~%tsu%sto4908~ ~%tsu%sto4909~ ~%tsu%taerum~ ~%tsu%ulgoth~ ~arlax2~ ~bernpotr~ ~bh2010~ ~bhst0102~ ~bhzelmar~ ~brundor~ ~calshop1~ ~cb3651in~ ~cb4279st~ ~cb4280st~ ~cb4281st~ ~cbhlvlnt~ ~cbsbin72~ ~cmmagin1~ ~equselca~ ~kusmith~ ~osgil2~ ~sto1320~ ~wwmer01~ BEGIN
+    ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+      COPY_EXISTING ~%hz%.sto~ ~override~
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~t-hamm03~ AFTER ~%tsu%ax1h04~ #5 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
+        END
+      BUT_ONLY
+    END
+  END
+END ELSE BEGIN
+  ACTION_IF (~%plt%~ STRING_EQUAL ~bgt~ = 1) OR (~%plt%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+    ACTION_FOR_EACH hz IN ~friend~ ~inn2616~ ~inn3304~ ~sto1112~ ~sto4803~ ~sto4908~ ~sto4909~ ~taerum~ ~ulgoth~ ~ambar01~ ~arlax2~ ~bdbart01~ ~bernard~ ~bernard2~ ~bernpotr~ ~bh2010~ ~bhst0102~ ~bhzelmar~ ~binnkeep~ ~brundor~ ~bshop02~ ~calshop1~ ~cb3651in~ ~cb4279st~ ~cb4280st~ ~cb4281st~ ~cbhlvlnt~ ~cbsbin72~ ~cmmagin1~ ~crobar01~ ~dshop02~ ~equselca~ ~ffbart~ ~garlena~ ~hendak~ ~kusmith~ ~lehtinan~ ~merchant~ ~osgil2~ ~ppinn01~ ~ribald~ ~sahpr1~ ~sevbar01~ ~shop01~ ~shop03~ ~shop04~ ~shop05~ ~shop06~ ~shop07~ ~sto1320~ ~suelf10~ ~thumb~ ~trinnk01~ ~type1~ ~uddrow22~ ~uddrow23~ ~udsvir04~ ~uhinn01~ ~uhmer01~ ~wwmer01~ BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+        COPY_EXISTING ~%hz%.sto~ ~override~
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~t-hamm03~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
+          END
+        BUT_ONLY
+      END
+    END
+  END ELSE BEGIN
+    ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) BEGIN
+      ACTION_FOR_EACH hz IN ~ehinn~ ~ehpomab~ ~kugerth~ ~kuinn1~ ~kuinn2~ ~kuinn3~ ~kusmith~ BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+          COPY_EXISTING ~%hz%.sto~ ~override~
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-hamm03~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
+            END
+          BUT_ONLY
+        END
+      END
+    END ELSE BEGIN
+      ACTION_IF (~%plt%~ STRING_EQUAL ~ca~ = 1) BEGIN
+        ACTION_FOR_EACH hz IN ~tcicar01~ ~tcmer02~ ~tcmerch3~ ~tcmmdwrf~ ~tcselmr1~ BEGIN
+          ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+            COPY_EXISTING ~%hz%.sto~ ~override~
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm03~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
+              END
+            BUT_ONLY
+          END
+        END
+      END
+    END
+  END
+END
+
+//! +1 throwing weapons /////////////////////////////////////////////////////
+BEGIN @29 //+1 throwing weapons
+DESIGNATED 35
+REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
+REQUIRE_PREDICATE NOT (GAME_IS ~iwd2~) @27 //IWD2 already has such items
+
+ACTION_IF MOD_IS_INSTALLED ~setup-hammers.tp2~ 25 BEGIN
+  OUTER_SPRINT thm ~t-hamm03~
+END ELSE BEGIN
+  OUTER_SPRINT thm ~%tsu%ax1h04~
+END
+
+COPY ~hammers/bams/t-dham04.bam~ ~override~
+     ~hammers/bams/t-iaxe01.bam~ ~override~
+     ~hammers/bams/t-iham04.bam~ ~override~
+     ~hammers/bams/t-taxe01.bam~ ~override~
+     ~hammers/bams/t-tdag03.bam~ ~override~
+     ~hammers/bams/t-tham04.bam~ ~override~
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+    READ_LONG 0x8 dl //Uncompressed data length
+    DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
+  END
+
+COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
+  READ_SHORT 0x38 sk //Stack amount
+BUT_ONLY
+
+COPY ~hammers/items/t-hamm04.itm~ ~override~ //Throwing Hammer +1
+  SAY NAME1 @16
+  SAY NAME2 @19
+  SAY UNIDENTIFIED_DESC @17
+  SAY DESC @20
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 12 //Strength
+    WRITE_BYTE 0x2c 6 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+  END
+  WRITE_SHORT 0x38 sk //Stack amount
+  READ_LONG 0x64 hf //Extended header offset
+  READ_SHORT 0x68 hc //Extended header count
+  FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+    READ_BYTE (0x38 * i1 + hf) pt //Attack type
+    PATCH_IF pt = 2 BEGIN
+      PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+      PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psg%~ //Projectile animation
+      END
+    END
+  END
+
+COPY ~hammers/items/t-ax1h01.itm~ ~override~ //Throwing Axe +1
+  SAY NAME2 @21
+  SAY DESC @22
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 12 //Strength
+    WRITE_BYTE 0x2c 10 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+    READ_LONG 0x64 hf //Extended header offset
+    READ_SHORT 0x68 hc //Extended header count
+    FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+      READ_BYTE (0x38 * i1 + hf) pt //Attack type
+      PATCH_IF pt = 2 BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+    END
+  END
+  WRITE_SHORT 0x38 sk //Stack amount
+  PATCH_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+    WRITE_ASCII 0x44 ~_gax1h01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_cax1h04~ #8 //Description icon
+  END
+
+COPY_EXISTING ~%tsu%dagg05.itm~ ~override~ //Throwing Dagger
+  PATCH_INCLUDE ~hammers/lib/fj_spl_itm_reindex.tpp~
+  READ_SHORT 0x38 sk //Stack amount
+  READ_LONG 0x64 hf //Extended header offset
+  READ_SHORT 0x68 hc //Extended header count
+  FOR (i = 0; i < hc; i += 1) BEGIN //Cycle through headers
+    READ_BYTE (0x38 * i + hf) pt //Attack type
+    PATCH_IF pt = 1 BEGIN
+      WRITE_ASCII (0x38 * i + hf + 4) ~%tsu%idagg01~ #8 //Use icon 1
+    END
+  END
+BUT_ONLY
+
+COPY ~hammers/items/t-dagg03.itm~ ~override~ //Throwing Dagger +1
+  SAY NAME2 @23
+  SAY DESC @24
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 4 //Strength
+    WRITE_BYTE 0x2c 4 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+    READ_LONG 0x64 hf //Extended header offset
+    READ_SHORT 0x68 hc //Extended header count
+    FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+      READ_BYTE (0x38 * i1 + hf) pt //Attack type
+      PATCH_IF pt = 2 BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+    END
+  END
+  WRITE_SHORT 0x38 sk //Stack amount
+  PATCH_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+    WRITE_ASCII 0x44 ~_gdagg01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_cdagg05~ #8 //Description icon
+  END
+
+APPEND ~tooltip.2da~ ~T-HAMM04          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM04~
+APPEND ~tooltip.2da~ ~T-AX1H01          15527        15529       -1 -1%cz%~ UNLESS ~^T-AX1H01~
+APPEND ~tooltip.2da~ ~T-DAGG03          15527        15529       -1 -1%cz%~ UNLESS ~^T-DAGG03~
+
+ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  ACTION_IF (~%ttc%~ STRING_EQUAL ~totsc~ = 1) BEGIN //TotSC
+    COPY_EXISTING ~%tsu%ulgoth.sto~ ~override~ //Ulgoth's Inn
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~t-hamm04~ AFTER ~%thm%~ #5 #0 #0 ~IDENTIFIED~ #50
+        ADD_STORE_ITEM ~t-ax1h01~ AFTER ~%tsu%ax1h04~ #5 #0 #0 ~IDENTIFIED~ #50
+      END
+    BUT_ONLY
+  END ELSE BEGIN
+    COPY_EXISTING ~%tss%toblack.sto~ ~override~ //Black Lily's
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~t-hamm04~ AFTER ~%tsu%dart03~ #5 #0 #0 ~IDENTIFIED~ #50
+        ADD_STORE_ITEM ~t-ax1h01~ AFTER ~%tsu%dart03~ #5 #0 #0 ~IDENTIFIED~ #50
+      END
+    BUT_ONLY
+  END
+  COPY_EXISTING ~%tsu%taerum.sto~ ~override~ //Taerum's Smithy
+    PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+      ADD_STORE_ITEM ~t-dagg03~ AFTER ~%tsu%dagg05~ #5 #0 #0 ~IDENTIFIED~ #50
+    END
+  BUT_ONLY
+END ELSE BEGIN
+  ACTION_IF (~%plt%~ STRING_EQUAL ~bgt~ = 1) OR (~%plt%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+    ACTION_FOR_EACH hz IN ~bdbart01~ ~brundor~ ~cb4280st~ ~equselca~ ~ffbart~ ~hendak~ ~lehtinan~ ~osgil2~ ~ribald~ ~shop03~ ~thumb~ ~udsvir04~ ~ulgoth~ BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+        COPY_EXISTING ~%hz%.sto~ ~override~
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~t-hamm04~ AFTER ~%thm%~ #5 #0 #0 ~IDENTIFIED~ #50
+            ADD_STORE_ITEM ~t-ax1h01~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #50
+          END
+        BUT_ONLY
+      END
+    END
+    ACTION_FOR_EACH hz IN ~bernard~ ~bernard2~ ~bernpotr~ ~bhzelmar~ ~brundor~ ~cb4280st~ ~cmmagin1~ ~crobar01~ ~equselca~ ~osgil2~ ~ppinn01~ ~ribald~ ~taerum~ ~uddrow22~ ~uddrow23~ ~udsvir04~ ~uhmer01~ BEGIN
+      ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+        COPY_EXISTING ~%hz%.sto~ ~override~
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~t-dagg03~ AFTER ~dagg05~ #5 #0 #0 ~IDENTIFIED~ #50
+          END
+        BUT_ONLY
+      END
+    END
+  END ELSE BEGIN
+    ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) BEGIN
+      ACTION_FOR_EACH hz IN ~ehpomab~ ~emmeric~ ~kusmith~ BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+          COPY_EXISTING ~%hz%.sto~ ~override~
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-dagg03~ AFTER ~dagg05~ #5 #0 #0 ~IDENTIFIED~ #50
+            END
+          BUT_ONLY
+        END
+      END
+      ACTION_FOR_EACH hz IN ~ehinn~ ~ehpomab~ ~kugerth~ ~kuinn1~ ~kuinn2~ ~kuinn3~ ~kusmith~ BEGIN
+        ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+          COPY_EXISTING ~%hz%.sto~ ~override~
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-hamm04~ AFTER ~%thm%~ #5 #0 #0 ~IDENTIFIED~ #50
+              ADD_STORE_ITEM ~t-ax1h01~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #50
+            END
+          BUT_ONLY
+        END
+      END
+    END ELSE BEGIN
+      ACTION_IF (~%plt%~ STRING_EQUAL ~ca~ = 1) BEGIN
+        ACTION_FOR_EACH hz IN  ~tcicar01~ ~tcmer02~ ~tcmerch3~ ~tcmmdwrf~ ~tcselmr1~ BEGIN
+          ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+            COPY_EXISTING ~%hz%.sto~ ~override~
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm04~ AFTER ~%thm%~ #5 #0 #0 ~IDENTIFIED~ #50
+                ADD_STORE_ITEM ~t-ax1h01~ AFTER ~ax1h04~ #5 #0 #0 ~IDENTIFIED~ #50
+              END
+            BUT_ONLY
+          END
+        END
+        ACTION_FOR_EACH hz IN ~tccarras~ ~tcicar01~ ~tcmer02~ ~tcmerch3~ ~tcmmdwrf~ ~tcmmelf2~ BEGIN
+          ACTION_IF FILE_EXISTS_IN_GAME ~%hz%.sto~ BEGIN
+            COPY_EXISTING ~%hz%.sto~ ~override~
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-dagg03~ AFTER ~dagg05~ #5 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~
+              END
+            BUT_ONLY
+          END
+        END
+      END
+    END
+  END
+END
+
+//! Additional magic items //////////////////////////////////////////////////
+BEGIN @30 //Additional magic items
+DESIGNATED 50
+REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
+
+ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+  OUTER_SPRINT thr ~_hamm06~
+END ELSE BEGIN
+  OUTER_SPRINT thr ~t-hamm06~
+END
+
+COPY ~hammers/bams/t-idag02.bam~ ~override~
+     ~hammers/bams/t-iham01.bam~ ~override~
+     ~hammers/bams/t-iham02.bam~ ~override~
+     ~hammers/bams/t-tdag02.bam~ ~override~
+     ~hammers/bams/t-tham01.bam~ ~override~
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+    READ_LONG 0x8 dl //Uncompressed data length
+    DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
+  END
+
+COPY ~hammers/%ipth%/t-dagg02.itm~ ~override~ //Meraera's Dagger +2
   SAY NAME2 @3
   SAY DESC @4
-  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ BEGIN //Tutu
-    WRITE_ASCII 0x44 ~_GDAGG01~ #8 //Ground icon
-    WRITE_ASCII 0x58 ~_CDAGG04~ #8 //Description icon
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 4 //Strength
+    WRITE_BYTE 0x2c 4 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+    READ_LONG 0x64 hf //Extended header offset
+    READ_SHORT 0x68 hc //Extended header count
+    FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+      READ_BYTE (0x38 * i1 + hf) pt //Attack type
+      PATCH_IF pt = 2 BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+    END
+  END
+  PATCH_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+    WRITE_ASCII 0x44 ~_gdagg01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_cdagg04~ #8 //Description icon
   END
 
-ADD_PROJECTILE ~hammers/pros/PSHAMMB.pro~ //Blue War Hammer
-COPY ~hammers/items/ldhamm01.itm~ ~override~ //Mjolnir
+COPY ~hammers/%ipth%/t-hamm01.itm~ ~override~ //Gethlun's Hammer +2
   SAY NAME2 @5
   SAY DESC @6
-  WRITE_SHORT 0x9c ~%PSHAMMB%~ //Projectile animation
-  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
-    WRITE_ASCII 0x44 ~_GHAMM01~ #8 //Ground icon
-    WRITE_ASCII 0x58 ~_CHAMM02~ #8 //Description icon
-    WRITE_ASCII 0xe6 ~_PWI308B~ //Use icon 3
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 12 //Strength
+    WRITE_BYTE 0x2c 6 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+  END
+  PATCH_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+    WRITE_ASCII 0x44 ~_ghamm01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_chamm02~ #8 //Description icon
+    WRITE_ASCII 0xe6 ~_pwi308b~ //Use icon 3
+  END
+  READ_LONG 0x64 hf //Extended header offset
+  READ_SHORT 0x68 hc //Extended header count
+  FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+    READ_BYTE (0x38 * i1 + hf) pt //Attack type
+    PATCH_IF pt = 2 BEGIN
+      PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+        WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+      END
+      PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+        WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psb%~ //Projectile animation
+      END
+    END
   END
 
-COPY ~hammers/items/ldhamm02.itm~ ~override~ //Bec de Corbin
+COPY ~hammers/%ipth%/t-hamm02.itm~ ~override~ //Essembra Hammer +2
   SAY NAME2 @7
   SAY DESC @8
-  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
-    WRITE_ASCII 0x44 ~_GHAMM01~ #8 //Ground icon
-    WRITE_ASCII 0x58 ~_CHAMM03~ #8 //Description icon
+  PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+    PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+    WRITE_BYTE 0x26 12 //Strength
+    WRITE_BYTE 0x2c 6 //Dexterity
+  END
+  PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+    WRITE_BYTE 0x31 0 //Proficiency
+  END
+  PATCH_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
+    WRITE_ASCII 0x44 ~_ghamm01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_chamm03~ #8 //Description icon
   END
 
-ADD_PROJECTILE ~hammers/pros/PSHAMMG.pro~ //Gray War Hammer
-ACTION_IF FILE_EXISTS_IN_GAME ~hamm06.itm~ THEN BEGIN //Dwarven Thrower +3
-  COPY_EXISTING ~hamm06.itm~ ~override~
-    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
-      SAY DESC @13
-      WRITE_SHORT 0x9c ~%PSHAMMG%~ //Projectile animation
+ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) OR ((~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%ttc%~ STRING_EQUAL ~totsc~ = 1)) BEGIN
+  COPY ~hammers/bams/t-iham06.bam~ ~override~
+    PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+      READ_LONG 0x8 dl //Uncompressed data length
+      DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
     END
-  BUT_ONLY_IF_IT_CHANGES
+  COPY ~hammers/items/t-hamm06.eff~ ~override~
+  COPY ~hammers/items/t-hamm06.itm~ ~override~ //Dwarven Thrower +3
+    SAY NAME2 @25
+    SAY DESC @15
+    PATCH_IF MOD_IS_INSTALLED ~setup-ashesofembers.tp2~ 0 BEGIN
+      PATCH_INCLUDE ~hammers/lib/t-embers.tpp~
+      WRITE_BYTE 0x26 12 //Strength
+      WRITE_BYTE 0x2c 6 //Dexterity
+    END
+  APPEND ~tooltip.2da~ ~T-HAMM06          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM06~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~w#hamm06.itm~ THEN BEGIN //Dwarven Thrower +3
-  COPY_EXISTING ~w#hamm06.itm~ ~override~
-    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
-      SAY DESC @13
-      WRITE_SHORT 0x9c ~%PSHAMMG%~ //Projectile animation
-    END
-  BUT_ONLY_IF_IT_CHANGES
-END
-
-APPEND ~tooltip.2da~ ~LDDAGG01   15527      15529      -1
-LDHAMM01   15527      15529      3804~ UNLESS ~LDDAGG01~
+APPEND ~tooltip.2da~ ~T-DAGG02          15527        15529       -1 -1%cz%~ UNLESS ~^T-DAGG02~
+APPEND ~tooltip.2da~ ~T-HAMM01          15527        12124       12060 15529%cz%~ UNLESS ~^T-HAMM01~
 
 OUTER_SET rn = 0
 RANDOM_SEED null
-ACTION_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
-  ACTION_IF FILE_EXISTS_IN_GAME ~fw2003.are~ THEN BEGIN //TotSC
+ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  ACTION_IF (~%ttc%~ STRING_EQUAL ~totsc~ = 1) BEGIN //TotSC
     OUTER_SET rn = RANDOM(1 4)
   END ELSE BEGIN
     OUTER_SET rn = RANDOM(1 2)
   END
-  ACTION_IF (rn = 1) THEN BEGIN
-    COPY_EXISTING ~_sto4908.sto~ ~override~ //Melee Weapons Tent (fw4908 Nashkel Carnival)
+  ACTION_IF rn = 1 BEGIN
+    COPY_EXISTING ~%tsu%sto4908.sto~ ~override~ //Melee Weapons Tent (fw4908 Nashkel Carnival)
       PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-        ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+        ADD_STORE_ITEM ~t-dagg02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
       END
-    BUT_ONLY_IF_IT_CHANGES
-    COPY_EXISTING ~_toblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
+    BUT_ONLY
+    COPY_EXISTING ~%tss%toblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
       PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-        ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+        ADD_STORE_ITEM ~t-hamm01~ AFTER ~%tsu%sw1h07~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
       END
-    BUT_ONLY_IF_IT_CHANGES
-    COPY_EXISTING ~_ighhedg.sto~ ~override~ //High Hedge (fw3202 Thalantyr's Abode)
+    BUT_ONLY
+    COPY_EXISTING ~%tsh%ighhedg.sto~ ~override~ //High Hedge (fw3202 Thalantyr's Abode)
       PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-        ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+        ADD_STORE_ITEM ~t-hamm02~ AFTER ~%tsu%bull02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
       END
-    BUT_ONLY_IF_IT_CHANGES
-    COPY_EXISTING ~_tosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
-      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-        ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
-      END
-    BUT_ONLY_IF_IT_CHANGES
+    BUT_ONLY
+    ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%ttc%~ STRING_EQUAL ~totsc~ = 1) BEGIN
+      COPY_EXISTING ~%tss%tosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~%thr%~ AFTER ~%tsu%sw1h07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+        END
+      BUT_ONLY
+    END
   END ELSE BEGIN
-    ACTION_IF (rn = 2) THEN BEGIN
-      COPY_EXISTING ~_sto4803.sto~ ~override~ //Nashkel Store (fw4803 Nashkel)
+    ACTION_IF rn = 2 BEGIN
+      COPY_EXISTING ~%tsu%sto4803.sto~ ~override~ //Nashkel Store (fw4803 Nashkel)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-dagg02~ AFTER ~%tsu%sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~_sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
+      BUT_ONLY
+      COPY_EXISTING ~%tsu%sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-hamm01~ AFTER ~%tsu%sw1h05~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~_inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
+      BUT_ONLY
+      COPY_EXISTING ~%tsu%inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-hamm02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~_tem0131.sto~ ~override~ //High Hall of Wonders (fw0131 W Baldur's Gate)
-        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
-        END
-      BUT_ONLY_IF_IT_CHANGES
+      BUT_ONLY
+      ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) OR (~%ttc%~ STRING_EQUAL ~totsc~ = 1) BEGIN
+        COPY_EXISTING ~%tsu%tem0131.sto~ ~override~ //High Hall of Wonders (fw0131 W Baldur's Gate)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~%thr%~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+          END
+        BUT_ONLY
+      END
     END ELSE BEGIN
-      ACTION_IF (rn = 3) THEN BEGIN
-        COPY_EXISTING ~_taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
+      ACTION_IF rn = 3 BEGIN
+        COPY_EXISTING ~%tsu%taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-dagg02~ AFTER ~%tsu%dagg02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+        BUT_ONLY
+        COPY_EXISTING ~%tsu%erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm01~ AFTER ~%tsu%sw1h20~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~_tem4802.sto~ ~override~ //Temple of Helm (fw4802 Nashkel)
+        BUT_ONLY
+        COPY_EXISTING ~%tsu%tem4802.sto~ ~override~ //Temple of Helm (fw4802 Nashkel)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+        BUT_ONLY
+        COPY_EXISTING ~%tsu%ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~%thr%~ AFTER ~%tsu%hamm01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
+        BUT_ONLY
       END ELSE BEGIN
-        ACTION_IF (rn = 4) THEN BEGIN
-          COPY_EXISTING ~_sto1112.sto~ ~override~ //Weapons Store (fw1112 SW Baldur's Gate)
+        ACTION_IF rn = 4 BEGIN
+          COPY_EXISTING ~%tsu%sto1112.sto~ ~override~ //Weapons Store (fw1112 SW Baldur's Gate)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN //(also in fw1116 and fw0304 NE Baldur's Gate)
-              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-dagg02~ AFTER ~%tsu%sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+          BUT_ONLY
+          COPY_EXISTING ~%tsu%ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm01~ AFTER ~%tsu%hamm01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~_friend.sto~ ~override~ //Friendly Arm Inn (fw2301 Friendly Arm)
+          BUT_ONLY
+          COPY_EXISTING ~%tsu%friend.sto~ ~override~ //Friendly Arm Inn (fw2301 Friendly Arm)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm02~ AFTER ~%tsu%hamm01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+          BUT_ONLY
+          COPY_EXISTING ~%tsu%erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~%thr%~ AFTER ~%tsu%sw1h20~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-        END //rn 4
+          BUT_ONLY
+        END
       END
     END
   END
 END ELSE BEGIN
-  ACTION_IF FILE_EXISTS_IN_GAME ~ar7200.are~ THEN BEGIN //BGT
+  ACTION_IF (~%plt%~ STRING_EQUAL ~bgt~ = 1) BEGIN
     OUTER_SET rn = RANDOM(1 4)
-    ACTION_IF (rn = 1) THEN BEGIN
-      COPY_EXISTING ~_toblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
+    ACTION_IF rn = 1 BEGIN
+      COPY_EXISTING ~stoblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-dagg02~ AFTER ~sw1h07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
+      BUT_ONLY
       COPY_EXISTING ~wallace.sto~ ~override~ //Wallace (ar2000 Trademeet)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-hamm01~ AFTER ~ax1h01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~_tosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
+      BUT_ONLY
+      COPY_EXISTING ~stosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
         PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+          ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw1h07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
         END
-      BUT_ONLY_IF_IT_CHANGES
+      BUT_ONLY
     END ELSE BEGIN
-      ACTION_IF (rn = 2) THEN BEGIN
-        COPY_EXISTING ~_inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
+      ACTION_IF rn = 2 BEGIN
+        COPY_EXISTING ~inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-dagg02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
+        BUT_ONLY
         COPY_EXISTING ~trmer01.sto~ ~override~ //Peddler (ar2000 Trademeet)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm01~ AFTER ~sw2h01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~_sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
+        BUT_ONLY
+        COPY_EXISTING ~sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw1h05~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
+        BUT_ONLY
       END ELSE BEGIN
-        ACTION_IF (rn = 3) THEN BEGIN
-          COPY_EXISTING ~_taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
+        ACTION_IF rn = 3 BEGIN
+          COPY_EXISTING ~taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-dagg02~ AFTER ~dagg02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
+          BUT_ONLY
           COPY_EXISTING ~amcler02.sto~ ~override~ //Chyil (ar5503 Amkethran House)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm01~ LAST #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+          BUT_ONLY
+          COPY_EXISTING ~ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm02~ AFTER ~hamm01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
+          BUT_ONLY
         END ELSE BEGIN
-          ACTION_IF (rn = 4) THEN BEGIN
-            COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+          ACTION_IF rn = 4 BEGIN
+            COPY_EXISTING ~erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN //(also in fw1116 and fw0304 NE Baldur's Gate)
-                ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-dagg02~ AFTER ~sw1h20~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
+            BUT_ONLY
             COPY_EXISTING ~udduer01.sto~ ~override~ //Carlig (ar2100 Underdark)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-                ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-hamm01~ AFTER ~sw2h01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
+            BUT_ONLY
             COPY_EXISTING ~trcar04.sto~ ~override~ //Caravan Merchant (ar2015 Merchant Tent)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-                ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw1h43~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
+            BUT_ONLY
           END
         END
       END
     END
   END ELSE BEGIN //BG2
-    OUTER_SET rn = RANDOM(1 4)
-    ACTION_IF (rn = 1) THEN BEGIN
-      COPY_EXISTING ~arled.sto~ ~override~ //Arledrian (ar0312 Sea Bounty Sleeping Room)
-        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
-        END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~wallace.sto~ ~override~ //Wallace (ar2000 Trademeet)
-        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
-        END
-      BUT_ONLY_IF_IT_CHANGES
-      COPY_EXISTING ~uhmer03.sto~ ~override~ //Beherant Diir (ar1100 Umar Hills)
-        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
-        END
-      BUT_ONLY_IF_IT_CHANGES
-    END ELSE BEGIN
-      ACTION_IF (rn = 2) THEN BEGIN
-        COPY_EXISTING ~bshop02.sto~ ~override~ //Storekeep (ar0500 Bridge District)
+    ACTION_IF (~%plt%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+      OUTER_SET rn = RANDOM(1 4)
+      ACTION_IF rn = 1 BEGIN
+        COPY_EXISTING ~arled.sto~ ~override~ //Arledrian (ar0312 Sea Bounty Sleeping Room)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-dagg02~ AFTER ~dagg02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~talmiss.sto~ ~override~ //Mistress Ada (ar0904 Temple of Talos)
+        BUT_ONLY
+        COPY_EXISTING ~wallace.sto~ ~override~ //Wallace (ar2000 Trademeet)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm01~ AFTER ~ax1h01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
-        COPY_EXISTING ~trmer01.sto~ ~override~ //Peddler (ar2000 Trademeet)
+        BUT_ONLY
+        COPY_EXISTING ~uhmer03.sto~ ~override~ //Beherant Diir (ar1100 Umar Hills)
           PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            ADD_STORE_ITEM ~t-hamm02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
           END
-        BUT_ONLY_IF_IT_CHANGES
+        BUT_ONLY
       END ELSE BEGIN
-        ACTION_IF (rn = 3) THEN BEGIN
-          COPY_EXISTING ~shop04.sto~  ~override~ //Enge (ar0700 Waukeen's Promenade)
+        ACTION_IF rn = 2 BEGIN
+          COPY_EXISTING ~bshop02.sto~ ~override~ //Storekeep (ar0500 Bridge District)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-dagg02~ AFTER ~sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~amcler02.sto~ ~override~ //Chyil (ar5503 Amkethran House)
+          BUT_ONLY
+          COPY_EXISTING ~temtalos.sto~ ~override~ //Mistress Ada (ar0904 Temple of Talos)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm01~ AFTER ~staf19~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
-          COPY_EXISTING ~udduer01.sto~ ~override~ //Carlig (ar2100 Underdark)
+          BUT_ONLY
+          COPY_EXISTING ~trmer01.sto~ ~override~ //Peddler (ar2000 Trademeet)
             PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+              ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
             END
-          BUT_ONLY_IF_IT_CHANGES
+          BUT_ONLY
         END ELSE BEGIN
-          ACTION_IF (rn = 4) THEN BEGIN
-            COPY_EXISTING ~dmark1.sto~  ~override~ //Fovem (ar0300 Docks)
+          ACTION_IF rn = 3 BEGIN
+            COPY_EXISTING ~shop04.sto~  ~override~ //Enge (ar0700 Waukeen's Promenade)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-                ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-dagg02~ AFTER ~sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
-            COPY_EXISTING ~trrak01.sto~ ~override~ //Adratha the Witch (ar1902 Ihtafeer's Storehouse)
+            BUT_ONLY
+            COPY_EXISTING ~ppstor01.sto~ ~override~ //Merchant (ar1603 Brynnlaw's Shop)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-                ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-hamm01~ AFTER ~halb02~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
-            COPY_EXISTING ~trcar04.sto~ ~override~ //Caravan Merchant (ar2015 Merchant Tent)
+            BUT_ONLY
+            COPY_EXISTING ~udduer01.sto~ ~override~ //Carlig (ar2100 Underdark)
               PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-                ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+                ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw2h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
               END
-            BUT_ONLY_IF_IT_CHANGES
+            BUT_ONLY
+          END ELSE BEGIN
+            ACTION_IF rn = 4 BEGIN
+              COPY_EXISTING ~dmark1.sto~  ~override~ //Fovem (ar0300 Docks)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-dagg02~ AFTER ~dagg15~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~trrak01.sto~ ~override~ //Adratha the Witch (ar1902 Ihtafeer's Storehouse)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm01~ LAST #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~trcar04.sto~ ~override~ //Caravan Merchant (ar2015 Merchant Tent)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm02~ AFTER ~sw1h43~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+            END
+          END
+        END
+      END
+    END ELSE BEGIN
+      ACTION_IF (~%plt%~ STRING_EQUAL ~ca~ = 1) BEGIN
+        OUTER_SET rn = RANDOM(1 3)
+        ACTION_IF rn = 1 BEGIN
+          COPY_EXISTING ~tccarras.sto~ ~override~ //Carras (tc1300 Westgate)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-hamm02~ AFTER ~staf07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+            END
+          BUT_ONLY
+          COPY_EXISTING ~tcinn03.sto~ ~override~ //Salty Dog (tc1007 Westgate)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-dagg02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+            END
+          BUT_ONLY
+          COPY_EXISTING ~tcjan.sto~ ~override~ //Jan Jansen (tc3310)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~t-hamm01~ LAST #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+            END
+          BUT_ONLY
+          COPY_EXISTING ~tcslmer1.sto~ ~override~ //Westgate Warehouse (tc1000)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~hamm06~ AFTER ~halb02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+            END
+          BUT_ONLY
+        END ELSE BEGIN
+          ACTION_IF rn = 2 BEGIN
+            COPY_EXISTING ~tc2008.sto~ ~override~ //Suderham Merchant (tc2008)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm02~ AFTER ~halb02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~tcjoy2.sto~ ~override~ //Temple of Lliira (tc0310)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-dagg02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~trmer02.sto~ ~override~ //Saltmarsh Merchant (tc0025)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~hamm06~ AFTER ~blun07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~tcmmdwrf.sto~ ~override~ //Grimdar's Shop (mm0108)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm01~ AFTER ~hamm01~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+          END ELSE BEGIN
+            ACTION_IF rn = 3 BEGIN
+              COPY_EXISTING ~tcmer04.sto~  ~override~ //Fielding's Magic Shoppe (tc0027)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm01~ LAST #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~trmer04.sto~  ~override~ //Rurik's Blacksmithy (tc0025)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~hamm06~ AFTER ~blun07~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~tcmmmer1.sto~ ~override~ //Merchant (mm0100)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm02~ AFTER ~ax1h01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~tctinke1.sto~ ~override~ //The Tinker (sp1000)
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-dagg02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+            END
+          END
+        END
+      END ELSE BEGIN
+        ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) BEGIN
+          OUTER_SET rn = RANDOM(1 2)
+          ACTION_IF rn = 1 BEGIN
+            COPY_EXISTING ~tiernon.sto~ ~override~ //Tiernon's Forge
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm01~ AFTER ~hqhamm~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~waukeen.sto~ ~override~ //Golden Lodge
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-dagg02~ AFTER ~hqdagg~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~kusmith.sto~ ~override~ //Conlan's Smithy
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm02~ LAST #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+            COPY_EXISTING ~ldd_nym.sto~ ~override~ //Nym's Exotic Goods
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~t-hamm06~ AFTER ~moradin~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+              END
+            BUT_ONLY
+          END ELSE BEGIN
+            ACTION_IF rn = 2 BEGIN
+              COPY_EXISTING ~emmeric.sto~ ~override~ //Emmerich's Archery
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm02~ AFTER ~hamm01~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~kieran2.sto~ ~override~ //Kieran Nye
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-dagg02~ AFTER ~gullwyn~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~ehinn.sto~ ~override~ //Snowdrift Inn
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm06~ AFTER ~hamm02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~shlehlan.sto~ ~override~ //Lehland's Shop
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm01~ AFTER ~udart3b~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+            END
+          END
+        END ELSE BEGIN
+          ACTION_IF (~%plt%~ STRING_EQUAL ~iwd2~ = 1) BEGIN
+            OUTER_SET rn = RANDOM(1 2)
+            ACTION_IF rn = 1 BEGIN
+              COPY_EXISTING ~40bdawn.sto~ ~override~ //Beodaewn's Caravan
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm01~ AFTER ~00sper99~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~50tahvo.sto~ ~override~ //Tahvo the Huntmaster
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-dagg02~ AFTER ~00dagg04~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+              COPY_EXISTING ~11deird.sto~ ~override~ //Gallaway Trading Depot
+                PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                  ADD_STORE_ITEM ~t-hamm02~ AFTER ~00hamm02~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                END
+              BUT_ONLY
+            END ELSE BEGIN
+              ACTION_IF rn = 2 BEGIN
+                COPY_EXISTING ~20arte.sto~ ~override~ //Artemus
+                  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                    ADD_STORE_ITEM ~t-hamm02~ AFTER ~00hamt03~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                  END
+                BUT_ONLY
+                COPY_EXISTING ~50limha.sto~ ~override~ //Limha's Home
+                  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                    ADD_STORE_ITEM ~t-dagg02~ AFTER ~00swdl03~ #0 #0 #0 ~IDENTIFIED&UNSTEALABLE~ #1
+                  END
+                BUT_ONLY
+                COPY_EXISTING ~53heggr.sto~ ~override~ //Heggr Splitsteel
+                  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                    ADD_STORE_ITEM ~t-hamm01~ AFTER ~00hamt10~ #0 #3 #3 ~IDENTIFIED&UNSTEALABLE~ #1
+                  END
+                BUT_ONLY
+              END
+            END
           END
         END
       END

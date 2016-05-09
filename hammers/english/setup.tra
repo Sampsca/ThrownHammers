@@ -1,8 +1,8 @@
 @1 = ~Thrown Hammers~
-@2 = ~This mod is not compatible with your game: it requires (Easy)Tutu, BGT or BG2 with ToB.~
-
-@3 = ~Yarash's Dagger~
-@4 = ~The Dagger of Returning was crafted by Yarash the Sorcerer as payment to a band of adventures for services rendered. Many believe it is as much its unusual weight as the magical enchantment that gives the dagger its high level of damage.
+@2 = ~This mod is not compatible with your game: check your install folder.~
+@3 = ~Meraera's Dagger +2~
+@4 = ~Dagger of Returning +2: "Meraera's Dagger"
+An elven scholar-mage of the Olin Gisiae ("secret keepers") enchanted this dagger. She bound it with the essense of a minor demon and charged it to return to its thrower. Arcane runes wind around the hilt, but whatever meaning they possess is a well-guarded secret, like so much of Olin Gisir lore.
 
 STATISTICS:
 
@@ -19,57 +19,61 @@ Requires: 4 Strength
 Not Usable By:
  Cleric~
 
-@5 = ~Mjolnir the Destroyer~
-@6 = ~This is the legendary hammer of Thor, the god of thunder from a distant realm. Crafted by a dwarven blacksmith Eitri at the bequest of Loki and presented to the gods as a gift, Mjolnir possesses great powers. It can never be lost, it will return to the thrower's hand after being thrown, it can never be destroyed, and was enchanted by Thor himself with the ability to control lightning.
+@5 = ~Gethlun's Hammer +2~
+@6 = ~This is the legendary hammer of a Stormlord of Talos named Gethlun, who some say attained demigodhood. Crafted by a duergar blacksmith long ago, Gethlun's Hammer possesses great powers. It confers electrical resistance, returns to the thrower's hand after being thrown, can never be destroyed, and was enchanted by Talos himself with the ability to control lightning.
 
 STATISTICS:
 
 THAC0: +2
-Damage: 1D4 + 3
+Damage: 2D4 + 2
 Special:
  Returns to thrower
- Casts Lightning Bolt or Call Lightning 3 times per day
+ Lightning Bolt 3 times per day
+ Call Lightning 3 times per day
+Equipped Ability: Electrical Resistance +20%
 Damage type: crushing
 Weight: 4
 Speed Factor: 2
 Proficiency Type: War Hammer
 Type: 1-handed
-Requires: 9 Strength
+Requires: 15 Strength
 Not Usable By:
  Druid
- Mage 
+ Mage
  Thief
  Monk~
 
-@7 = ~Bec de Corbyn~
-@8 = ~For centuries, the appearance of a raven on the field of battle was considered an omen of doom. This devastating warhammer is the aptly-named "Raven's Beak." The shape of the back-spike echoes the beak while the gnarled face helps concentrate the blow on an opponent's armor. The leaf-shaped top-spike adds a deadly thrust to the wielder's repertoire.
+@7 = ~Essembra Hammer +2~
+@8 = ~The Essembra Hammer is named for its place of invention in the Dalelands. This polearm consists of a hammerhead with a spike at its rear, mounted on a long pole reaching practically ten feet in length. A long spear-like top-spike allows the wielder to keep enemies at bay and switch tactics to a deadly thrust attack. It is one of the heavier pole weapons and is rather slow. The entire weapon is made of steel, including the pole, and is decorated with carvings and precious metal gilding. This particular Essembra hammer bears a potent enchantment that can strike an enemy down or cause him to flee in abject horror.
 
 STATISTICS:
 
-THACO: +2
-Damage: 1D4 + 3  
+THAC0: +2
+Damage: 1D8 + 2
 Special:
  5% chance to knock unconscious
  10% chance to cause Horror
-Damage type: crushing
-Weight: 5
-Speed Factor: 2
+Damage type: crushing/piercing
+Weight: 8
+Speed Factor: 7
 Proficiency Type: War Hammer
-Type: 1-handed
+Type: 2-handed
 Requires: 9 Strength
 Not Usable By:
  Druid
- Mage 
+ Mage
  Thief
  Monk~
-@9 = ~War Hammer~
-@10 = ~Aegis-Fang~
-@11 = ~Bruenor Battlehammer specifically made this weapon for Wulfgar, and the strongest of its enchantments only functions while in the hands of a warrior of great strength. Otherwise, Aegis-Fang functions as a War Hammer +3.
+
+@9 = ~Aegis-Fang +3~
+@10 = ~Aegis-Fang +5~
+@11 = ~War Hammer +5: "Aegis-Fang"
+Bruenor Battlehammer specifically made this weapon for Wulfgar, and the strongest of its enchantments only functions while in the young warrior's hands, where it is a +5 hammer. Anyone else wields Aegis-Fang as a +3 weapon.
 
 STATISTICS:
 
-THAC0: +3
-Damage: 2D4 + 3
+THAC0: +5
+Damage: 2D4 + 5
 Special: Returns to thrower
 Damage type: crushing
 Weight: 3
@@ -78,16 +82,18 @@ Proficiency Type: War Hammer
 Type: 1-handed
 Requires: 18 strength
 Only Usable By:
- Fighter~
-@12 = ~Bruenor Battlehammer specifically made this weapon for Wulfgar, and the strongest of its enchantments only functions while in the young warrior's hands. Anyone else wields Aegis-Fang as a War Hammer +3.
+ Wulfgar~
+@12 = ~War Hammer +3: "Aegis-Fang"
+Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
 
 STATISTICS:
 
 THAC0: +3
 Damage: 2D4 + 3
+Special: Returns to thrower
 Damage type: crushing
 Weight: 3
-Speed Factor: 1
+Speed Factor: 2
 Proficiency Type: War Hammer
 Type: 1-handed
 Requires: 18 strength
@@ -96,8 +102,25 @@ Not Usable By:
  Mage
  Thief
  Monk~
-@13 = ~War Hammer +3, Dwarven Thrower
-This hammer - not to be confused with the elven made Dwarf Thrower - is only usable by dwarves. In the capable hands of a dwarven warrior or priest, the hammer may be thrown at an opponent. The magic in the hammer draws it back to the hand of its wielder. If it hits an opponent, it does double the damage that a thrown hammer would normally do. Against giants and ogres, the hammer does an additional +8 damage due to the special hatred dwarves hold for these races.
+@13 = ~Aegis-Fang +4~
+@14 = ~War Hammer +4: "Aegis-Fang"
+Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
+
+STATISTICS:
+
+THAC0: +4
+Damage: 2D4 + 4
+Damage type: crushing
+Weight: 3
+Speed Factor: 5
+Proficiency Type: War Hammer
+Type: 1-handed
+Requires: 18 strength
+Only Usable By:
+ Fighter
+ Barbarian~
+@15 = ~War Hammer +3: "Dwarven Thrower"
+This hammer - not to be confused with the elven-made Dwarf Thrower - is only usable by dwarves. In the capable hands of a dwarven warrior or priest, the hammer may be thrown at an opponent. The magic in the hammer draws it back to the hand of its wielder. If it hits an opponent, it does double the damage that a thrown hammer would normally do. Against giants and ogres, the hammer does an additional +8 damage due to the special hatred dwarves hold for these races.
 
 STATISTICS:
 
@@ -114,3 +137,152 @@ Only Usable By:
  Dwarves
  Cleric
  Fighter (single and multi-class)~
+@16 = ~Throwing Hammer~
+@17 = ~Originally a blacksmith's tool, this simple hammer is composed of a steel head mounted on a 6" wooden shaft. It is balanced to deliver a bone-crushing impact when thrown.  Since the throwing hammer is designed differently than a normal hammer, it is less effective as a melee weapon.
+
+STATISTICS:
+
+Damage: 1D4 + 1 (1D3 + 1 melee)
+Damage type: crushing
+Weight: 4
+Speed Factor: 3
+Proficiency Type: War Hammer
+Type: 1-handed
+Requires: 9 Strength
+Not Usable By:
+ Druid
+ Mage
+ Thief~
+@18 = ~Originally a blacksmith's tool, this simple hammer is composed of a steel head mounted on a 6" wooden shaft. It is balanced to deliver a bone-crushing impact when thrown. It is also the work of a master smith and exhibits a craftsmanship that makes it quicker and more effective in combat.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1D4 + 1
+Damage type: missile (crushing)
+Weight: 4
+Speed Factor: 1
+Proficiency Type: War Hammer
+Type: 1-handed
+Requires: 9 Strength
+Not Usable By:
+ Druid
+ Mage
+ Thief~
+@19 = ~Throwing Hammer +1~
+@20 = ~Originally a blacksmith's tool, this simple hammer is composed of a steel head mounted on a 6" wooden shaft. It is balanced to deliver a bone-crushing impact when thrown. It is also enchanted, making it quicker and more effective in combat. Since the throwing hammer is designed differently than a normal hammer, it is less effective as a melee weapon.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1D4 + 2 (1D3 + 2 melee)
+Damage type: missile (crushing)
+Weight: 2
+Speed Factor: 1
+Proficiency Type: War Hammer
+Type: 1-handed
+Requires: 9 Strength
+Not Usable By:
+ Druid
+ Mage
+ Thief~
+@21 = ~Throwing Axe +1~
+@22 = ~The hand axe or throwing axe is also known as a hatchet. The axe blade has a sharp steel tip, counterbalanced by a pointed fluke. The short handle has a point of the bottom and the head hs a spike on the top. This throwing axe is balanced and enchanted, making it more accurate and damaging. Since the throwing axe is designed differently than a normal axe, it is less effective as a melee weapon.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1D6 + 2 (1D6 + 1 melee)
+Damage type: missile (slashing)
+Weight: 2
+Speed Factor: 3
+Proficiency Type: Axe
+Type: 1-handed
+Requires: 4 Strength
+Not Usable By:
+ Druid
+ Cleric
+ Mage 
+ Thief~
+@23 = ~Throwing Dagger +1~
+@24 = ~The typical throwing dagger has a pointed, usually double-edged blade, as opposed to a knife, which has a single edge and is a bit shorter than the dagger.  Unlike a normal dagger, this one has a smaller handle and is balanced for throwing. It is also enchanted to make it more effective in combat. Since the throwing dagger is designed differently than a normal dagger, it is less effective as a melee weapon.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1D4 + 1 (1D3 + 1 melee)
+Damage type:  missile (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: 1-handed
+Requires: 3 Strength
+Not Usable By:
+ Cleric~
+@25 = ~Dwarven Thrower +3~
+@26 = ~This component requires the main component.~
+@27 = ~IWD2 already has such items.~
+@28 = ~Normal throwing hammers~
+@29 = ~+1 throwing weapons~
+@30 = ~Additional magic items~
+@31 = ~Thrown Spiritual Hammers~
+
+/* WeiDU prompts for translators
+@-1000 = ~The %TP2_FILE_NAME% mod has~
+@-1001 = ~distinct optional components.
+To save time, you can choose what to do with them at a high level rather
+than being asked about each one.
+~
+@-1002 = ~What should be done with all components that are NOT YET installed?
+[I]nstall them, [S]kip them or [A]sk about each one? ~
+@-1003 = ~What should be done with all components that are ALREADY installed?
+[R]e-install them, [U]ninstall them, [S]kip them or [A]sk about each one? ~
+
+@-1004 = ~PLEASE report this message in the file~
+@-1005 = ~to~
+@-1006 = ~Install component [~
+@-1007 = ~]?
+[R]einstall, [N]o change, [U]ninstall or [Q]uit? ~
+
+@-1008 = ~]?
+[I]nstall, [N]ot install or [Q]uit? ~
+
+@-1009 = ~Enter part of a module name: ~
+@-1010 = ~Reinstalling [~
+@-1011 = ~] component~
+@-1012 = ~Reinstalling using language~
+@-1013 = ~Removing old installation of [~
+@-1014 = ~] first ...~
+@-1015 = ~SUCCESSFULLY REMOVED OLD~
+@-1016 = ~Installing~
+@-1017 = ~ERROR installing [~
+@-1018 = ~], rolling back to previous state~
+@-1019 = ~SUCCESSFULLY INSTALLED     ~
+@-1020 = ~Skipping~
+@-1021 = ~Removing [~
+@-1022 = ~] (component #~
+@-1023 = ~)~
+@-1024 = ~SUCCESSFULLY REMOVED [~
+
+@-1025 = ~]?
+[R]einstall, [N]o change, [U]ninstall, [Q]uit or choose one:~
+@-1026 = ~]?
+[N]o, [Q]uit or choose one:~
+
+@-1027 = ~ (currently installed)~
+@-1028 = ~Would you like to display the components from [~
+@-1029 = ~]?
+[Y]es, [N]o? ~
+
+@-1030 = ~]?
+choose one:~
+
+@-1031 = ~]?
+[R]einstall, [N]o change, [Q]uit or choose one:~
+
+@-1032 = ~NOT INSTALLED DUE TO ERRORS~
+@-1033 = ~INSTALLED WITH WARNINGS    ~
+@-1034 = ~Would you like to display the readme? [Y]es [N]o~
+@-1035 = ~Using language~
+@-1036 = ~Skipping GROUP [~
+@-1037 = ~] because it fails its requirements.~
+*/

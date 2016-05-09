@@ -1,0 +1,293 @@
+@1 = ~Marteaux de jet~
+@2 = ~Ce mod n'est pas compatible avec votre jeu : verifiez votre repertoire d'installation.~
+@3 = ~Dague +2 de Meraera~
+@4 = ~Dague de retour +2 : "Dague de Meraera"
+C'est une mage-érudite des Olin Gisiae ("les gardiens des secrets") qui enchanta cette dague. Elle y emprisonna l'essence d'un démon mineur et lui ordonna de revenir à son lanceur. Des runes arcanes s'enroulent autour de son pommeau mais leur signification - si tant est qu'elles en aient une - est un secret bien gardé, comme la plupart du savoir des Olin Gisiae.
+
+PARAMETRES :
+
+Capacité spéciale : revient dans la main du lanceur
+Capacité d'équipement : 1 attaque supplémentaire par round
+
+TAC0 : +2
+Dégâts : 1D6 +2
+Type de dégâts : perforant
+Poids :  3
+Facteur de vitesse : 2
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 4
+Inutilisable par :
+ Clerc~
+
+@5 = ~Marteau +2 de Gethlun~
+@6 = ~Il s'agit du marteau légendaire d'un seigneur des tempêtes de Talos nommé Gethlun, dont certains disent qu'il atteignit le statut de demi-dieu. Créé il y a bien longtemps par un forgeron duergar, le marteau de Gethlun possède de grands pouvoirs. Il accorde une résistance à l'électricité, revient dans la main du lanceur après avoir été jeté, ne peut être détruit, et c'est Talos en personne qui lui conféra la capacité de contrôler les éclairs.
+
+PARAMETRES :
+
+Capacités spéciales :
+  Revient dans la main du lanceur
+  Éclair 3 fois par jour
+  Appel de la foudre 3 fois par jour
+
+Capacité d'équipement : +20% de résistance à l'électricité
+
+TAC0 : +2
+Dégâts : 2D4 +2
+Type de dégâts : contondant
+Poids :  4
+Facteur de vitesse : 2
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 15
+Inutilisable par :
+ Druide
+ Mage
+ Voleur
+ Moine~
+
+@7 = ~Marteau +2 d'Essembra~
+@8 = ~Le marteau d'Essembra porte le nom du lieu où il a été créé, dans les Vaux. Cette arme d'hast est constituée d'une tête de marteau équipée d'une pointe à l'arrière, montée sur un long manche d'environ trois mètres. Une longue pointe semblable à une lance permet à son porteur de maintenir ses ennemis à distance et de changer de tactique en portant une estocade meurtrière. Il s'agit d'une des armes d'hast les plus lourdes qui soit, et est plutôt lente. L'arme est entièrement en acier, manche inclus, et est décorée de sculptures ainsi que de dorures de métaux précieux. Ce marteau d'Essembra bien précis est imprégné d'un enchantement puissant qui peut mettre à terre un ennemi ou le faire fuir, complètement terrorisé.
+
+PARAMETRES :
+
+Capacités spéciales :
+  5% de chance d'assommer
+  10% de chance de provoquer un sort d'horreur
+
+TAC0 : +2
+Dégâts : 1D8 +2
+Type de dégâts : contondant/perforant
+Poids :  8
+Facteur de vitesse : 7
+Type de compétence : marteau de guerre
+Type : arme à 2 mains
+Force nécessaire : 9
+Inutilisable par :
+ Druide
+ Mage
+ Voleur
+ Moine~
+
+@9 = ~Aegis-Fang +3~
+@10 = ~Aegis-Fang +5~
+@11 = ~Marteau des Nains +5 : "Aegis-Fang"
+Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, et son plus puissant enchantement ne fonctionne qu'entre les mains du jeune guerrier. Pour n'importe qui d'autre, Aegis-Fang est un marteau de guerre +3.
+
+PARAMETRES :
+
+Capacité spéciale : revient dans la main du lanceur
+
+TAC0 : +5
+Dégâts : 2D4 +5
+Type de dégâts : contondant
+Poids :  3
+Facteur de vitesse : 1
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 18
+Utilisable uniquement par :
+ Wulfgar~
+@12 = ~Marteau de Guerre +3 : "Aegis-Fang"
+Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance.  Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
+
+PARAMETRES :
+
+Capacité spéciale : revient dans la main du lanceur
+
+TAC0 : +3
+Dégâts : 2D4 +3
+Type de dégâts : contondant
+Poids :  3
+Facteur de vitesse : 2
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 18
+Inutilisable par :
+ Druide
+ Mage
+ Voleur
+ Moine~
+@13 = ~Aegis-Fang +4~
+@14 = ~Marteau de Guerre +4 : "Aegis-Fang"
+Cette arme a été faite spécifiquement pour Wulfgar par Bruenor Marteauguerre, celui-ci l'a imprégnée d'une puissante magie de façon à ce qu'elle revienne à son porteur quand on la lance. Bruenor est très fier de cette arme - c'est son chef-d'oeuvre.
+
+PARAMETRES :
+
+Capacité spéciale : revient dans la main du lanceur
+
+TAC0 : +4
+Dégâts : 2D4 +4
+Type de dégâts : contondant
+Poids :  3
+Facteur de vitesse : 5
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 18
+Utilisable uniquement par :
+ Guerrier
+ Barbare~
+@15 = ~Marteau de guerre +3 : "Marteau des Nains"
+Ce marteau - à ne pas confondre avec le "lanceur de nains" de facture elfique - ne peut être utilisé que par des nains. Entre les mains d'un guerrier ou d'un prêtre nain, ce marteau peut être lancé sur un adversaire. La magie du marteau le ramène dans la main de son porteur. S'il touche un adversaire, il fait deux fois plus de dégâts qu'un marteau de guerre normal. Contre les géants et les ogres, le marteau occasionne un bonus supplémentaire de huit points de dégâts, à cause de la haine fervente que les nains vouent à ces créatures.
+
+PARAMETRES :
+
+Capacité spéciale : revient dans la main du lanceur
+
+TAC0 : +3
+Dégâts : 2D4 +3, +8 contre les géants et les ogres
+Type de dégâts : contondant
+Poids :  4
+Facteur de vitesse : 1
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 9
+Utilisable uniquement par :
+ Nains
+ Clerc
+ Guerrier (mono et multi-classé)~
+@16 = ~Marteau de jet~
+@17 = ~A l'origine un outil de forgeron, ce marteau simple est formé d'une tête d'acier montée sur un manche en bois de 15 cm. Il est équilibré de façon à délivrer un choc écrasant lorsqu'on le lance. Le marteau de jet étant conçu différemment du modèle habituel, il est moins efficace comme arme de mêlée.
+
+PARAMETRES :
+
+Dégâts : 1D4 +1 (1D3 +1 en mêlée)
+Type de dégâts : contondant
+Poids :  4
+Facteur de vitesse : 3
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 9
+Inutilisable par :
+ Druide
+ Mage
+ Voleur~
+@18 = ~A l'origine un outil de forgeron, ce marteau simple est formé d'une tête d'acier montée sur un manche en bois de 15 cm. Il est équilibré de façon à délivrer un choc écrasant lorsqu'on le lance. Il est également l'oeuvre d'un maître forgeron et est d'une qualité qui le rend plus rapide et plus efficace au combat.
+
+PARAMETRES :
+
+TAC0 : +1
+Dégâts : 1D4 +1
+Type de dégâts : projectile (contondant)
+Poids :  4
+Facteur de vitesse : 1
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 9
+Inutilisable par :
+ Druide
+ Mage
+ Voleur~
+@19 = ~Marteau de jet +1~
+@20 = ~A l'origine un outil de forgeron, ce marteau simple est formé d'une tête d'acier montée sur un manche en bois de 15 cm. Il est équilibré de façon à délivrer un choc écrasant lorsqu'on le lance. Il est également enchanté, ce qui le rend plus rapide et plus efficace au combat. Le marteau de jet étant conçu différemment du modèle habituel, il est moins efficace comme arme de mêlée.
+
+PARAMETRES :
+
+TAC0 : +1
+Dégâts : 1D4 +2 (1D3 +2 en mêlée)
+Type de dégâts : projectile (contondant)
+Poids :  2
+Facteur de vitesse : 1
+Type de compétence : marteau de guerre
+Type : arme à 1 main
+Force nécessaire : 9
+Inutilisable par :
+ Druide
+ Mage
+ Voleur~
+@21 = ~Hache de jet +1~
+@22 = ~La hache à main, ou hache de jet, est également connue sous l'appellation de hachette. Sa lame comporte une lame d'acier tranchante, contrebalancée par une barbelure pointue. La courte poignée comporte une pointe en bas et la tête comporte une pointe en haut. Cette hache de jet est équilibrée et enchantée, ce qui la rend plus précise et meurtrière. La hache de jet étant conçue différemment du modèle habituel, elle est moins efficace comme arme de mêlée.
+
+PARAMETRES :
+
+TAC0 : +1
+Dégâts : 1D6 +2 (1D6 +1 en mêlée)
+Type de dégâts : projectile (tranchant)
+Poids :  2
+Facteur de vitesse : 3
+Type de compétence : hache
+Type : arme à 1 main
+Force nécessaire : 4
+Inutilisable par :
+ Druide
+ Clerc
+ Mage 
+ Voleur~
+@23 = ~Dague de jet +1~
+@24 = ~La dague de jet traditionnelle a une lame pointue généralement à double tranchant, contrairement au couteau qui n'a qu'un seul tranchant et est un peu moins long. Par rapport à une dague normale, celle-ci possède un manche plus court et est équilibrée pour être lancée. Elle est également enchantée dans le but de la rendre plus efficace au combat. La dague de jet étant conçue différemment du modèle habituel, elle est moins efficace comme arme de mêlée.
+
+PARAMETRES :
+
+TAC0 : +1
+Dégâts : 1D4 +1 (1D3 +1 en mêlée)
+Type de dégâts : projectile (perforant)
+Facteur de vitesse : 1
+Type de compétence : dague
+Type : arme à 1 main
+Force nécessaire : 3
+Inutilisable par :
+ Clerc~
+@25 = ~Marteau des Nains +3~
+@26 = ~Ce composant necessite le composant principal.~
+@27 = ~IWD2 contient deja de tels objets.~
+@28 = ~Marteau de jet standard~
+@29 = ~Armes de jet +1~
+@30 = ~Objets magiques supplementaires~
+@31 = ~Marteaux spirituels de jet~
+
+// WeiDU prompts
+@-1000 = ~Le mod %TP2_FILE_NAME% contient~
+@-1001 = ~composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+~
+@-1002 = ~Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? ~
+@-1003 = ~Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? ~
+
+@-1004 = ~S'IL VOUS PLAIT, envoyez par e-mail le fichier~
+@-1005 = ~a~
+@-1006 = ~Installer le composant [~
+@-1007 = ~] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? ~
+@-1008 = ~] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? ~
+
+@-1009 = ~Entrez une partie du nom du module : ~
+@-1010 = ~Reinstallation du composant [~
+@-1011 = ~] ~
+@-1012 = ~Reinstallation dans la langue~
+@-1013 = ~Suppression de l'ancienne installation de [~
+@-1014 = ~] au prealable...~
+@-1015 = ~SUPPRESSION REUSSIE DE L'ANCIEN~
+@-1016 = ~Installation en cours~
+@-1017 = ~ERREUR pendant l'installation de [~
+@-1018 = ~], retour a l'etat anterieur~
+@-1019 = ~INSTALLATION REUSSIE                  ~
+@-1020 = ~Saute~
+@-1021 = ~Suppression de [~
+@-1022 = ~] (composant #~
+@-1023 = ~)~
+@-1024 = ~SUPPRESSION REUSSIE DE [~
+
+@-1025 = ~] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :~
+@-1026 = ~] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :~
+@-1027 = ~ (installe actuellement)~
+
+@-1028 = ~Souhaitez-vous afficher les composants de [~
+@-1029 = ~] ?
+[Y]Oui, [N]on? ~
+
+@-1030 = ~] ?
+choisir un parmi :~
+@-1031 = ~] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :~
+@-1032 = ~INSTALLATION ECHOUEE A CAUSE D'ERREURS~
+@-1033 = ~INSTALLATION AVEC DES ALERTES         ~
+@-1034 = ~Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on~
+@-1035 = ~Dans la langue~
+@-1036 = ~Saute le GROUPE [~
+@-1037 = ~] pour cause d'absence des pre-requis.~

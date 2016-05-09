@@ -1,0 +1,302 @@
+@1  = ~Wurfhaemmer~ 
+@2  = ~Diese Modifikation ist nicht kompatibel mit Eurem Spiel: Ueberprueft Euer Spielverzeichnis.~
+@3  = ~Meraeras Dolch~ 
+@4  = ~Eine elfische Magier-Gelehrte von Olin Gisiae ("Geheime Wächter") verzauberte diesen Dolch. Sie verband ihn mit der Essenz eines niederen Dämonen und gab ihm die Kraft zum Werfer zurückzukommen. Akane Runen winden sich um den Griff, aber was auch immer sie bedeuten, ist ein gut geschütztes Geheimnis, wie so vieles von den Olin Gisiae.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +2 oder besser verletzt werden können.
+
+Schaden: 1W6 +2 (Stich/Geschoss)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -2
+Angriffe/Runde: +1
+Gewicht: 3
+Initiativefaktor: 2
+Mindeststärke: 4
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Klerikern~
+@5  = ~Gethluns Hammer~ 
+@6  = ~Dies ist der legendäre Hammer von Gethlun, ein Sturmlord von Talos, wo manche sagen das er die Halbgottheit erlangte. Vor langer Zeit geschmiedet von einem Duergar Schmied, besitzt Gethluns Hammer große Macht. Er verleiht elektrische Widerstandskraft, kehrt in die Hand des Werfers zurück, kann niemals zerstört werden und wurde von Talos persönlich verzaubert, um die Kontrolle über Blitze zu erlangen.
+
+EIGENSCHAFTEN:
+
+Blitzstrahl oder Blitze herbeirufen (3x täglich)
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +2 oder besser verletzt werden können.
+
+Schaden: 2W4 +2 (Wucht/Geschoss)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -2
+Elektizitätswiderstand: +20%
+Gewicht: 4
+Initiativefaktor: 2
+Mindeststärke: 15
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern
+- Mönchen~
+@7  = ~Essembra Hammer~
+@8  = ~Der Essembra Hammer wurde nach seinem Ort in den Tallanden genannt, wo er Erfunden wurde. Diese Stangenwaffe besteht aus einem Hammerkopf, mit einer Spitze an seiner Rückseite, der auf einen langen Stab angebracht ist und praktisch eine länge von 10 Fuß erreicht. Durch die Reichweite und die Spitze am Kopf erlaubt es den Träger die Feinde auf Abstand zu halten und durch wechseln der Taktik zu einer tödlichen Stoßattacke auszuholen. Er ist einer von den schwereren Stabwaffen und ist ziemlich langsam. Die ganze Waffe, mitsamt des Stabes, wurde aus Stahl gemacht und mit Schnitzereien sowie kostbaren Metallvergoldungen dekoriert. Dieser spezielle Essembra Hammer besitzt eine mächtige Verzauberung, die einen Gegner sofort niederstrecken kann oder ihn dazu bringt, in höchstem Entsetzen davonzulaufen.
+
+EIGENSCHAFTEN:
+
+Wird der Gegner getroffen besteht eine 5%ige Chance, dass er bewusstlos geschlagen und eine 10%ige Chance, dass Schrecken auf ihn gewirkt wird.
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +2 oder besser verletzt werden können.
+
+Schaden: 1W8 +2 (Wucht/Stich)
+ETW0-Bonus: -2
+Gewicht: 8
+Initiativefaktor: 7
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 2-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern
+- Mönchen~ 
+@9  = ~Aegis-Fang~
+@10 = ~Aegis-Fang~ 
+@11 = ~Bruenor Battlehammer hat diese Waffe speziell für Wulfgar gemacht und die stärkste Verzauberung, wo es ein Hammer +5 ist, kommt nur zur Wirkung, wenn ein unerfahrener Krieger ihn in der Hand hält. Jeder andere führt Aegis-Fang wie ein Kriegshammer +3.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +5 oder besser verletzt werden können.
+
+Schaden: 2W4 +5 (Wucht/Geschoss)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -5
+Gewicht: 3
+Initiativefaktor: 1
+Mindeststärke: 18
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nur verwendet werden von:
+- Wulfgar~
+@12 = ~Bruenor Battlehammer hat diese Waffe speziell für Wulfgar gemacht und sie mit einer starken Verzauberung versehen, so das sie zum Werfer zurückkehrt, wenn sie geworfen wurde. Bruenor ist sehr stolz auf diese Waffe - es ist seine prächtigste Arbeit.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +3 oder besser verletzt werden können.
+
+Schaden: 2W4 +3 (Wucht/Geschoss)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -3
+Gewicht: 3
+Initiativefaktor: 2
+Mindeststärke: 18
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern
+- Mönchen~
+@13 = ~Aegis-Fang~ 
+@14 = ~Bruenor Battlehammer hat diese Waffe speziell für Wulfgar gemacht und sie mit einer starken Verzauberung versehen, so das sie zum Werfer zurückkehrt, wenn sie geworfen wurde. Bruenor ist sehr stolz auf diese Waffe - es ist seine prächtigste Arbeit.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +4 oder besser verletzt werden können.
+
+Schaden: 2W4 +4 (Wucht/Geschoss)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -4
+Gewicht: 3
+Initiativefaktor: 5
+Mindeststärke: 18
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nur verwendet werden von:
+- Kriegern
+- Barbaren~
+@15 = ~Dieser Hammer - nicht zu verwechseln mit dem elfischen Zwergenwerfer - kann nur von Zwegen benutzt werden. In den fähigen Händen von Zwergenkriegern oder Zwergenklerikern kann der Hammer auf Gegner geworfen werden. Die Magie des Hammers führt ihn wieder in die Hand des Trägers zurück. Trifft er sein Ziel, verursacht der Hammer doppelt soviel Schaden wie ein normaler geworfener Hammer. Da die Zwerge einen großen Hass auf Riesen und Oger haben, verursacht der Hammer bei diesen Rassen einen zusätzlichen Schaden von +8.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +3 oder besser verletzt werden können.
+
+Schaden:
+ 2W4 +3 (Wucht/Geschoss)
+ 2W4 +11 (gg. Riesen/Oger)
+ (Kehrt sofort zum Werfer zurück)
+ETW0-Bonus: -3
+Gewicht: 4
+Initiativefaktor: 1
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nur verwendet werden von:
+- Zwergen
+- Klerikern
+- Kriegern (Einzel- und Multiklasse)~ 
+@16 = ~Wurfhammer~
+@17 = ~Ursprünglich ein Schmiedegegenstand, besteht dieser einfache Hammer aus einem Stahlkopf der auf einem 15 cm langen Holzschaft montiert wurde. Er ist ausgewogen, um einen knochenbrechenden Aufprall zu verursachen, wenn er geworfen wird. Da der Wurfhammer anders hergestellt wird als ein normaler Hammer, ist er weniger Effektiv als eine Nahkampfwaffe.
+
+EIGENSCHAFTEN:
+
+Schaden:
+ 1W3+1 (Wucht)
+ 1W4+1 (Geschoss)
+Gewicht: 4
+Initiativefaktor: 3
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern~
+@18 = ~Ursprünglich ein Schmiedegegenstand, besteht dieser einfache Hammer aus einem Stahlkopf der auf einem 15 cm langen Holzschaft montiert wurde. Er ist ausgewogen, um einen knochenbrechenden Aufprall zu verursachen, wenn er geworfen wird. Er ist auch das Werk eines Meisterschmieds und zeigt eine Handwerkskunst, das ihn schneller und effektiver im Kampf macht.
+
+EIGENSCHAFTEN:
+
+Schaden: 1W4+1 (Wucht/Geschoss)
+ETW0-Bonus: -1
+Gewicht: 4
+Initiativefaktor: 1
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern~
+@19 = ~Wurfhammer +1~ 
+@20 = ~Ursprünglich ein Schmiedegegenstand, besteht dieser einfache Hammer aus einem Stahlkopf der auf einem 15 cm langen Holzschaft montiert wurde. Er ist ausgewogen, um einen knochenbrechenden Aufprall zu verursachen, wenn er geworfen wird. Er ist auch verzaubert, um ihn schneller und effektiver im Kampf zu machen. Da der Wurfhammer anders hergestellt wird als ein normaler Hammer, ist er weniger Effektiv als eine Nahkampfwaffe.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +1 oder besser verletzt werden können.
+
+Schaden:
+ 1W3+2 (Wucht)
+ 1W4+2 (Geschoss)
+ETW0-Bonus: -1
+Gewicht: 2
+Initiativefaktor: 1
+Mindeststärke: 9
+Fertigkeit: Kriegshammer
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Magiern~
+@21 = ~Wurfaxt +1~ 
+@22 = ~Die Hand- oder Wurfaxt ist auch als Kriegsaxt bekannt. Die Klinge der Axt ist mit einer scharfen Stahlschneide und einer spitzen Fluke als Gegengewicht versehen. Der kurze Griff hat am unteren Ende eine Spitze und am oberen Ende einen Dorn. Diese Wurfaxt ist ausgewogen und verzaubert, um sie zielgenauer und schadhafter zu machen. Da die Wurfaxt anders hergestellt wird als eine normale Axt, ist sie weniger Effektiv als eine Nahkampfwaffe.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +1 oder besser verletzt werden können.
+
+Schaden:
+ 1W6+1 (Klinge)
+ 1W6+2 (Geschoss)
+ETW0-Bonus: -1
+Gewicht: 2
+Initiativefaktor: 3
+Mindeststärke: 4
+Fertigkeit: Axt
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Dieben
+- Druiden
+- Klerikern
+- Magiern~ 
+@23 = ~Wurfdolch +1~
+@24 = ~Der typische Wurfdolch hat eine spitze, normalerweise zweischneidige Klinge, anders als ein Messer, das eine einschneidige Klinge besitzt und ein bisschen kürzer ist als der Dolch. Im Gegensatz zum Dolch hat der Wurfdolch einen kürzeren Griff und ist anders ausbalanciert. Er ist auch verzaubert, um ihn effektiver im Kampf zu machen. Da der Wurfdolch anders hergestellt wird als ein normaler Dolch, ist er weniger Effektiv als eine Nahkampfwaffe.
+
+EIGENSCHAFTEN:
+
+Der Träger kann Wesen verletzen, die nur von magischen Waffen +1 oder besser verletzt werden können.
+
+Schaden:
+ 1W3+1 (Stich)
+ 1W4+1 (Geschoss)
+ETW0-Bonus: -1
+Gewicht: 0
+Initiativefaktor: 1
+Mindeststärke: 3
+Fertigkeit: Dolch
+Typ: 1-händig
+
+Kann nicht verwendet werden von:
+- Klerikern~ 
+@25 = ~Zwergenwerfer~
+@26 = ~Diese Komponente benoetigt die Hauptkomponente.~
+@27 = ~Icewind Dale 2 hat bereits solche Gegenstaende.~
+@28 = ~Normale Wurfhaemmer~
+@29 = ~+1 Wurfwaffen~
+@30 = ~Zusaetzliche magische Gegenstaende~
+@31 = ~Wurf-Geisterhammer~
+
+//WeiDU prompts
+@-1000  = ~Die Modifikation %TP2_FILE_NAME% hat~ 
+@-1001  = ~einzelne optionale Komponenten.
+Um Zeit zu sparen, koennt Ihr waehlen, was Ihr mit denen machen wollt,
+anstatt ueber jede einzelne gefragt zu werden.~
+@-1002  = ~Was soll mit den Komponenten geschehen, die NOCH NICHT installiert sind?
+Installiere sie [I], ueberspringe sie [S], frage jede einzelne ab [A]? ~ 
+@-1003  = ~Was soll mit den Komponenten geschehen, die BEREITS installiert sind?
+Deinstalliere sie [U], ueberspringe sie [S], frage jede einzelne ab [A]? (waehlt nicht [R]einstalliere sie) ~
+@-1004  = ~BITTE postet den Inhalt dieser Datei~ 
+@-1005  = ~bei~
+@-1006  = ~Installiere Komponente [~
+@-1007  = ~]
+Nicht aendern [N], deinstallieren [U], beenden [Q]? (waehlt nicht [R]einstallieren) ~ 
+@-1008  = ~]
+Ja [Y], Nein [N] oder Beenden [Q]? ~
+@-1009  = ~Gebt den Teil eines Modulnamens ein: ~ 
+@-1011  = ~] Komponente ~
+@-1013  = ~Entferne zuerst alte Installation von [~
+@-1014  = ~] ...~ 
+@-1015  = ~ERFOLGREICH ALTE ENTFERNT~
+@-1016  = ~Installiere~ 
+@-1017  = ~ERROR beim Installieren [~
+@-1018  = ~], stelle den Ursprung wieder her~
+@-1019  = ~ERFOLGREICH INSTALLIERT              ~
+@-1020  = ~Ueberspringe~ 
+@-1021  = ~Entferne [~
+@-1022  = ~] (Komponente #~ 
+@-1023  = ")" 
+@-1024  = ~ERFOLGREICH ENTFERNT [~
+@-1025 = ~]?
+[R] Neu installieren, [N] keine Aenderung, [U] Deinstallieren, [Q] Abbrechen oder eine der folgenden Optionen aussuchen:~
+@-1026 = ~]?
+[N] Nein, [Q] Abbrechen oder eine der folgenden Optionen aussuchen:~
+
+@-1027 = ~(zur Zeit installiert)~
+@-1028 = ~Moechten Sie die Einzelkomponenten aufgelistet bekommen? [~
+@-1029 = ~]?
+[Y] Ja, [N] Nein? ~
+
+@-1030 = ~]?
+Eine der folgenden Optionen aussuchen:~
+
+@-1031 = ~]?
+[R] Neu installieren, [N] keine Aenderung, [Q] Abbrechen oder eine der folgenden Optionen aussuchen:~
+
+@-1032 = ~NICHT INSTALLIERT AUFGRUND VON FEHLERN~
+@-1033 = ~MIT WARNUNGEN INSTALLIERT             ~
+@-1034 = ~Moechten Sie jetzt die Liesmich oeffnen? [Y] Ja, [N] Nein~
+@-1035 = ~Verwende die Sprache~
+@-1036 = ~Auslassen von GROUP [~
+@-1037 = ~] aufgrund nicht erfuellter Voraussetzungen.~

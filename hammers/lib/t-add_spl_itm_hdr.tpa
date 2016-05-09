@@ -1,0 +1,187 @@
+DEFINE_PATCH_FUNCTION t-add_spl_itm_header
+  INT_VAR
+  t-headers   = 1
+  t-copy      = 1
+  //Header variables
+  t-atk_type  = 2
+  t-id_req    = 0
+  t-use_loc   = 1
+  t-adie_size = 0
+  t-hdr_targ  = 1
+  t-targ_num  = 0
+  t-range     = 30
+  t-launcher  = 0
+  t-adice     = 0
+  t-speed     = 0
+  t-adm_bonus = 0
+  t-hit_bonus = 0
+  t-hdie_size = 0
+  t-pri_type  = 0
+  t-hdice     = 0
+  t-sec_type  = 0
+  t-dmg_bonus = 0
+  t-dmg_type  = 4
+  t-charges   = 0
+  t-deplete   = 0
+  t-flags     = 0b00000001
+  t-projectl  = 1
+  t-melee1    = 100
+  t-melee2    = 0
+  t-melee3    = 0
+  t-bow       = 0
+  t-xbow      = 0
+  t-sling     = 0
+  //Effect variables
+  t-opcode    = 0
+  t-eff_targ  = 2
+  t-power     = 0
+  t-param1    = 0
+  t-param2    = 0
+  t-timing    = 1
+  t-dispel    = 2
+  t-duration  = 0
+  t-prob1     = 100
+  t-prob2     = 0
+  t-fdie_size = 0
+  t-fdice     = 0
+  t-sav_throw = 0
+  t-sav_bonus = 0
+  t-tool_1    = ` 0
+  t-tool_2    = ` 0
+  t-tool_3    = ` 0
+  STR_VAR
+  t-bam       = ~~
+  t-resref    = ~~
+  RET
+  t-tool_1
+  t-tool_2
+  t-tool_3
+BEGIN
+  READ_LONG 0x64  t-hdr_off
+  READ_SHORT 0x68 t-hdr_num
+  READ_LONG 0x6a  t-eq_off
+  PATCH_IF (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~spl~ = 1) BEGIN
+    t-hdr_size = 0x28
+    t-proj_off = 0x26
+    WRITE_LONG 0xc (0 - 1)
+    WRITE_LONG 0x54 (0 - 1)
+    PATCH_FOR_EACH t-junk IN 0x44 0x48 0x58 0x5c BEGIN
+      WRITE_LONG t-junk 0
+    END
+  END ELSE BEGIN
+    t-hdr_size = 0x38
+    t-proj_off = 0x2a
+    PATCH_IF t-copy = 1 BEGIN
+      READ_SHORT (t-hdr_off + 0x26) t-flags
+      READ_SHORT (t-hdr_off + 0x32) t-bow
+      READ_SHORT (t-hdr_off + 0x34) t-xbow
+      READ_SHORT (t-hdr_off + 0x36) t-sling
+    END
+  END
+  READ_SHORT (t-hdr_off + 0x1e) t-eff_num
+  READ_SHORT (t-hdr_off + 0x20) t-eff_off
+  PATCH_IF t-copy = 1 BEGIN
+    READ_BYTE (t-hdr_off + 1) t-id_req
+    READ_BYTE (t-hdr_off + 2) t-use_loc
+    READ_BYTE (t-hdr_off + 3) t-adie_size 
+    READ_BYTE (t-hdr_off + 0xc) t-hdr_targ
+    READ_BYTE (t-hdr_off + 0xd) t-targ_num
+    READ_BYTE (t-hdr_off + 0x10) t-launcher
+    READ_BYTE (t-hdr_off + 0x11) t-adice
+    READ_BYTE (t-hdr_off + 0x12) t-speed
+    READ_BYTE (t-hdr_off + 0x13) t-adm_bonus
+    READ_SHORT (t-hdr_off + 0x14) t-hit_bonus
+    READ_BYTE (t-hdr_off + 0x16) t-hdie_size
+    READ_BYTE (t-hdr_off + 0x17) t-pri_type
+    READ_BYTE (t-hdr_off + 0x18) t-hdice
+    READ_BYTE (t-hdr_off + 0x19) t-sec_type
+    READ_SHORT (t-hdr_off + 0x1a) t-dmg_bonus
+    READ_SHORT (t-hdr_off + 0x22) t-charges
+    READ_SHORT (t-hdr_off + 0x24) t-deplete
+    INSERT_BYTES (t-eq_off + 0x30 * (t-eff_num + t-eff_off)) (t-headers * t-eff_num * 0x30) //New effects
+  END
+  INSERT_BYTES (t-hdr_off + (t-hdr_size * t-hdr_num)) (t-headers * t-hdr_size) //New headers
+  WRITE_SHORT 0x68 (t-hdr_num + t-headers) //Update header count
+  t-eq_off = t-hdr_off + (t-hdr_num + t-headers) * t-hdr_size
+  WRITE_LONG 0x6a t-eq_off //Update equipping effect offset
+  FOR (t-hdr_cycle = t-hdr_num; t-hdr_cycle < (t-hdr_num + t-headers); t-hdr_cycle += 1) BEGIN
+    WRITE_BYTE (t-hdr_off + (t-hdr_size * t-hdr_cycle)) t-atk_type //Attack type
+    PATCH_IF t-atk_type = 2 BEGIN
+      SET $t-tool(~%t-hdr_cycle%~) = 15527 //Thrown
+    END ELSE BEGIN
+      PATCH_IF t-atk_type = 1 BEGIN
+        SET $t-tool(~%t-hdr_cycle%~) = 15529 //Melee
+      END
+    END
+    WRITE_BYTE (t-hdr_off + 1 + (t-hdr_size * t-hdr_cycle)) t-id_req
+    WRITE_BYTE (t-hdr_off + 2 + (t-hdr_size * t-hdr_cycle)) t-use_loc
+    WRITE_BYTE (t-hdr_off + 3 + (t-hdr_size * t-hdr_cycle)) t-adie_size
+    WRITE_ASCIIE (t-hdr_off + 4 + (t-hdr_size * t-hdr_cycle)) ~%t-bam%~ #8
+    WRITE_BYTE (t-hdr_off + 0xc + (t-hdr_size * t-hdr_cycle)) t-hdr_targ
+    WRITE_BYTE (t-hdr_off + 0xd + (t-hdr_size * t-hdr_cycle)) t-targ_num
+    WRITE_SHORT (t-hdr_off + 0xe + (t-hdr_size * t-hdr_cycle)) t-range
+    WRITE_BYTE (t-hdr_off + 0x10 + (t-hdr_size * t-hdr_cycle)) t-launcher
+    WRITE_BYTE (t-hdr_off + 0x11 + (t-hdr_size * t-hdr_cycle)) t-adice
+    WRITE_BYTE (t-hdr_off + 0x12 + (t-hdr_size * t-hdr_cycle)) t-speed
+    WRITE_BYTE (t-hdr_off + 0x10 + (t-hdr_size * t-hdr_cycle)) t-launcher
+    WRITE_SHORT (t-hdr_off + 0x14 + (t-hdr_size * t-hdr_cycle)) t-hit_bonus
+    WRITE_BYTE (t-hdr_off + 0x16 + (t-hdr_size * t-hdr_cycle)) t-hdie_size
+    WRITE_BYTE (t-hdr_off + 0x17 + (t-hdr_size * t-hdr_cycle)) t-pri_type
+    WRITE_BYTE (t-hdr_off + 0x18 + (t-hdr_size * t-hdr_cycle)) t-hdice
+    WRITE_BYTE (t-hdr_off + 0x19 + (t-hdr_size * t-hdr_cycle)) t-sec_type
+    WRITE_SHORT (t-hdr_off + 0x1a + (t-hdr_size * t-hdr_cycle)) t-dmg_bonus
+    WRITE_SHORT (t-hdr_off + 0x1c + (t-hdr_size * t-hdr_cycle)) t-dmg_type
+    WRITE_SHORT (t-hdr_off + 0x1e + (t-hdr_size * t-hdr_cycle)) (t-eff_num * t-hdr_cycle)
+    WRITE_SHORT (t-hdr_off + 0x20 + (t-hdr_size * t-hdr_cycle)) (t-eff_off + t-eff_num * t-headers)
+    WRITE_SHORT (t-hdr_off + 0x22 + (t-hdr_size * t-hdr_cycle)) t-charges
+    WRITE_SHORT (t-hdr_off + 0x24 + (t-hdr_size * t-hdr_cycle)) t-deplete
+    WRITE_SHORT (t-hdr_off + t-proj_off + (t-hdr_size * t-hdr_cycle)) t-projectl
+    PATCH_IF (~%SOURCE_EXT%~ STRING_EQUAL_CASE ~itm~ = 1) BEGIN
+      WRITE_SHORT (t-hdr_off + 0x26 + (t-hdr_size * t-hdr_cycle)) t-flags
+      WRITE_SHORT (t-hdr_off + 0x2c + (t-hdr_size * t-hdr_cycle)) t-melee1
+      WRITE_SHORT (t-hdr_off + 0x2e + (t-hdr_size * t-hdr_cycle)) t-melee2
+      WRITE_SHORT (t-hdr_off + 0x30 + (t-hdr_size * t-hdr_cycle)) t-melee3
+      WRITE_SHORT (t-hdr_off + 0x32 + (t-hdr_size * t-hdr_cycle)) t-bow
+      WRITE_SHORT (t-hdr_off + 0x34 + (t-hdr_size * t-hdr_cycle)) t-xbow
+      WRITE_SHORT (t-hdr_off + 0x36 + (t-hdr_size * t-hdr_cycle)) t-sling
+    END
+    PATCH_IF t-copy = 1 BEGIN
+      FOR (t-eff_cycle = t-eff_off; t-eff_cycle < (t-eff_off + t-eff_num); t-eff_cycle += 1) BEGIN
+        READ_SHORT (t-eq_off + (0x30 * t-eff_cycle)) t-opcode
+        READ_BYTE (t-eq_off + 2 + (0x30 * t-eff_cycle)) t-eff_targ
+        READ_BYTE (t-eq_off + 3 + (0x30 * t-eff_cycle)) t-power
+        READ_LONG (t-eq_off + 4 + (0x30 * t-eff_cycle)) t-param1
+        READ_LONG (t-eq_off + 8 + (0x30 * t-eff_cycle)) t-param2
+        READ_BYTE (t-eq_off + 0xc + (0x30 * t-eff_cycle)) t-timing
+        READ_BYTE (t-eq_off + 0xd + (0x30 * t-eff_cycle)) t-dispel
+        READ_LONG (t-eq_off + 0xe + (0x30 * t-eff_cycle)) t-duration
+        PATCH_IF (t-duration = 0) AND (t-timing = 0) BEGIN //If bogus duration
+          t-timing = 1 //Make it instantaneous
+          WRITE_BYTE (t-eq_off + 0xc + (0x30 * t-eff_cycle)) t-timing
+        END
+        READ_BYTE (t-eq_off + 0x12 + (0x30 * t-eff_cycle)) t-prob1
+        READ_BYTE (t-eq_off + 0x13 + (0x30 * t-eff_cycle)) t-prob2
+        READ_ASCII (t-eq_off + 0x14 + (0x30 * t-eff_cycle)) t-resref
+        READ_LONG (t-eq_off + 0x1c + (0x30 * t-eff_cycle)) t-fdice
+        READ_LONG (t-eq_off + 0x20 + (0x30 * t-eff_cycle)) t-fdie_size
+        READ_LONG (t-eq_off + 0x24 + (0x30 * t-eff_cycle)) t-sav_throw
+        READ_LONG (t-eq_off + 0x28 + (0x30 * t-eff_cycle)) t-sav_bonus
+        WRITE_SHORT (t-eq_off + 0x30 * (t-eff_cycle + t-eff_num)) t-opcode
+        WRITE_BYTE (t-eq_off + 2 + 0x30 * (t-eff_cycle + t-eff_num)) t-eff_targ
+        WRITE_BYTE (t-eq_off + 3 + 0x30 * (t-eff_cycle + t-eff_num)) t-power
+        WRITE_LONG (t-eq_off + 4 + 0x30 * (t-eff_cycle + t-eff_num)) t-param1
+        WRITE_LONG (t-eq_off + 8 + 0x30 * (t-eff_cycle + t-eff_num)) t-param2
+        WRITE_BYTE (t-eq_off + 0xc + 0x30 * (t-eff_cycle + t-eff_num)) t-timing
+        WRITE_BYTE (t-eq_off + 0xd + 0x30 * (t-eff_cycle + t-eff_num)) t-dispel
+        WRITE_LONG (t-eq_off + 0xe + 0x30 * (t-eff_cycle + t-eff_num)) t-duration
+        WRITE_BYTE (t-eq_off + 0x12 + 0x30 * (t-eff_cycle + t-eff_num)) t-prob1
+        WRITE_BYTE (t-eq_off + 0x13 + 0x30 * (t-eff_cycle + t-eff_num)) t-prob2
+        WRITE_ASCIIE (t-eq_off + 0x14 + 0x30 * (t-eff_cycle + t-eff_num)) ~%t-resref%~ #8
+        WRITE_LONG (t-eq_off + 0x1c + 0x30 * (t-eff_cycle + t-eff_num)) t-fdice
+        WRITE_LONG (t-eq_off + 0x20 + 0x30 * (t-eff_cycle + t-eff_num)) t-fdie_size
+        WRITE_LONG (t-eq_off + 0x24 + 0x30 * (t-eff_cycle + t-eff_num)) t-sav_throw
+        WRITE_LONG (t-eq_off + 0x28 + 0x30 * (t-eff_cycle + t-eff_num)) t-sav_bonus
+      END
+    END
+  END
+END
