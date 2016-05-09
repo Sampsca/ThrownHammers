@@ -1,17 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
   <head>
+    <meta http-equiv="Content-type" content="text/html;charset=ascii" />
     <style type="text/css">
-/*<![CDATA[*/
-    <!-- 
       body {
         margin: 0;
         padding: 0;
         cursor: default;
         text-align: center;
         color: #000;
-        background: #e3e3db url('images/shsbkgd.jpg');
+        background: #e3e3db url('http://spellholdstudios.net/images/sh_bg_main.jpg');
       }
       #wrap {
         text-align: left;
@@ -45,15 +43,6 @@
       #header .menu a:visited {
         color: #333;
       }
-      #footer {
-        text-align: center;
-        background: #e5e5e5;
-        border: 1px solid #781808;
-        border-top: 5px solid #781808;
-        border-bottom: 5px solid #781808;
-        font-size: 75%;
-        padding: 5px 0 13px 0;
-      }
       #maindiv {
         margin: 0 auto;
         margin-top: -20px;
@@ -79,13 +68,75 @@
         color: #eee;
         background-color: #781808;
         width: 35px;
+        position: absolute;
         top: 0px;
         left: 0px;
         display: block;
       }
+      h2 {
+        display: block;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+        text-align: left;
+        text-indent: 30px;
+        padding: 0px;
+        margin: 20px 0 0 0;
+        border-bottom: dotted 2px #d0d0d0;
+        border-top: dotted 2px #d0d0d0;
+        background: #deded9;
+        font-size: 160%;
+      }
+      h2::first-letter {
+        color: #781808;
+        background-color: transparent;
+      }
+      #maindiv p {
+        font-size: 100%;
+        font-style: normal;
+        line-height: 150%;
+        padding: 0px;
+        margin: 10px auto;
+        width: 90%;
+        display: block;
+      }
+      #maindiv address a:link,
+      #maindiv address a:visited {
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: transparent;
+        color: #eaeaea !important;
+        padding-right: 5px;
+        padding-left: 6px;
+      }
+      #maindiv address a:focus,
+      #maindiv address a:hover {
+        text-decoration: none;
+        color: #F1F1F1;
+        border: 0;
+      }
+      #maindiv address a:active {
+        color: #fff;
+        text-decoration: line-through;
+        border: none;
+      }
+      #maindiv address {
+        font-size: 95%;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        color: #BBB;
+        background-color: #781808;
+        padding: 3px 0px 0px;
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        display: block;
+        text-align: right;
+      }
       #maindiv .important {
         font-size: 95%;
-        font-family: Verdana;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
         text-align: left;
         background-color: #F1F1F1;
         border-top: solid 1px #aaa;
@@ -105,70 +156,25 @@
         text-indent: 0px;
         margin: 5px 0 10px 0;
       }
-      #maindiv .important ol {
-        margin: -10px 0 0 20px;
-      }
-      #maindiv .important ul {
-        margin: -10px 0 0 15px;
-      }
-      #maindiv p {
-        font-size: 100%;
-        font-style: normal;
-        line-height: 150%;
-        padding: 0px;
-        margin: 10px auto;
-        width: 90%;
-        display: block;
-      }
-      #maindiv address {
-        font-size: 95%;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        color: #BBB;
-        background-color: #781808;
-        padding: 3px 0px 0px;
-        margin: 0px;
-        width: 100%;
-        position: absolute;
-        bottom: -1px;
-        left: 0px;
-        display: block;
-        text-align: right;
-      }
-      #maindiv address a:active {
-        color: #fff;
-        text-decoration: line-through;
-        border: none;
-      }
-      #maindiv address a:focus,
-      #maindiv address a:hover {
-        text-decoration: none;
-        color: #F1F1F1;
-        border: 0;
-      }
-      #maindiv address a:link,
-      #maindiv address a:visited {
-        font-weight: bold;
-        text-decoration: underline;
-        background-color: transparent;
-        color: #eaeaea !important;
-        padding-right: 5px;
-        padding-left: 6px;
+      #maindiv ul {
+        margin: -10px 0 0 30px;
+        *margin-left: 65px;
       }
       #maindiv ol {
         margin: -10px 0 0 35px;
         *margin-left: 70px;
       }
-      #maindiv ol li {
-        line-height: 150%;
+      #maindiv .important ul {
+        margin: -10px 0 0 15px;
       }
-      #maindiv ul {
-        margin: -10px 0 0 30px;
-        *margin-left: 65px;
+      #maindiv .important ol {
+        margin: -10px 0 0 20px;
       }
       #maindiv ul li {
         list-style-type: square;
+        line-height: 150%;
+      }
+      #maindiv ol li {
         line-height: 150%;
       }
       .t1 {
@@ -188,16 +194,20 @@
         *float: none;
         line-height: 22px;
       }
-      a:hover,
-      a:active {
-        color: #222;
-        border-bottom: 1px solid black;
+      hr {
+        margin: 10px 0 10px 0;
+        padding: 0;
+        height: 1px;
+        border: 0;
+        color: #aaa;
+        background-color: #aaa;
       }
-      a:link,
-      a:visited {
-        color: #781808;
-        font-weight: bold;
-        text-decoration: none;
+      hr.floatfix {
+        clear: both;
+        color: #e8e8e6;
+        background-color: #e8e8e6;
+        *margin: 0;
+        *padding: 0;
       }
       h1 {
         font-size: 225%;
@@ -205,22 +215,6 @@
         padding: 5px 0 5px 0;
         margin: 0;
         width: 100%;
-      }
-      h2 {
-        display: block;
-        font-family: Verdana, Trebuchet MS, Arial, serif;
-        text-align: left;
-        text-indent: 30px;
-        padding: 0px;
-        margin: 20px 0 0 0;
-        border-bottom: dotted 2px #d0d0d0;
-        border-top: dotted 2px #d0d0d0;
-        background: #deded9;
-        font-size: 160%;
-      }
-      h2::first-letter {
-        color: #781808;
-        background-color: transparent;
       }
       h3,
       h4,
@@ -251,58 +245,43 @@
         border-bottom: solid 1px #bbb;
         border-top: solid 1px #bbb;
       }
-      hr {
-        margin: 10px 0 10px 0;
-        padding: 0;
-        height: 1px;
-        border: 0;
-        color: #aaa;
-        background-color: #aaa;
+      a:link,
+      a:visited {
+        color: #781808;
+        font-weight: bold;
+        text-decoration: none;
       }
-      hr.floatfix {
-        clear: both;
-        color: #e8e8e6;
-        background-color: #e8e8e6;
-        *margin: 0;
-        *padding: 0;
+      a:hover,
+      a:active {
+        color: #222;
+        border-bottom: 1px solid black;
       }
-      ul.c1 {margin-left: 32px;}
-    -->
-    /*]]>*/
     </style>
-    <title>
-      Spellhold Studios - Thrown Hammers
-    </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="images/shsweb.ico" rel="icon" type="image/bmp" />
+    <title>Spellhold Studios - Thrown Hammers</title>
+    <link rel="shortcut icon" href="http://www.shsforums.net/favicon.ico" />
   </head>
   <body>
     <div id="wrap">
-      <a name="top" id="top"></a>
       <div id="header">
-        <h1>
-          Thrown Hammers
-        </h1><strong>A Spellhold Studios mod for Baldur's Gate, Baldur's Gate
-        II, Baldur's Gate Trilogy, <acronym title=
-        "Baldur's Gate 'To Two'">Tutu</acronym>, Icewind Dale and Icewind Dale
-        II</strong>
+        <a name="top" id="top"></a>
+        <h1>Thrown Hammers</h1>
+        <strong>A Spellhold Studios mod for Baldur's Gate, Baldur's Gate II, Baldur's Gate Trilogy, </strong><acronym title="Baldur's Gate 'To Two'"><strong>Tutu</strong></acronym><strong>, Icewind Dale and Icewind Dale II</strong>
         <hr />
         <p class="about">
-          Authors: Miloch and Sam.
-        </p>
+        Authors: <a href="http://www.shsforums.net/user/5803-miloch/">Miloch</a> and <a href="http://www.shsforums.net/user/10485-sam/">Sam.</a></p>
         <p class="about">
-          <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">Mod
-          Forum</a> &#8226; <a href=
-          "http://www.shsforums.net/index.php?automodule=downloads&showfile=654">Download</a>
-          &#8226; Version 3
+          <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">Mod Forum</a> &#8226;
+          <a href="http://www.shsforums.net/files/file/654-thrown-hammers-v3/">Download</a> &#8226;
+          Version 4
         </p>
         <hr />
         <p class="menu">
-          <a href="#intro">Introduction</a> &middot; <a href=
-          "#compat">Compatibility</a> &middot; <a href=
-          "#installation">Installation</a> &middot; <a href=
-          "#compon">Components</a> &middot; <a href="#trouble">Troubleshooting</a>
-          &middot; <a href="#credits">Credits</a> &middot;
+          <a href="#intro">Introduction</a> &middot;
+          <a href="#compat">Compatibility</a> &middot;
+          <a href="#installation">Installation</a> &middot;
+          <a href="#compon">Components</a> &middot;
+          <a href="#trouble">Troubleshooting</a> &middot;
+          <a href="#credits">Credits</a> &middot;
           <a href="#version">Version History</a>
         </p>
       </div>
@@ -323,8 +302,7 @@
             appropriate animation.
           </p>
           <p class="c1">
-            <img border="0" src="images/hammer.gif" width="420" height="120" alt=
-            "Spiritual Hammer" />
+            <img src="images/hammer.gif" width="420" height="120" alt="Spiritual Hammer" />
           </p>
           <p>
             An optional component adds a special animation to the Spiritual
@@ -335,15 +313,15 @@
             stores if you install the magic item component.
           </p>
           <p>
-            <img width=51 height=45 src="images/t-aegisi.gif" alt="Aegis-Fang" />
-            <img width=58 height=53 src="images/t-iham06.gif" alt="Dwarven Thrower +3" />
-            <img width=45 height=34 src="images/t-iham03.gif" alt="Throwing Hammer" />
-            <img width=43 height=37 src="images/t-iham04.gif" alt="Throwing Hammer +1" />
-            <img width=48 height=45 src="images/t-iaxe01.gif" alt="Throwing Axe +1" />
-            <img width=30 height=28 src="images/t-tdag03.gif" alt="Throwing Dagger +1" />
-            <img width=34 height=32 src="images/t-idag02.gif" alt="Meraera's Dagger" />
-            <img width=53 height=50 src="images/t-iham01.gif" alt="Gethlun's Hammer" />
-            <img width=62 height=62 src="images/t-iham02.gif" alt="Essembra Hammer" />
+            <img src="images/t-aegisi.gif" width="51" height="45" alt="Aegis-Fang" />
+            <img src="images/t-iham06.gif" width="58" height="53" alt="Dwarven Thrower +3" />
+            <img src="images/t-iham03.gif" width="45" height="34" alt="Throwing Hammer" />
+            <img src="images/t-iham04.gif" width="43" height="37" alt="Throwing Hammer +1" />
+            <img src="images/t-iaxe01.gif" width="48" height="45" alt="Throwing Axe +1" />
+            <img src="images/t-tdag03.gif" width="30" height="28" alt="Throwing Dagger +1" />
+            <img src="images/t-idag02.gif" width="34" height="32" alt="Meraera's Dagger" />
+            <img src="images/t-iham01.gif" width="53" height="50" alt="Gethlun's Hammer" />
+            <img src="images/t-iham02.gif" width="62" height="62" alt="Essembra Hammer" />
           </p>
           <address>
             <span class="footer">Thrown Hammers &gt; Introduction</span>
@@ -358,9 +336,9 @@
           </h2>
           <p>
             This mod works with any Infinity Engine game except <acronym title=
-            "Planescape: Torment">PS:T</acronym>. However, the new hammer
+            "Planescape: Torment"><span>PS:T</span></acronym>. However, the new hammer
             projectiles will only appear for games based on the <acronym title=
-            "Baldur's Gate II">BG2</acronym> engine, since projectile
+            "Baldur's Gate II"><span>BG2</span></acronym> engine, since projectile
             identifiers seem to be hardcoded in other games. Make sure your game
             has the latest patch. Check the ReadMe files related to your patch
             in your game folder and the <a href=
@@ -373,7 +351,7 @@
             EasyTutu) and <a href=
             "http://www.shsforums.net/index.php?showforum=261">Baldur's Gate
             Trilogy</a>. Thrown Hammers is also compatible with the total
-            conversion <a href="http://ca.spellholdstudios.net">Classic
+            conversion <a href="http://classicadventuresmod.com/">Classic
             Adventures</a>. You can install this mod during an existing game,
             though you may miss some items unless you start a new game.
           </p>
@@ -387,7 +365,7 @@
             If you want the (few) weapons in this mod to take the "Sensible
             Weapon Restrictions" from <a href="http://www.pocketplane.net/aoe/">
             Ashes of Embers</a>, it doesn't matter whether you install Thrown
-            Hammers before or after <acronym title="Ashes of Embers">AoE</acronym>.
+            Hammers before or after <acronym title="Ashes of Embers"><span>AoE</span></acronym>.
             If you want the similar weapon tweaks in <a href=
             "http://www.gibberlings3.net/level1npcs/">Level 1 NPCs</a>,
             however, install the latter mod after Thrown Hammers.
@@ -409,7 +387,7 @@
             <strong>setup-hammers.exe</strong> (or .command), uninstall all
             previously installed components and delete the hammers folder. When
             installing or uninstalling, do not close the <acronym title=
-            "Disk Operating System">DOS</acronym> window by clicking on the
+            "Disk Operating System"><span>DOS</span></acronym> window by clicking on the
             <strong>X</strong> button! Instead, press the
             <strong>Enter</strong> key when instructed to do so.</em>
           </p>
@@ -417,7 +395,7 @@
             <strong>Important:</strong> If you wish to install any optional
             components, you <em>must</em> install them immediately after the
             main component so that <acronym title=
-            "Weimer Dialogue Utility">WeiDU</acronym> can interpret the new
+            "Weimer Dialogue Utility"><span>WeiDU</span></acronym> can interpret the new
             projectiles. If you decide to add optional components later, you
             must uninstall and reinstall the main component first.
           </p>
@@ -445,7 +423,7 @@
             to modify. On successful extraction, there should be a hammers
             subfolder in your game folder. Download the OS X version of <a href=
             "http://weidu.org/~thebigg/"><acronym title=
-            "Weimer Dialogue Utility">WeiDU</acronym></a> (or copy another mod's
+            "Weimer Dialogue Utility"><span>WeiDU</span></acronym></a> (or copy another mod's
             launcher) and rename it <strong>setup-hammers</strong>. Put this and
             the <strong>setup-hammers.command</strong> file within the hammers
             subfolder into your main game folder. To install, double-click on
@@ -457,9 +435,9 @@
             Extract the contents of the mod to the folder of the game you wish
             to modify. Download the latest Linux version of <a href=
             "http://weidu.org/~thebigg/"><acronym title=
-            "Weimer Dialogue Utility">WeiDU</acronym></a> and copy WeiDU and
+            "Weimer Dialogue Utility"><span>WeiDU</span></acronym></a> and copy WeiDU and
             WeInstall to /usr/bin. Then open a terminal and cd to your
-            <acronym title="Baldur's Gate II">BG2</acronym> installation
+            <acronym title="Baldur's Gate II"><span>BG2</span></acronym> installation
             directory.
           </p>
           <p>
@@ -513,8 +491,8 @@
             This component installs +1 throwing hammers, axes and daggers in
             shops that sell magical weapons and throwing weapons. These are
             fairly uncommon in most games and quite rare in <acronym title=
-            "Baldur's Gate 'To Two'">Tutu</acronym>/<acronym title=
-            "Baldur's Gate">BG1</acronym>.
+            "Baldur's Gate 'To Two'"><span>Tutu</span></acronym>/<acronym title=
+            "Baldur's Gate"><span>BG1</span></acronym>.
           </p>
           <p>
             <strong>Additional magic items</strong><br />
@@ -522,8 +500,8 @@
             shops. Most of these shops are not accessible until later in the
             game. The items include Meraera's Dagger, Gethlun's Hammer, the
             Essembra Hammer and the Dwarven Thrower for Icewind Dale, <acronym title=
-            "Baldur's Gate 'To Two'">Tutu</acronym> and <acronym title=
-            "Baldur's Gate">BG1</acronym>.
+            "Baldur's Gate 'To Two'"><span>Tutu</span></acronym> and <acronym title=
+            "Baldur's Gate"><span>BG1</span></acronym>.
           </p>
           <address>
             <span class="footer">Thrown Hammers &gt; Components</span> 
@@ -552,7 +530,7 @@
             error message, open the file <strong>baldur.ini</strong> in your
             game folder with a text editor (such as Notepad). If you find you
             can't edit it or save changes in Windows Vista, see <a href=
-            "http://forums.bioware.com/viewtopic.html?topic=662080&forum=10">
+            "http://forums.bioware.com/viewtopic.html?topic=662080&amp;forum=10">
             this topic</a> for assistance.
           </p>
           <p>
@@ -568,7 +546,7 @@
           </p>
           <p>
             <strong>Assertion failed in ChDimm.cpp at line #7641</strong><br />
-            Exp: pBiffHeader->dwFileType != mmioFOURCC('B', 'I', 'F', 'C')<br />
+            Exp: pBiffHeader-&gt;dwFileType != mmioFOURCC('B', 'I', 'F', 'C')<br />
             Msg: c:\{path}\bg2\cd#\DATA\BIFNAME.BIF: attempted to use compressed
             BIF from CD, check free hard drive space
           </p>
@@ -578,8 +556,8 @@
             cd# folder (or the CD itself) will sometimes work. Other times, you
             may need to use <a href=
             "http://www.gibberlings3.net/tools/dltcep.php"><acronym title=
-            "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> to
-            decompress the BIF. To do this, go to <strong>Extraction >
+            "Dragonlance Total Conversion Editor Pro"><span>DLTCEP</span></acronym></a> to
+            decompress the BIF. To do this, go to <strong>Extraction &gt;
             Uncompress BIF</strong>. The decompressed BIF should end up in your
             main \data folder. Relaunch the game and see if this resolves the
             issue.
@@ -593,8 +571,9 @@
             the problem in the mod's <a href=
             "http://www.shsforums.net/topic/34099-thrown-hammers/">forum</a>.
             Include the contents of your <acronym title=
-            "Weimer Dialogue Utility">WeiDU</acronym>.log file in the post, or
+            "Weimer Dialogue Utility"><span>WeiDU</span></acronym>.log file in the post, or
             attach it if it's large.
+          </p>
           <address>
             <span class="footer">Thrown Hammers &gt; Troubleshooting</span>
             &#8226;<a href="#top">Back to top</a>
@@ -608,7 +587,7 @@
           </h2><span class="t1">Animations:</span> <span class="t2">Sam.</span><br />
           <span class="t1">Coding:</span> <span class="t2">Miloch</span><br />
           <span class="t1">Item ideas:</span> <span class="t2">Lord Delekhan</span><br />
-          <span class="t1">German translation:</span> <span class="t2">Rübezahl
+          <span class="t1">German translation:</span> <span class="t2">R&uuml;bezahl
           and Leomar</span><br />
           <span class="t1">French translation:</span> <span class="t2">Le
           Marquis (of the d'Oghmatiques)</span><br />
@@ -635,22 +614,22 @@
             <li>
               <a href=
               "http://www.gibberlings3.net/tools/dltcep.php"><acronym title=
-              "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> by
+              "Dragonlance Total Conversion Editor Pro"><span>DLTCEP</span></acronym></a> by
               Avenger
             </li>
             <li>
               <a href="http://iesdp.gibberlings3.net/"><acronym title=
-              "Infinity Engine Structures Description Project">IESDP</acronym></a>
+              "Infinity Engine Structures Description Project"><span>IESD</span>P</acronym></a>
               maintained by igi
             </li>
             <li>
               <a href=
-              "http://forums.pocketplane.net/index.php/topic,22727.msg297145.html#msg297145">
+              "http://www.shsforums.net/topic/45358-nearinfinity/">
               Near Infinity</a> by Jon Olav Hauglid and others
             </li>
             <li>
               <a href="http://weidu.org/main.html#weidu"><acronym title=
-              "Weimer Dialogue Utility">WeiDU</acronym></a> by Wes Weimer and
+              "Weimer Dialogue Utility"><span>WeiDU</span></acronym></a> by Wes Weimer and
               the bigg
             </li>
           </ul>
@@ -677,6 +656,11 @@
           <h2>
             Version History
           </h2>
+          <h6>Version 4: 17 Aug 2014</h6>
+          <ul>
+            <li>Updated Polish translation</li>
+            <li>Updated WeiDU</li>
+          </ul>
           <h6>
             Version 3: 31 Oct 2010
           </h6>
@@ -697,8 +681,8 @@
           <ul>
             <li>Added German, French, Spanish, Italian and Russian translations
             </li>
-            <li>Added compatibility for all <acronym title="Infinity Engine">IE</acronym>
-            games (except <acronym title="Planescape: Torment">PS:T</acronym>)
+            <li>Added compatibility for all <acronym title="Infinity Engine"><span>IE</span></acronym>
+            games (except <acronym title="Planescape: Torment"><span>PS:T</span></acronym>)
             </li>
             <li>Added Classic Adventures compatibility
             </li>
@@ -718,8 +702,8 @@
             <li>Changed item names to avoid conflict with Dark Horizons
             </li>
             <li>Added compatibility with <acronym title=
-            "Baldur's Gate Trilogy">BGT</acronym>/<acronym title=
-            "BiG World Project">BWP</acronym> and all mods
+            "Baldur's Gate Trilogy"><span>BGT</span></acronym>/<acronym title=
+            "BiG World Project"><span>BWP</span></acronym> and all mods
             </li>
           </ul>
           <h6>

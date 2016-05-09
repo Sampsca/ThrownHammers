@@ -1,17 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
   <head>
+    <meta http-equiv="Content-type" content="text/html;charset=ascii" />
     <style type="text/css">
-/*<![CDATA[*/
-    <!-- 
       body {
         margin: 0;
         padding: 0;
         cursor: default;
         text-align: center;
         color: #000;
-        background: #e3e3db url('images/shsbkgd.jpg');
+        background: #e3e3db url('http://spellholdstudios.net/images/sh_bg_main.jpg');
       }
       #wrap {
         text-align: left;
@@ -45,15 +43,6 @@
       #header .menu a:visited {
         color: #333;
       }
-      #footer {
-        text-align: center;
-        background: #e5e5e5;
-        border: 1px solid #781808;
-        border-top: 5px solid #781808;
-        border-bottom: 5px solid #781808;
-        font-size: 75%;
-        padding: 5px 0 13px 0;
-      }
       #maindiv {
         margin: 0 auto;
         margin-top: -20px;
@@ -79,13 +68,75 @@
         color: #eee;
         background-color: #781808;
         width: 35px;
+        position: absolute;
         top: 0px;
         left: 0px;
         display: block;
       }
+      h2 {
+        display: block;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
+        text-align: left;
+        text-indent: 30px;
+        padding: 0px;
+        margin: 20px 0 0 0;
+        border-bottom: dotted 2px #d0d0d0;
+        border-top: dotted 2px #d0d0d0;
+        background: #deded9;
+        font-size: 160%;
+      }
+      h2::first-letter {
+        color: #781808;
+        background-color: transparent;
+      }
+      #maindiv p {
+        font-size: 100%;
+        font-style: normal;
+        line-height: 150%;
+        padding: 0px;
+        margin: 10px auto;
+        width: 90%;
+        display: block;
+      }
+      #maindiv address a:link,
+      #maindiv address a:visited {
+        font-weight: bold;
+        text-decoration: underline;
+        background-color: transparent;
+        color: #eaeaea !important;
+        padding-right: 5px;
+        padding-left: 6px;
+      }
+      #maindiv address a:focus,
+      #maindiv address a:hover {
+        text-decoration: none;
+        color: #F1F1F1;
+        border: 0;
+      }
+      #maindiv address a:active {
+        color: #fff;
+        text-decoration: line-through;
+        border: none;
+      }
+      #maindiv address {
+        font-size: 95%;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+        color: #BBB;
+        background-color: #781808;
+        padding: 3px 0px 0px;
+        margin: 0px;
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0px;
+        display: block;
+        text-align: right;
+      }
       #maindiv .important {
         font-size: 95%;
-        font-family: Verdana;
+        font-family: Verdana, Tahoma, Arial, sans-serif;
         text-align: left;
         background-color: #F1F1F1;
         border-top: solid 1px #aaa;
@@ -105,70 +156,25 @@
         text-indent: 0px;
         margin: 5px 0 10px 0;
       }
-      #maindiv .important ol {
-        margin: -10px 0 0 20px;
-      }
-      #maindiv .important ul {
-        margin: -10px 0 0 15px;
-      }
-      #maindiv p {
-        font-size: 100%;
-        font-style: normal;
-        line-height: 150%;
-        padding: 0px;
-        margin: 10px auto;
-        width: 90%;
-        display: block;
-      }
-      #maindiv address {
-        font-size: 95%;
-        font-style: normal;
-        font-weight: bold;
-        text-decoration: none;
-        color: #BBB;
-        background-color: #781808;
-        padding: 3px 0px 0px;
-        margin: 0px;
-        width: 100%;
-        position: absolute;
-        bottom: -1px;
-        left: 0px;
-        display: block;
-        text-align: right;
-      }
-      #maindiv address a:active {
-        color: #fff;
-        text-decoration: line-through;
-        border: none;
-      }
-      #maindiv address a:focus,
-      #maindiv address a:hover {
-        text-decoration: none;
-        color: #F1F1F1;
-        border: 0;
-      }
-      #maindiv address a:link,
-      #maindiv address a:visited {
-        font-weight: bold;
-        text-decoration: underline;
-        background-color: transparent;
-        color: #eaeaea !important;
-        padding-right: 5px;
-        padding-left: 6px;
+      #maindiv ul {
+        margin: -10px 0 0 30px;
+        *margin-left: 65px;
       }
       #maindiv ol {
         margin: -10px 0 0 35px;
         *margin-left: 70px;
       }
-      #maindiv ol li {
-        line-height: 150%;
+      #maindiv .important ul {
+        margin: -10px 0 0 15px;
       }
-      #maindiv ul {
-        margin: -10px 0 0 30px;
-        *margin-left: 65px;
+      #maindiv .important ol {
+        margin: -10px 0 0 20px;
       }
       #maindiv ul li {
         list-style-type: square;
+        line-height: 150%;
+      }
+      #maindiv ol li {
         line-height: 150%;
       }
       .t1 {
@@ -188,16 +194,20 @@
         *float: none;
         line-height: 22px;
       }
-      a:hover,
-      a:active {
-        color: #222;
-        border-bottom: 1px solid black;
+      hr {
+        margin: 10px 0 10px 0;
+        padding: 0;
+        height: 1px;
+        border: 0;
+        color: #aaa;
+        background-color: #aaa;
       }
-      a:link,
-      a:visited {
-        color: #781808;
-        font-weight: bold;
-        text-decoration: none;
+      hr.floatfix {
+        clear: both;
+        color: #e8e8e6;
+        background-color: #e8e8e6;
+        *margin: 0;
+        *padding: 0;
       }
       h1 {
         font-size: 225%;
@@ -205,22 +215,6 @@
         padding: 5px 0 5px 0;
         margin: 0;
         width: 100%;
-      }
-      h2 {
-        display: block;
-        font-family: Verdana, Trebuchet MS, Arial, serif;
-        text-align: left;
-        text-indent: 30px;
-        padding: 0px;
-        margin: 20px 0 0 0;
-        border-bottom: dotted 2px #d0d0d0;
-        border-top: dotted 2px #d0d0d0;
-        background: #deded9;
-        font-size: 160%;
-      }
-      h2::first-letter {
-        color: #781808;
-        background-color: transparent;
       }
       h3,
       h4,
@@ -251,53 +245,43 @@
         border-bottom: solid 1px #bbb;
         border-top: solid 1px #bbb;
       }
-      hr {
-        margin: 10px 0 10px 0;
-        padding: 0;
-        height: 1px;
-        border: 0;
-        color: #aaa;
-        background-color: #aaa;
+      a:link,
+      a:visited {
+        color: #781808;
+        font-weight: bold;
+        text-decoration: none;
       }
-      hr.floatfix {
-        clear: both;
-        color: #e8e8e6;
-        background-color: #e8e8e6;
-        *margin: 0;
-        *padding: 0;
+      a:hover,
+      a:active {
+        color: #222;
+        border-bottom: 1px solid black;
       }
-      ul.c1 {margin-left: 32px;}
-    -->
-    /*]]>*/
     </style>
   <title>Spellhold Studios - Marteaux de jet</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link href="images/shsweb.ico" rel="icon" type="image/bmp" />
+  <link rel="shortcut icon" href="http://www.shsforums.net/favicon.ico" />
 </head>
 <body>
   <div id="wrap">
-    <a name="top" id="top"></a>
       <div id="header">
-        <h1>
-          Marteaux de jet
-        </h1><strong>Un mod de Spellhold Studios pour Baldur's Gate</strong><strong>, Baldur's Gate
-        II, Baldur's Gate Trilogy, <acronym title="Baldur's Gate 'To Two'">Tutu</acronym>, Icewind Dale et Icewind Dale
-        II</strong>
-<hr />
-<p class="about">
-          Auteurs: Miloch et Sam.
+        <h1>Marteaux de jet</h1>
+        <a name="top" id="top"></a>
+        <strong>Un mod de Spellhold Studios pour Baldur's Gate, Baldur's Gate II, Baldur's Gate Trilogy, <acronym title="Baldur's Gate 'To Two'"><span>Tutu</span></acronym>, Icewind Dale et Icewind Dale II</strong>
+		<hr />
+		<p class="about">
+          Auteurs: <a href="http://www.shsforums.net/user/5803-miloch/">Miloch</a> et <a href="http://www.shsforums.net/user/10485-sam/">Sam.</a>
         </p>
-<p class="about">
-          <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">Forum du mod</a> &bull; <a href="http://www.shsforums.net/index.php?automodule=downloads&amp;showfile=654">T&eacute;l&eacute;chargement</a>
-          &bull; Version 3
+		<p class="about">
+          <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">Forum du mod</a> &bull;
+          <a href="http://www.shsforums.net/files/file/654-thrown-hammers-v3/">T&eacute;l&eacute;chargement</a>
+          &bull; Version 4
         </p>
-<hr />
-<p class="menu">
+		<hr />
+		<p class="menu">
           <a href="#intro">Introduction</a> &middot; <a href="#compat">Compatibilit&eacute;</a> &middot; <a href="#installation">Installation</a> &middot; <a href="#compon">Composants</a> &middot; <a href="#trouble">D&eacute;pannage</a>
           &middot; <a href="#credits">Remerciements</a> &middot;<a href="#version"> Historique</a>
         </p>
       </div>
-<div id="maindiv">
+		<div id="maindiv">
         <!-- ================== I n t r o d u c t i o n ================== -->
         <a name="intro" id="intro"></a>
         <div class="content">
@@ -314,7 +298,7 @@ comme tels et pas comme des haches. Tout marteau de jet cr&eacute;&eacute; par
 un autre mod b&eacute;n&eacute;ficiera &eacute;galement d'une animation
 appropri&eacute;e.</p>
 <p class="c1">
-            <img src="images/hammer.gif" alt="Marteau Spirituel" border="0" height="120" width="420" />
+            <img src="images/hammer.gif" width="420" height="120" alt="Spiritual Hammer" />
           </p>
 <p>Un composant optionnel ajoute une animation sp&eacute;cifique au sort Marteau
 Spirituel, voir ci-dessus. D'autres composants optionnels ajoutent des marteaux
@@ -325,7 +309,7 @@ hasard, si vous installez le composant "objets magiques
 suppl&eacute;mentaires". </p>
 <p>
             <img src="images/t-aegisi.gif" alt="Aegis-Fang" height="45" width="51" />
-            <img src="images/t-iham06.gif" alt="Marteau des Nains +3" height="53" width="58" />
+            <img src="images/t-iham06.gif" width="58" height="53" alt="Marteau des Nains +3"/>
             <img src="images/t-iham03.gif" alt="Marteau de jet" height="34" width="45" />
             <img src="images/t-iham04.gif" alt="Marteau de jet +1" height="37" width="43" />
             <img src="images/t-iaxe01.gif" alt="Hache de jet +1" height="45" width="48" />
@@ -345,7 +329,7 @@ suppl&eacute;mentaires". </p>
 <h2>
             Compatibilit&eacute;
           </h2>
-<p>Ce mod fonctionne avec n'importe quel jeu utilisant l'Infinity Engine, hormis Planescape Torment<acronym title="Planescape: Torment"></acronym>. Les nouveaux marteaux de jet n'appara&icirc;tront toutefois que dans les jeux fonctionnant avec le moteur de <acronym title="Baldur's Gate II">BG2</acronym>,
+<p>Ce mod fonctionne avec n'importe quel jeu utilisant l'Infinity Engine, hormis Planescape Torment<acronym title="Planescape: Torment"><span>PS:T</span></acronym>. Les nouveaux marteaux de jet n'appara&icirc;tront toutefois que dans les jeux fonctionnant avec le moteur de <acronym title="Baldur's Gate II"><span>BG2</span></acronym>,
 car les identificateurs de projectiles semblent &ecirc;tre cod&eacute;s
 "en dur" dans les autres jeux.&nbsp;Assurez-vous que vous avez
 install&eacute; le patch le plus r&eacute;cent.&nbsp;V&eacute;rifiez
@@ -354,7 +338,7 @@ votre jeu, et sur le site web de <a href="http://www.bioware.com/support/games/"
           </p>
 <p>Ce mod est &eacute;galement compatible avec les autres mods, y compris&nbsp;<a href="http://www.pocketplane.net/tutu/">Baldur's Gate Tutu</a> (et
             EasyTutu) et <a href="http://www.shsforums.net/index.php?showforum=261">Baldur's Gate
-            Trilogy</a>. Marteaux de jet est &eacute;galement compatible avec le m&eacute;ga-mod <a href="http://ca.spellholdstudios.net">Classic
+            Trilogy</a>. Marteaux de jet est &eacute;galement compatible avec le m&eacute;ga-mod <a href="http://classicadventuresmod.com/">Classic
             Adventures</a>.&nbsp;Vous pouvez installer ce mod pendant une partie en cours, mais certains objets 
 risquent d'&ecirc;tre inaccessibles ; il faudra commencer une nouvelle partie pour les 
 obtenir. 
@@ -366,7 +350,7 @@ Spirituel) et avant les proc&eacute;dures finales de&nbsp;"biffing". Il faut
 les ressources du jeu au lieu de les modifier. </p>
 <p>Si vous souhaitez que les armes de ce mod utilisent les modifications de r&egrave;gles 
 du mod Ashes of Embers ("Sensible Weapon Restrictions"), installer Thrown
-            Hammers avant ou apr&egrave;s <acronym title="Ashes of Embers">AoE</acronym>
+            Hammers avant ou apr&egrave;s <acronym title="Ashes of Embers"><span>AoE</span></acronym>
             n'a aucune importance. Si toutefois vous souhaitez que les modifications des armes du mod <a href="http://www.gibberlings3.net/level1npcs/">Level 1 NPCs</a>
             s'appliquent, alors installez ce mod apr&egrave;s Marteaux de jet.
           </p>
@@ -386,14 +370,14 @@ du mod Ashes of Embers ("Sensible Weapon Restrictions"), installer Thrown
 install&eacute;e, d&eacute;sinstallez-la avant d'extraire la nouvelle version. Pour cela, 
 lancez <strong>setup-hammers.exe</strong> (ou .command), d&eacute;sinstallez tous les 
 composants d&eacute;j&agrave; pr&eacute;sents et supprimez le r&eacute;pertoire "hammers". Lorsque vous 
-installez ou d&eacute;sinstallez, ne fermez pas la fen&ecirc;tre <acronym title="Disk Operating System">DOS</acronym> en cliquant sur le bouton 
+installez ou d&eacute;sinstallez, ne fermez pas la fen&ecirc;tre <acronym title="Disk Operating System"><span>DOS</span></acronym> en cliquant sur le bouton 
 <strong>X</strong>&nbsp;! Au lieu de cela, appuyez sur la 
 touche&nbsp;<strong>Entr&eacute;e</strong> quand cette option vous est propos&eacute;e.</em>
           </p>
 <p>Vous pouvez extraire les fichiers de l'archive avec&nbsp;<a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.zipgenius.it/index.php?id=33">ZipGenius</a>&nbsp;ou n'importe quel autre logiciel capable de d&eacute;compacter les fichiers .rar. 
           </p>
 <p>
-            <strong>Windows</strong><br />Extrayez le contenu du mod dans le r&eacute;pertoire du jeu que vous souhaitez modifier<acronym title="Baldur's Gate II"></acronym><acronym title="Baldur's Gate Trilogy"></acronym>. Si l'extraction s'est 
+            <strong>Windows</strong><br />Extrayez le contenu du mod dans le r&eacute;pertoire du jeu que vous souhaitez modifier<acronym title="Baldur's Gate II"><span>BG2</span></acronym><acronym title="Baldur's Gate Trilogy"><span>BGT</span></acronym>. Si l'extraction s'est 
 d&eacute;roul&eacute;e correctement, un r&eacute;pertoire "hammers" et un fichier setup-hammers.exe 
 doivent &ecirc;tre apparus dans le r&eacute;pertoire du jeu. Pour installer le mod, 
 double-cliquez sur <strong>setup-hammers.exe</strong> et suivez les instructions 
@@ -408,14 +392,14 @@ apparaissant &agrave; l'&eacute;cran.
 souhaitez modifier.&nbsp;Si l'extraction s'est d&eacute;roul&eacute;e
 correctement, un sous-r&eacute;pertoire "hammers" doit &ecirc;tre
 apparu dans le r&eacute;pertoire du jeu. T&eacute;l&eacute;chargez la
-version OS X de <a href="http://weidu.org/%7Ethebigg/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> (ou alors copiez un autre installateur de mods) et renommez-le <strong>setup-hammers</strong>. Placez ce fichier ainsi que le fichier <strong>setup-hammers.command</strong> dans le sous-r&eacute;pertoire "hammers".&nbsp;Pour installer le mod, double-cliquez sur 
+version OS X de <a href="http://weidu.org/%7Ethebigg/"><acronym title="Weimer Dialogue Utility"><span>WeiDU</span></acronym></a> (ou alors copiez un autre installateur de mods) et renommez-le <strong>setup-hammers</strong>. Placez ce fichier ainsi que le fichier <strong>setup-hammers.command</strong> dans le sous-r&eacute;pertoire "hammers".&nbsp;Pour installer le mod, double-cliquez sur 
 <strong>setup-hammers.command</strong>&nbsp;et suivez les instructions apparaissant &agrave; 
 l'&eacute;cran.
           </p>
 <p>
             <strong>Linux</strong><br />Extrayez le contenu du mod dans le r&eacute;pertoire du jeu que vous souhaitez 
-modifier. T&eacute;l&eacute;chargez la derni&egrave;re version Linux de <a href="http://weidu.org/%7Ethebigg/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a>, puis copiez WeiDU et WeInstall dans /usr/bin. Lancez ensuite une console et 
-allez dans votre r&eacute;pertoire d'installation de <acronym title="Baldur's Gate II">BG2</acronym>.
+modifier. T&eacute;l&eacute;chargez la derni&egrave;re version Linux de <a href="http://weidu.org/%7Ethebigg/"><acronym title="Weimer Dialogue Utility"><span>WeiDU</span></acronym></a>, puis copiez WeiDU et WeInstall dans /usr/bin. Lancez ensuite une console et 
+allez dans votre r&eacute;pertoire d'installation de <acronym title="Baldur's Gate II"><span>BG2</span></acronym>.
           </p><p><em>Facultatif : lancez 'tolower' et r&eacute;pondez oui ("Y") aux deux requ&ecirc;tes. Il 
 n'est pas n&eacute;cessaire d'ex&eacute;cuter la deuxi&egrave;me option (linux.ini) si vous l'avez 
 d&eacute;j&agrave; ex&eacute;cut&eacute;e une fois dans le m&ecirc;me r&eacute;pertoire. Pour gagner du temps, l'archive 
@@ -464,7 +448,7 @@ assez courants. </p>
 Ce composant introduit des marteaux de jet +1, haches +1 et dagues
 +1&nbsp;dans les magasins qui vendent des armes magiques et des armes
 de jet. Ces armes sont assez peu courantes dans la plupart des jeux, et
-plut&ocirc;t rares dans <acronym title="Baldur's Gate 'To Two'">Tutu</acronym>/<acronym title="Baldur's Gate">BG1</acronym>.
+plut&ocirc;t rares dans <acronym title="Baldur's Gate 'To Two'"><span>Tutu</span></acronym>/<acronym title="Baldur's Gate"><span>BG1</span></acronym>.
           </p>
 <p>
             <strong>Additional magic items (objets magiques suppl&eacute;mentaires)</strong><br />
@@ -472,7 +456,7 @@ Ce composant introduit quelques objets magiques uniques dans des
 magasins tir&eacute;s au sort. La plupart de ces magasins n'est
 accessible qu'&agrave; un stade assez avanc&eacute; du jeu. Ces objets
 incluent la dague de Meraera, le marteau de Gethlun, le marteau
-d'Essembra et le Marteau des nains pour Icewind Dale, <acronym title="Baldur's Gate 'To Two'">Tutu</acronym> et <acronym title="Baldur's Gate">BG1</acronym>.
+d'Essembra et le Marteau des nains pour Icewind Dale, <acronym title="Baldur's Gate 'To Two'"><span>Tutu</span></acronym> et <acronym title="Baldur's Gate"><span>BG1</span></acronym>.
           </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Composants</span> 
@@ -529,7 +513,7 @@ dans
 data &agrave; partir du r&eacute;pertoire cd# (ou &agrave; partir du CD
 lui-m&ecirc;me), cela r&eacute;sout parfois le probl&egrave;me. Sinon,
 il est
-possible que vous ayez besoin du logiciel <a href="http://www.gibberlings3.net/tools/dltcep.php"><acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> pour d&eacute;compacter le fichier BIF. Pour cela, allez dans le menu <strong>Extraction &gt;
+possible que vous ayez besoin du logiciel <a href="http://www.gibberlings3.net/tools/dltcep.php"><acronym title="Dragonlance Total Conversion Editor Pro"><span>DLTCEP</span></acronym></a> pour d&eacute;compacter le fichier BIF. Pour cela, allez dans le menu <strong>Extraction &gt;
             Uncompress BIF</strong>.
 Le fichier BIF d&eacute;compact&eacute; devrait se trouver dans le
 dossier \data du r&eacute;pertoire principal. Lancez &agrave; nouveau
@@ -544,7 +528,7 @@ pour y trouver des informations suppl&eacute;mentaires au niveau du
 d&eacute;pannage. Si vous n'arrivez toujours pas &agrave;
 r&eacute;soudre votre probl&egrave;me ou si votre probl&egrave;me est
 li&eacute; &agrave; un mod bien pr&eacute;cis,&nbsp;signalez le
-probl&egrave;me sur le <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">forum</a> du mod.&nbsp;Incluez dans&nbsp;votre sujet le contenu de votre fichier <acronym title="Weimer Dialogue Utility">WeiDU</acronym>.log, ou alors ajoutez-le en pi&egrave;ce jointe s'il est trop volumineux.
+probl&egrave;me sur le <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">forum</a> du mod.&nbsp;Incluez dans&nbsp;votre sujet le contenu de votre fichier <acronym title="Weimer Dialogue Utility"><span>WeiDU</span></acronym>.log, ou alors ajoutez-le en pi&egrave;ce jointe s'il est trop volumineux.
           </p><address>
             <span class="footer">Marteaux de jet &gt; D&eacute;pannage</span>
             &bull;<a href="#top">Haut de page</a>
@@ -578,19 +562,19 @@ probl&egrave;me sur le <a href="http://www.shsforums.net/topic/34099-thrown-hamm
               Workshop</a> par Glenn Flansburg
             </li>
             <li>
-              <a href="http://www.gibberlings3.net/tools/dltcep.php"><acronym title="Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> par
+              <a href="http://www.gibberlings3.net/tools/dltcep.php"><acronym title="Dragonlance Total Conversion Editor Pro"><span>DLTCEP</span></acronym></a> par
               Avenger
             </li>
             <li>
-              <a href="http://iesdp.gibberlings3.net/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>
+              <a href="http://iesdp.gibberlings3.net/"><acronym title="Infinity Engine Structures Description Project"><span>IESDP</span></acronym></a>
               maintenu par igi
             </li>
             <li>
-              <a href="http://forums.pocketplane.net/index.php/topic,22727.msg297145.html#msg297145">
+              <a href="http://www.shsforums.net/topic/45358-nearinfinity/">
               Near Infinity</a> par Jon Olav Hauglid et autres
             </li>
             <li>
-              <a href="http://weidu.org/main.html#weidu"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> par Wes Weimer et
+              <a href="http://weidu.org/main.html#weidu"><acronym title="Weimer Dialogue Utility"><span>WeiDU</span></acronym></a> par Wes Weimer et
               the bigg
             </li>
 </ul>
@@ -610,6 +594,11 @@ citant pas la source (mais il est plus correct de cr&eacute;diter les auteurs).
         <div class="content">   
         <h2>Historique
         </h2>
+          <h6>Version 4: 17 Aout 2014</h6>
+          <ul>
+            <li>Mettre &agrave; jour Polish traduction</li>
+            <li>Mettre &agrave; jour WeiDU</li>
+          </ul>
           <h6>
             Version 3 : 31 Octobre 2010
           </h6>
@@ -634,7 +623,7 @@ citant pas la source (mais il est plus correct de cr&eacute;diter les auteurs).
             italien et russe&nbsp;
             </li>
             <li>Mod rendu compatible avec tous les jeux Infinity engine
-            (hormis <acronym title="Planescape: Torment">PS:T</acronym>)
+            (hormis <acronym title="Planescape: Torment"><span>PS:T</span></acronym>)
             </li>
             <li>Mod rendu compatible&nbsp;avec le mod Classic Adventures
             </li>
@@ -656,7 +645,7 @@ citant pas la source (mais il est plus correct de cr&eacute;diter les auteurs).
             <li>Certains noms d'objets modifi&eacute;s pour &eacute;viter un
             conflit avec le mod Dark Horizons
             </li>
-            <li>Mod rendu compatible&nbsp;avec&nbsp;<acronym title="Baldur's Gate Trilogy">BGT</acronym>/<acronym title="BiG World Project">BWP</acronym> et tous les autres mods
+            <li>Mod rendu compatible&nbsp;avec&nbsp;<acronym title="Baldur's Gate Trilogy"><span>BGT</span></acronym>/<acronym title="BiG World Project"><span>BWP</span></acronym> et tous les autres mods
             </li>
           </ul>
           <h6>
