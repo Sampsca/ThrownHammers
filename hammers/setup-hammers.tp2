@@ -1,0 +1,360 @@
+BACKUP ~hammers/backup~
+AUTHOR ~www.shsforums.net/index.php?showtopic=34099~
+VERSION ~v1~
+README ~hammers/hammers-%LANGUAGE%.html~
+
+AUTO_TRA ~hammers/%s~
+LANGUAGE ~English~ ~english~ ~hammers/english/setup.tra~
+
+BEGIN @1 //Thrown Hammers
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~fw0125.are~) AND (FILE_EXISTS_IN_GAME ~ar6200.are~) THEN BEGIN //Tutu-ToB
+  OUTER_SPRINT ~tsu~ ~_~ //Tutu underscore
+  OUTER_SPRINT ~cws~ ~%tsu%inn2616~ //Candlekeep Inn
+END ELSE BEGIN
+  ACTION_IF (NOT FILE_EXISTS_IN_GAME ~fw0125.are~) AND (FILE_EXISTS_IN_GAME ~ar6200.are~) THEN BEGIN //BG2-ToB
+    OUTER_SPRINT ~tsu~ ~~ //No underscore
+    OUTER_SPRINT ~cws~ ~ribald~ //Adventurer's Mart store
+  END ELSE BEGIN
+    FAIL @2 //This mod is not compatible with your game: it requires (Easy)Tutu, BGT or BG2 with ToB.
+  END
+END
+
+COPY ~hammers/bams~ ~override~ //Animations
+
+ACTION_IF FILE_EXISTS_IN_GAME ~c6wulf.cre~ THEN BEGIN //Wulfgar
+  COPY_EXISTING ~c6wulf.cre~ ~override~
+                ~c6wulf2.cre~ ~override~
+    PATCH_IF SOURCE_SIZE > 0x2d3 BEGIN
+      REMOVE_CRE_ITEM ~aegis2~
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
+
+ADD_PROJECTILE ~hammers/pros/PSHAMMA.pro~ //Green War Hammer
+ACTION_IF FILE_EXISTS_IN_GAME ~aegis.itm~ THEN BEGIN //Aegis-Fang
+  COPY_EXISTING ~aegis.itm~ ~override~
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      SAY NAME1 #6345
+      SAY NAME2 @10
+      SAY DESC @11
+      READ_BYTE 0x18 fl //Flags 1
+      WRITE_BYTE 0x18 (fl BOR 0b00000100) //Movable
+      WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
+      WRITE_ASCII 0x3a ~T-AEGISI~ #8 //Inventory icon
+      WRITE_ASCII 0x76 ~T-AEGIST~ #8 //Use icon 1
+      WRITE_ASCII 0xae ~T-AEGISI~ #8 //Use icon 2
+      WRITE_SHORT 0x9c ~%PSHAMMA%~ //Projectile animation
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~aegis2.itm~ THEN BEGIN //Aegis-Fang
+  COPY_EXISTING ~aegis2.itm~ ~override~
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      SAY NAME2 @10
+      SAY DESC @12
+      WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
+      WRITE_ASCII 0x3a ~T-AEGISI~ #8 //Inventory icon
+      WRITE_ASCII 0x76 ~T-AEGISI~ #8 //Use icon 1
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
+
+COPY ~hammers/items/lddagg01.itm~ ~override~ //Yarash's Dagger
+  SAY NAME2 @3
+  SAY DESC @4
+  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ BEGIN //Tutu
+    WRITE_ASCII 0x44 ~_GDAGG01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_CDAGG04~ #8 //Description icon
+  END
+
+ADD_PROJECTILE ~hammers/pros/PSHAMMB.pro~ //Blue War Hammer
+COPY ~hammers/items/ldhamm01.itm~ ~override~ //Mjolnir
+  SAY NAME2 @5
+  SAY DESC @6
+  WRITE_SHORT 0x9c ~%PSHAMMB%~ //Projectile animation
+  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
+    WRITE_ASCII 0x44 ~_GHAMM01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_CHAMM02~ #8 //Description icon
+    WRITE_ASCII 0xe6 ~_PWI308B~ //Use icon 3
+  END
+
+COPY ~hammers/items/ldhamm02.itm~ ~override~ //Bec de Corbin
+  SAY NAME2 @7
+  SAY DESC @8
+  PATCH_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
+    WRITE_ASCII 0x44 ~_GHAMM01~ #8 //Ground icon
+    WRITE_ASCII 0x58 ~_CHAMM03~ #8 //Description icon
+  END
+
+ADD_PROJECTILE ~hammers/pros/PSHAMMG.pro~ //Gray War Hammer
+ACTION_IF FILE_EXISTS_IN_GAME ~hamm06.itm~ THEN BEGIN //Dwarven Thrower +3
+  COPY_EXISTING ~hamm06.itm~ ~override~
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      SAY DESC @13
+      WRITE_SHORT 0x9c ~%PSHAMMG%~ //Projectile animation
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~w#hamm06.itm~ THEN BEGIN //Dwarven Thrower +3
+  COPY_EXISTING ~w#hamm06.itm~ ~override~
+    PATCH_IF SOURCE_SIZE > 0x71 BEGIN
+      SAY DESC @13
+      WRITE_SHORT 0x9c ~%PSHAMMG%~ //Projectile animation
+    END
+  BUT_ONLY_IF_IT_CHANGES
+END
+
+APPEND ~tooltip.2da~ ~LDDAGG01   15527      15529      -1
+LDHAMM01   15527      15529      3804~ UNLESS ~LDDAGG01~
+
+OUTER_SET rn = 0
+RANDOM_SEED null
+ACTION_IF FILE_EXISTS_IN_GAME ~fw0125.are~ THEN BEGIN //Tutu
+  ACTION_IF FILE_EXISTS_IN_GAME ~fw2003.are~ THEN BEGIN //TotSC
+    OUTER_SET rn = RANDOM(1 4)
+  END ELSE BEGIN
+    OUTER_SET rn = RANDOM(1 2)
+  END
+  ACTION_IF (rn = 1) THEN BEGIN
+    COPY_EXISTING ~_sto4908.sto~ ~override~ //Melee Weapons Tent (fw4908 Nashkel Carnival)
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+      END
+    BUT_ONLY_IF_IT_CHANGES
+    COPY_EXISTING ~_toblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+      END
+    BUT_ONLY_IF_IT_CHANGES
+    COPY_EXISTING ~_ighhedg.sto~ ~override~ //High Hedge (fw3202 Thalantyr's Abode)
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+      END
+    BUT_ONLY_IF_IT_CHANGES
+    COPY_EXISTING ~_tosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
+      PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+        ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+      END
+    BUT_ONLY_IF_IT_CHANGES
+  END ELSE BEGIN
+    ACTION_IF (rn = 2) THEN BEGIN
+      COPY_EXISTING ~_sto4803.sto~ ~override~ //Nashkel Store (fw4803 Nashkel)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~_sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~_inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~_tem0131.sto~ ~override~ //High Hall of Wonders (fw0131 W Baldur's Gate)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+    END ELSE BEGIN
+      ACTION_IF (rn = 3) THEN BEGIN
+        COPY_EXISTING ~_taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~_tem4802.sto~ ~override~ //Temple of Helm (fw4802 Nashkel)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+      END ELSE BEGIN
+        ACTION_IF (rn = 4) THEN BEGIN
+          COPY_EXISTING ~_sto1112.sto~ ~override~ //Weapons Store (fw1112 SW Baldur's Gate)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN //(also in fw1116 and fw0304 NE Baldur's Gate)
+              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~_friend.sto~ ~override~ //Friendly Arm Inn (fw2301 Friendly Arm)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~hamm06~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+        END //rn 4
+      END
+    END
+  END
+END ELSE BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar7200.are~ THEN BEGIN //BGT
+    OUTER_SET rn = RANDOM(1 4)
+    ACTION_IF (rn = 1) THEN BEGIN
+      COPY_EXISTING ~_toblack.sto~ ~override~ //Black Lily (fw0153 E Baldur's Gate)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~wallace.sto~ ~override~ //Wallace (ar2000 Trademeet)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~_tosilen.sto~ ~override~ //Silent's Shop (fw0809 E Baldur's Gate)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+    END ELSE BEGIN
+      ACTION_IF (rn = 2) THEN BEGIN
+        COPY_EXISTING ~_inn3351.sto~ ~override~ //Feldepost's Inn (fw3351 Beregost)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~trmer01.sto~ ~override~ //Peddler (ar2000 Trademeet)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~_sto0703.sto~ ~override~ //Sorcerous Sundries (fw0703 E Baldur's Gate)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+      END ELSE BEGIN
+        ACTION_IF (rn = 3) THEN BEGIN
+          COPY_EXISTING ~_taerum.sto~  ~override~ //Thunderhammer Smithy (fw3301 Beregost)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~amcler02.sto~ ~override~ //Chyil (ar5503 Amkethran House)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~_ulgoth.sto~ ~override~ //Ulgoth's Beard Inn (fw1001 Ulgoth's Beard)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+        END ELSE BEGIN
+          ACTION_IF (rn = 4) THEN BEGIN
+            COPY_EXISTING ~_erdane.sto~ ~override~ //Erdane (fw0500 Durlag's Tower)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN //(also in fw1116 and fw0304 NE Baldur's Gate)
+                ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+            COPY_EXISTING ~udduer01.sto~ ~override~ //Carlig (ar2100 Underdark)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+            COPY_EXISTING ~trcar04.sto~ ~override~ //Caravan Merchant (ar2015 Merchant Tent)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+          END
+        END
+      END
+    END
+  END ELSE BEGIN //BG2
+    OUTER_SET rn = RANDOM(1 4)
+    ACTION_IF (rn = 1) THEN BEGIN
+      COPY_EXISTING ~arled.sto~ ~override~ //Arledrian (ar0312 Sea Bounty Sleeping Room)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~wallace.sto~ ~override~ //Wallace (ar2000 Trademeet)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+      COPY_EXISTING ~uhmer03.sto~ ~override~ //Beherant Diir (ar1100 Umar Hills)
+        PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+          ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+        END
+      BUT_ONLY_IF_IT_CHANGES
+    END ELSE BEGIN
+      ACTION_IF (rn = 2) THEN BEGIN
+        COPY_EXISTING ~bshop02.sto~ ~override~ //Storekeep (ar0500 Bridge District)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~talmiss.sto~ ~override~ //Mistress Ada (ar0904 Temple of Talos)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+        COPY_EXISTING ~trmer01.sto~ ~override~ //Peddler (ar2000 Trademeet)
+          PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+            ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+          END
+        BUT_ONLY_IF_IT_CHANGES
+      END ELSE BEGIN
+        ACTION_IF (rn = 3) THEN BEGIN
+          COPY_EXISTING ~shop04.sto~  ~override~ //Enge (ar0700 Waukeen's Promenade)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~amcler02.sto~ ~override~ //Chyil (ar5503 Amkethran House)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+          COPY_EXISTING ~udduer01.sto~ ~override~ //Carlig (ar2100 Underdark)
+            PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+              ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+            END
+          BUT_ONLY_IF_IT_CHANGES
+        END ELSE BEGIN
+          ACTION_IF (rn = 4) THEN BEGIN
+            COPY_EXISTING ~dmark1.sto~  ~override~ //Fovem (ar0300 Docks)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~lddagg01~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+            COPY_EXISTING ~trrak01.sto~ ~override~ //Adratha the Witch (ar1902 Ihtafeer's Storehouse)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~ldhamm01~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+            COPY_EXISTING ~trcar04.sto~ ~override~ //Caravan Merchant (ar2015 Merchant Tent)
+              PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+                ADD_STORE_ITEM ~ldhamm02~ #0 #0 #0 ~IDENTIFIED~ #1
+              END
+            BUT_ONLY_IF_IT_CHANGES
+          END
+        END
+      END
+    END
+  END
+END
