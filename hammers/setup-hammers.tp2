@@ -1,6 +1,6 @@
 BACKUP ~hammers/backup~
 AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
-VERSION ~v4~
+VERSION ~v4.1~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
 ALWAYS
@@ -43,7 +43,7 @@ ALWAYS
         END ELSE BEGIN
           ACTION_IF FILE_EXISTS_IN_GAME ~ar2116.are~ BEGIN //IWD
             OUTER_SPRINT plt ~iwd~
-            OUTER_SPRINT pva ~idb~
+            OUTER_SPRINT pva ~ibg~
           END ELSE BEGIN
             ACTION_IF FILE_EXISTS_IN_GAME ~ar6050.are~ BEGIN //IWD2
               OUTER_SPRINT plt ~iwd2~
@@ -52,7 +52,7 @@ ALWAYS
             END ELSE BEGIN
               ACTION_IF FILE_EXISTS_IN_GAME ~ar0125.are~ BEGIN //BG1
                 OUTER_SPRINT plt ~bg1~
-                OUTER_SPRINT pva ~idb~
+                OUTER_SPRINT pva ~ibg~
                 ACTION_IF FILE_EXISTS_IN_GAME ~ar2003.are~ BEGIN //TotSC
                   OUTER_SPRINT ttc ~totsc~
                 END
