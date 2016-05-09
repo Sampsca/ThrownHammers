@@ -1,0 +1,231 @@
+@3 = ~Daga de Meraera +2~
+@4 = ~Daga de retorno +2: "Daga de Meraera"
+Una erudita maga elfica de los Olin Gisiae ("guardianes secretos") encantó esta daga. En ella enlazó la esencia de un demonio menor y le encargó que volviera a su lanzador. Las runas arcanas de viento destacan en la empuñadura, y cualquiera que sea el significado que poseen es un secreto bien guardado, como muchos otros de los conocimientos de los Olin Gisiae.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ Vuelve a la mano una vez lanzada
+Aptitud poseída:
+ +1 ataque por asalto
+
+GAC0: Bonificador +2
+Daño: 1D6 + 2
+Tipo de daño: Perforante
+Peso: 3
+Factor de velocidad: 2
+Talento marcial: Daga
+Tipo: A una mano
+Requisito: Fuerza 4
+No permitido a:
+ Clérigo~
+
+@5 = ~Martillo de Gethlun +2~
+@6 = ~Este es el legendario martillo de un Lord de la tormenta de Talos llamado Gethlun, de quien se dice alcanzó la semidivinidad. Creado por los herreros duergar hace largo tiempo, el Martillo de Gethlun posee grandes poderes. Confiere resistencia a la electricidad, retorna a la mano del lanzador tras ser lanzado, nunca puede ser destruido, y fue encantado por el mismísimo Talos con la habilidad de controlar los rayos.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ Retorna a la mano del lanzador
+ Puede lanzar Rayo relampagueante 3 veces al día
+ Puede lanzar Clamar al relámpago 3 veces al día
+Aptitud poseído:
+ +20% Resistencia a la electricidad
+
+GAC0: Bonificador +2
+Daño: 2D4 + 2
+Tipo de daño: Contundente
+Peso: 4
+Factor de velocidad: 2
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 15
+No permitido a:
+ Druida
+ Ladrón
+ Mago
+ Monje~
+
+@7 = ~Martillo Essembra +2~
+@8 = ~El Martillo Essembra se llama así por el lugar de su invención, en las Tierras de los valles. Esta arma de asta consiste en una cabeza de martillo con un pincho en parte trasera, montada en mastil que alcanza practicamente los 3 metros de largo. Esta especie de enorme lanza permite al portado mantener a los enemigos a distancia y escoger como táctica un empujón letal. Este es uno de las armas de asta más pesadas y por ello es bastante lenta. El arma está hecha de acero, incluyendo el mastil, y está decorada con grabados y brillantes metales preciosos. Este Martillo Essembra en particular porta un potente encantamiento por lo que puede dejar inconsciente a un enemigo o hacerlo huir de terror.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ 5% de posibilidades de dejar inconsciente
+ 10% de posibilidades de provocar Horror
+
+GAC0: Bonificador +2
+Daño: 1D8 + 2
+Tipo de daño: Contundente/Perforante
+Peso: 8
+Factor de velocidad: 7
+Talento marcial: Martillo de guerra
+Tipo: A dos manos
+Requisito: Fuerza 9
+No permitido a:
+ Druida
+ Ladrón
+ Mago
+ Monje~
+
+@9 = ~Aegis-Fang +3~
+@10 = ~Aegis-Fang +5~
+@11 = ~Martillo de guerra +5: "Aegis-Fang"
+Bruenor Battlehammer creó este arma específicamente para Wulfgar, y todo el poder de sus encantamientos sólo funcionan en las manos del jóven guerrero, donde es un martillo +5. Cualquier otro esgrimirá Aegis-Fang como un arma +3.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ Retorna al lanzador
+
+GAC0: Bonificador +5
+Daño: 2D4 + 5
+Tipo de daño: Contundente
+Peso: 3
+Factor de velocidad: 1
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 18
+Sólo permitido a:
+ Wulfgar~
+@12 = ~Martillo de guerra +3: "Aegis-Fang"
+Bruenor Battlehammer creó este arma específicamente para Wulfgar, y le colocó un poderoso encantamiento para que vuelva al portador cuando sea arrojado. Bruenor se enorgullece de este arma, es su obra maestra.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ Retorna al lanzador
+
+GAC0: Bonificador +3
+Daño: 2D4 + 3
+Tipo de daño: Contundente
+Peso: 3
+Factor de velocidad: 2
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 18
+No permitido a:
+ Druida
+ Ladrón
+ Mago
+ Monje~
+@13 = ~Aegis-Fang +4~
+@14 = ~Martillo de guerra +4: "Aegis-Fang"
+Bruenor Battlehammer creó este arma específicamente para Wulfgar, y le colocó un poderoso encantamiento para que vuelva al portador cuando sea arrojado. Bruenor se enorgullece de este arma, es su obra maestra.
+
+CARACTERÍSTICAS:
+
+GAC0: Bonificador +4
+Daño: 2D4 + 4
+Tipo de daño: Contundente
+Peso: 3
+Factor de velocidad: 5
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 18
+Sólo permitido a:
+ Bárbaro
+ Luchador~
+@15 = ~Martillo de guerra +3: "Lanzador enano"
+Este martillo (no confundir con el arma homónima de manufactura élfica) sólo puede ser utilizado por enanos. En las manos expertas de un guerrero o clérigo enano, puede ser lanzado sobre un enemigo y volver a continuación a la mano de su dueño. Si golpea al oponente, causará el doble de daño que un martillo arrojadizo normal. Contra gigantes y ogros el martillo causa +8 puntos de daño adicional, debido al odio especial que sienten los enanos por estas razas.
+
+CARACTERÍSTICAS:
+
+Aptitud especial:
+ Retorna al lanzador
+
+GAC0: Bonificador +3
+Daño: 2D4 + 3, +8 contra gigantes y ogros
+Tipo de daño: Contundente
+Peso: 4
+Factor de velocidad: 1
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 9
+Sólo permitido a:
+ Enanos
+ Clérigo
+ Luchador (de clase única o multiclase)~
+@16 = ~Martillo arrojadizo~
+@17 = ~Estos simples martillos, que en principio eran las herramientas de los herreros, se componen de una cabeza de acero montada sobre un mango de madera de 15 cm. Están equilibrados para proporcionar un impacto contundente cuando se arrojan. Dado su diseño para ser arrojados tienen diferencias respecto a un martillo normal, lo que la hace menos efectiva como arma cuerpo a cuerpo.
+
+CARACTERÍSTICAS:
+
+Daño: 1D4 + 1 (1D3 + 1 cuerpo a cuerpo)
+Tipo de daño: Contundente
+Peso: 4
+Factor de velocidad: 3
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 9
+No permitido a:
+ Druida
+ Ladrón
+ Mago~
+@18 = ~Estos simples martillos, que en principio eran las herramientas de los herreros, se componen de una cabeza de acero montada sobre un mango de madera de 15 cm. Están equilibrados para proporcionar un impacto contundente cuando se arrojan. También son la obra de un maestro herrero y exhiben una manufactura que los hace más rapidos y efectivos en el combate.
+
+CARACTERÍSTICAS:
+
+GAC0: Bonificador +1
+Daño: 1D4 + 1
+Tipo de daño: Proyectil (contundente)
+Peso: 4
+Factor de velocidad: 1
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 9
+No permitido a:
+ Druida
+ Ladrón
+ Mago~
+@19 = ~Martillo arrojadizo +1~
+@20 = ~Estos simples martillos, que en principio eran las herramientas de los herreros, se componen de una cabeza de acero montada sobre un mango de madera de 15 cm. Están equilibrados para proporcionar un impacto contundente cuando se arrojan. También son la obra de un maestro herrero y exhiben una manufactura que los hace más rapidos y efectivos en el combate.
+
+CARACTERÍSTICAS:
+
+GAC0: Bonificador +1
+Daño: 1D4 + 2 (1D3 + 2 cuerpo a cuerpo)
+Tipo de daño: Proyectil (contundente)
+Peso: 2
+Factor de velocidad: 1
+Talento marcial: Martillo de guerra
+Tipo: A una mano
+Requisito: Fuerza 9
+No permitido a:
+ Druida
+ Ladrón
+ Mago~
+@21 = ~Hacha arrojadiza +1~
+@22 = ~El hacha de mano o hacha arrojadiza también se conoce como hachuela. La hoja tiene una punta de acero afilada, con una aleta en punta como contrapeso. El corto asidero termina en punta y la cabeza puede tener un clavo en la parte superior. Esta hacha arrojadiza está equilibrada y encantada, haciendola más precisa y dañina. Dado su diseño para ser arrojadas tienen diferencias respecto a un hacha normal, lo que la hace menos efectiva como arma cuerpo a cuerpo.
+
+CARACTERÍSTICAS:
+
+GAC0: Bonificador +1
+Daño: 1D6 + 2 (1D6 + 1 cuerpo a cuerpo)
+Tipo de daño: Proyectil (contundente)
+Peso: 2
+Factor de velocidad: 3
+Talento marcial: Hacha
+Tipo: A una mano
+Requisito: Fuerza 4
+No permitido a:
+ Druida
+ Clérigo
+ Ladrón
+ Mago~
+@23 = ~Daga arrojadiza +1~
+@24 = ~La daga arrojadiza típica tiene una hoja puntiaguda de doble filo, al contrario que el cuchillo, que sólo tiene un filo y es un poco más corto que la daga. A diferencia de la daga normal, ésta tiene una empuñadura más pequeña y está compensada de manera diferente. Además, ésta está encantada para que sea más efectiva en combate. Dado su diseño para ser arrojada, tienen diferencias respecto a una daga normal que la hacen menos efectiva como arma cuerpo a cuerpo.
+
+CARACTERÍSTICAS:
+
+GAC0: Bonificador +1
+Daño: 1D4 + 1 (1D3 + 1 cuerpo a cuerpo)
+Tipo de daño: Proyecltil (perforante)
+Factor de velocidad: 1
+Talento marcial: Daga
+Tipo: A una mano
+Requisito: Fuerza 3
+No permitido a:
+ Clérigo~
+@25 = ~Lanzador enano +3~

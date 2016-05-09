@@ -1,0 +1,228 @@
+@3 = ~Sztylet Meraer'i +2~
+@4 = ~Powracaj¹cy sztylet +2: "Sztylet Meraer'i" 
+Elfia czarodziejka i uczona Olin Gisiae ("tajni opiekunowie") umagiczni³a ten sztylet. Zwi¹za³o go ona z esencj¹ pomniejszego demona i zaczarowa³a go aby powraca³ do rzucaj¹cego. Magiczne runy wiruj¹ wokó³ rêkojeœci, ale ich znaczenie jest dobrze strze¿onym sekretem, jak wiele z wiedzy Olin Gisir.
+
+PARAMETRY:
+
+Obra¿enia: 1K6 +2
+TraK0: +2
+Typ obra¿eñ: pocisk (k³ute)
+Specjalne:
+ Zapewnia dodatkowy atak na rundê.
+ Powraca do rêki w³aœciciela.
+Waga: 3
+OpóŸnienie: 2
+Rodzaj bieg³oœci: sztylet
+Typ broni: 1-rêczna
+Wymagana si³a: 4
+Nie mo¿e u¿ywaæ:
+ Kap³an ~
+
+@5 = ~M³ot Gethlun'a +2~
+@6 = ~Jest to legendarny m³ot Pana Burz Talosa, stworzony przez krasnoludzkiego kowala Gethlun'a, który jak niektórzy powiadaj¹ zdoby³ drewno pó³bogów. Broñ posiada ogromn¹ moc. Zapewnia odpornoœæ na elektrycznoœæ, wraca do rzucaj¹cego, nie mo¿e zostaæ zniszczona oraz mo¿e kontrolowaæ b³yskawice dziêki b³ogos³awieñstwu Talosa.
+
+PARAMETRY:
+
+Obra¿enia: 2K4 +2
+TraK0: +2
+Typ obra¿eñ: obuchowe
+Specjalne:
+ Wraca do w³aœciciela
+ B³yskawica 3 razy dziennie
+ Wezwanie B³yskawic 3 razy dziennie
+ Odpornoœæ na Elektrycznoœæ +20%
+Waga: 4
+OpóŸnienie: 2
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 15
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej
+ Mnich~
+@7 = ~M³ot bojowy +2: "Kraina Dolin"~ 
+@8 = ~M³ot zosta³ nazwany po miejscu jego wynalezienia w Krainie Dolin. Ta broñ to m³ot z kolcem w tylnej czêœci, mierz¹cy praktycznie trzy metry d³ugoœci. D³ugi jak w³ócznia, pozwala utrzymaæ wrogów na dystans i przechodziæ do œmiertelnego pchniêcia. To jedna z ciê¿szych broni i jest raczej powolna. Ca³a broñ wykonana jest ze stali, wraz z kolcem, jest ozdobiona z³oceniami i dekoracjami z metali szlachetnych. Ten szczególny egzemplarz posiada silnie umagicznienie, które mo¿e powaliæ przeciwnika lub wywo³aæ przera¿enie i ucieczkê.
+
+PARAMETRY:
+
+Obra¿enia: 1K8 +2
+TraK0: +2
+Typ obra¿eñ: obuchowe
+Specjalne:
+ 5% szans na og³uszenie przeciwnika
+ 10% szans na wywo³anie paniki
+Waga: 8
+OpóŸnienie: 7
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 9
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej
+ Mnich~
+
+@9 = ~Aegis-Fang +3~
+@10 = ~Aegis-Fang +5~
+@11 = ~M³ot bojowy +5: "Aegis-Fang"
+Broñ tê wykona³ Bruenor Battlehammer specjalnie dla Wulfgara. Najsilniejsze z czarów wplecionych w ten m³ot bojowy dzia³aj¹ tylko wtedy, kiedy orê¿ ten znajduje siê w rêkach tego m³odego wojownika. Ka¿da inna postaæ w³adaj¹ca t¹ broni¹ u¿ywa jej jako m³ota bojowego +5.
+
+PARAMETRY:
+
+Obra¿enia: 2K4 +5
+TraK0: +5
+Specjalne:
+ Wraca do w³aœciciela
+Typ obra¿eñ: obuchowe
+Waga: 3
+OpóŸnienie: 1
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 18
+Mo¿e u¿ywaæ tylko:
+ Wulfgar~
+
+@12 = ~M³ot bojowy +3: "Aegis-Fang"
+Broñ tê wykona³ Bruenor Battlehammer specjalnie dla Wulfgara. Najsilniejsze z czarów wplecionych w ten m³ot bojowy dzia³aj¹ tylko wtedy, kiedy orê¿ ten znajduje siê w rêkach tego m³odego wojownika. Ka¿da inna postaæ w³adaj¹ca t¹ broni¹ u¿ywa jej jako m³ota bojowego +3.
+
+PARAMETRY:
+
+Obra¿enia: 2K4 +3
+TraK0: +3
+Typ obra¿eñ: obuchowe
+Waga: 3
+OpóŸnienie: 2
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 18
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej
+ Mnich~
+
+@13 = ~Aegis-Fang +4~
+@14 = ~M³ot bojowy +4: "Aegis-Fang"
+Broñ tê wykona³ Bruenor Battlehammer specjalnie dla Wulfgara. Najsilniejsze z czarów wplecionych w ten m³ot bojowy dzia³aj¹ tylko wtedy, kiedy orê¿ ten znajduje siê w rêkach tego m³odego wojownika. Ka¿da inna postaæ w³adaj¹ca t¹ broni¹ u¿ywa jej jako m³ota bojowego +4.
+
+PARAMETRY:
+
+Obra¿enia: 2K4 +4
+TraK0: +4
+Typ obra¿eñ: obuchowe
+Waga: 3
+OpóŸnienie: 5
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 18
+Mo¿e u¿ywaæ tylko:
+ Wojownik
+ Barbarzyñca~
+
+@15 = ~Krasnoludzki m³ot +3"
+Ten m³ot - nie nale¿y myliæ go z elfim Powalaczem Krasnoludów - mo¿e byæ u¿ywany wy³¹cznie przez krasnoludy. Wprawny krasnoludzki wojownik mo¿e rzuciæ nim w przeciwnika. Magia m³ota powoduje, ¿e m³ot powraca do rêki w³aœciciela. Jeœli trafi przeciwnika do powoduje dwa razy wiêcej obra¿eñ ni¿ normalny m³ot. Zadaje +8 obra¿eñ gdy trafi olbrzyma lub ogra, z uwagi na nienawiœæ jak¹ ¿ywi¹ krasnoludy w stosunku do tych ras.
+
+PARAMETRY:
+
+Obra¿enia: 2K4 +3, +8 przeciwko ogrom i olbrzymom
+TraK0: +3
+Typ obra¿eñ: obuchowe
+Specjalne:
+ Wraca do w³aœciciela
+Waga: 4
+OpóŸnienie: 1
+Rodzaj bieg³oœci: m³ot bojowy
+Typ broni: 1-rêczna
+Wymagana si³a: 9
+Mo¿e u¿ywaæ tylko:
+ Krasnolud
+ Kap³an
+ Wojownik (jedno i wielo-klasowy)~
+
+@16 = ~M³ot rzucany~
+@17 = ~Pocz¹tkowo by³o to narzêdzie kowalskie, które póŸniej przekszta³cono. Posiada stalow¹ g³owicê oraz szeœciocalow¹, drewnian¹ r¹czk¹. Zosta³ skonstruowany w taki sposób, by przy trafieniu ³ama³ koœci ofiary. Z powodu nieco innej konstrukcji ni¿ zwyczajny m³ot, broñ ta jest mniej efektywna w walce w zwarciu.
+
+PARAMETRY:
+
+Obra¿enia: 1k4 + 1 (1k3 + 1 w zwarciu)
+Typ obra¿eñ: obuchowe
+Waga: 4
+OpóŸnienie: 3
+Typ bieg³oœci: M³ot
+Rodzaj: 1-rêczna
+Wymagana si³a: 9
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej~
+
+@18 = ~Pocz¹tkowo by³o to narzêdzie kowalskie, które póŸniej przekszta³cono. Posiada stalow¹ g³owicê oraz szeœciocalow¹, drewnian¹ r¹czk¹. Zosta³ skonstruowany w taki sposób, by przy trafieniu ³ama³ koœci ofiary. Z powodu nieco innej konstrukcji ni¿ zwyczajny m³ot, broñ ta jest mniej efektywna w walce w zwarciu. Broñ ta zosta³a wykonana przez mistrza kowlaskiego, dziêki czemu jest jeszcze szybsza i jeszcze bardziej œmiercionoœna.
+
+PARAMETRY:
+
+Trak0: +1
+Obra¿enia: 1k4 + 1
+Typ obra¿eñ: pociski (obuchowe)
+Waga: 4
+OpóŸnienie: 1
+Typ bieg³oœci: M³ot
+Rodzaj: 1-rêczna
+Wymagana si³a: 9
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej~
+ 
+@19 = ~M³ot rzucany +1~
+@20 = ~Pocz¹tkowo by³o to narzêdzie kowalskie, które póŸniej przekszta³cono. Posiada stalow¹ g³owicê oraz szeœciocalow¹, drewnian¹ r¹czk¹. Zosta³ skonstruowany w taki sposób, by przy trafieniu ³ama³ koœci ofiary. Z powodu nieco innej konstrukcji ni¿ zwyczajny m³ot, broñ ta jest mniej efektywna w walce w zwarciu. Broñ ta zosta³a wykonana przez mistrza kowlaskiego, dziêki czemu jest jeszcze szybsza i jeszcze bardziej œmiercionoœna. Dodatkowo broñ ta zosta³a nieznacznie umagiczniona.
+
+PARAMETRY:
+
+Trak0: +1
+Obra¿enia: 1k4 + 2 (1k3 + 2 w zwarciu)
+Typ obra¿eñ: pociski (obuchowe)
+Waga: 2
+OpóŸnienie: 1
+Typ bieg³oœci: M³ot
+Rodzaj: 1-rêczna
+Wymagana si³a: 9
+Nie mo¿e u¿ywaæ:
+ Druid
+ Mag
+ Z³odziej~
+@21 = ~Toporek rzucany +1~
+@22 = ~Toporek to lekka odmiana topora bojowego, s³u¿¹ca g³ównie do ciskania w przeciwnika z pewnej odleg³oœci. Ciê¿ar ostrza jest równowa¿ony do pewnego stopnia przez ostry szpic, skierowany do ty³u. Krótkie stylisko jest zwykle ostro zakoñczone zarówno u do³u, jak i u góry. Zdaje siê, ¿e ten toporek zosta³ nieznacznie umagiczniony, dziêki czemu sta³ siê jeszcze potê¿niejszy. Ze wzglêdu na odmienn¹ od topora budowê, broñ ta jest mniej efektywna w zwarciu.
+
+PARAMETRY:
+
+Trak0: +1
+Obra¿enia: 1k6 + 2 (1k6 + 1 w zwarciu)
+Typ obra¿eñ: pociski (sieczne)
+Waga: 2
+OpóŸnienie: 3
+Typ bieg³oœci: Topór
+Type: 1-handed
+Rodzaj: 1-rêczna
+Wymagana si³a: 4
+Nie mo¿e u¿ywaæ:
+ Druid
+ Kap³an
+ Mag
+ Z³odziej~
+
+@23 = ~Sztylet do rzucania +1~
+@24 = ~Typowy sztylet do rzucania ma spiczaste, zwykle obusieczne ostrze, w przeciwieñstwie do no¿a, który jest jednosieczny i trochê krótszy ni¿ sztylet. Ten ma mniejsz¹ rêkojeœæ i jest inaczej wywa¿ony dlatego jest on mniej efektywny w zwarciu od klasycznych sztyletów. Broñ zosta³a nieznacznie umagiczniona.
+
+PARAMETRY:
+
+Trak0: +1
+Obra¿enia: 1k4 + 1 (1k3 + 1 w zwarciu)
+Typ obra¿eñ: pociski (k³ute)
+OpóŸnienie: 1
+Typ bieg³oœci: Sztylet
+Rodzaj: 1-rêczna
+Wymagana si³a: 3 
+Nie mo¿e u¿ywaæ:
+ Kap³an~
+@25 = ~Krasnoludzki Miotacz +3~

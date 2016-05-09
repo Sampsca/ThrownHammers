@@ -1,0 +1,231 @@
+@3 = ~Pugnale di Meraera +2~
+@4 = ~Pugnale del Ritorno +2: "Pugnale di Meraera"
+Un'allieva-maga elfica di Olin Gisiae ("custode segreto") ha incantato questo pugnale. L'ha legato con l'essenza di un demone minore a l'ha incantato affinché tornasse da chi la lanciato. Rune arcane serpeggiano intorno all'elsa, ma qualunque significato posseggano è un segreto ben custodito, così come le tradizioni di Olin Gisiae.
+
+STATISTICHE:
+
+THAC0: +2
+Danno: 1D6 +2
+Speciale: Ritorna al lanciatore dopo essere stato lanciato
+Abilità durante l'uso: 1 attacco in più per round
+Tipo di danno: perforazione
+Peso: 3
+Fattore Velocità: 2
+Tipo di Competenza: Pugnale
+Tipo: A 1 mano
+Richiede: Forza 4
+
+Non utilizzabile da:
+ Chierico~
+
+@5 = ~Martello di Gethlun +2~
+@6 = ~Questo è il martello di un leggendario Signore delle Tempeste di Talos di nome Gethlun, che alcuni dicono abbia ottenuto la semidivinità. Realizzato molto tempo fa da un fabbro Duergar, il Martello di Gethlun possiede grandi poteri. Conferisce resistenza all'elettricità, torna nelle mani del lanciatore dopo essere stato lanciato, non può essere distrutto, ed è stato incantato da Talos stesso con la capacità di controllare i fulmini.
+
+STATISTICHE:
+
+THAC0: +2
+Danno: 2D4 +2
+Speciale:
+ Ritorna al lanciatore
+ Fulmine 3 volte al giorno
+ Invocare il fulmine 3 volte al giorno
+Abilità durante l'uso: +20% alla Resistenza all'elettricità 
+Tipo di danno: schiacciamento
+Peso: 4
+Fattore Velocità: 2
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 15
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro
+ Monaco~
+
+@7 = ~Martello Essembra +2~
+@8 = ~Il Martello Essembra è stato chiamato così a causa del suo luogo d'origine nelle Valli. Quest'arma ad asta è costituita da un martello con una punta nella parte posteriore, montata su un lungo palo che raggiungere quasi i tre metri e mezzo di lunghezza. Una punta superiore simile ad una lunga lancia permette a che la impugna di tenere a bada i nemici e di passare ad un mortale affondo. È una delle armi ad asta più pesanti ed è piuttosto lenta. L'arma è interamente realizzata in acciaio, compresa l'asta, ed è decorata con intagli e arricchita con metalli preziosi. Questo Martello Essembra in particolare è stato incantato potentemente per poter atterrare il nemico o indurlo a fuggire terrorizzato.
+
+STATISTICHE:
+
+THAC0: +2
+Danno: 1D8 +2
+Speciale:
+ 5% di possibilità di rendere il bersaglio inconsapevole
+ 10% di possibilità di causare Orrore
+Tipo di danno: schiacciamento/perforazione
+Peso: 8
+Fattore Velocità: 7
+Tipo di Competenza: Martello da Guerra
+Tipo: A 2 mani
+Richiede: Forza 9
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro
+ Monaco~
+
+@9 = ~Aegis-Fang +3~
+@10 = ~Aegis-Fang +5~
+@11 = ~Martello da Guerra +5: "Aegis-Fang"
+Quest'arma è stata creata appositamente per Wulfgar da Bruenor Battlehammer, e il più forte dei suoi incantesimi funziona solo nelle mani del giovane guerriero, dove si comporta come un martello +5. Tutti gli altri impugnano Aegis-Fang come un Martello da Guerra +3.
+
+STATISTICHE:
+
+THAC0: +5
+Danno: 2D4 +5
+Speciale: ritorna da chi l'ha lanciato
+Tipo di danno: schiacciamento
+Peso: 3
+Fattore Velocità: 1
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 18
+
+Utilizzabile solo da:
+ Wulfgar~
+@12 = ~Martello da Guerra +3: "Aegis-Fang"
+Quest'arma è stata creata appositamente per Wulfgar da Bruenor Battlehammer, e vi ha posto un potente incantesimo affinché torni nelle mani di chi l'ha lanciato. Bruenor è molto orgoglioso di questa arma – è il suo capolavoro.
+
+STATISTICHE:
+
+THAC0: +3
+Danno: 2D4 +3
+Speciale: ritorna da chi l'ha lanciato
+Tipo di danno: schiacciamento
+Peso: 3
+Fattore Velocità: 2
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 18
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro
+ Monaco~
+@13 = ~Aegis-Fang +4~
+@14 = ~Martello da Guerra +4: "Aegis-Fang"
+Quest'arma è stata creata appositamente per Wulfgar da Bruenor Battlehammer, e vi ha posto un potente incantesimo affinché torni nelle mani di chi l'ha lanciato. Bruenor è molto orgoglioso di questa arma – è il suo capolavoro.
+
+STATISTICHE:
+
+THAC0: +4
+Danno: 2D4 +4
+Tipo di danno: schiacciamento
+Peso: 3
+Fattore Velocità: 5
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 18
+
+Utilizzabile da:
+ Guerriero
+ Barbaro~
+@15 = ~Martello da Guerra +3, Lanciatore Nanico
+Questo martello - da non confondersi col Lanciatore Nano creato dagli elfi, è usato solo dai nani. Nelle abili mani di un guerriero nano il martello può essere scagliato contro un nemico. La magia nel martello fa sì che torni nella mano di chi lo ha lanciato. Se colpisce un avversario, fa un danno che equivale al doppio di quello di un normale martello. Contro giganti e orchi infligge 8 danni aggiuntivi a causa dello speciale odio che i nani hanno verso queste razze.
+
+STATISTICHE:
+
+THAC0: +3
+Danno: 2D4 + 3, +8 contro giganti e orchi
+Speciale: ritorna da chi l'ha lanciato
+Tipo di danno: schiacciamento
+Peso: 4
+Fattore Velocità: 1
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 9 
+
+Utilizzabile da:
+ Nano
+ Chierico
+ Guerriero (singolo e multiclasse)~
+@16 = ~Martello da lancio~
+@17 = ~Nato originariamente come attrezzo da fabbro, questo semplice martello è composto da una testa in acciaio montata su un manico di legno di 15 centimetri. È stato equilibrato per schiacciare le ossa all'impatto quando viene lanciato. Dal momento che il martello da lancio è stato progettato in modo diverso dal martello normale, è meno efficace come arma da mischia.
+
+STATISTICHE:
+
+Danno: 1D4 +1 (1D3 +1 in mischia)
+Tipo di danno: schiacciamento
+Peso: 4
+Fattore Velocità: 3
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 9
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro~
+@18 = ~Nato originariamente come attrezzo da fabbro, questo semplice martello è composto da una testa in acciaio montata su un manico di legno di 15 centimetri. È stato equilibrato per schiacciare le ossa all'impatto quando viene lanciato. Inoltre è stato anche lavorato da un maestro fabbro e mostra una maestria che lo rende più veloce e più efficace in combattimento.
+
+STATISTICHE:
+
+THAC0: +1
+Danno: 1D4 +1
+Tipo di danno: proiettile (schiacciamento)
+Peso: 4
+Fattore Velocità: 1
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 9
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro~
+@19 = ~Martello da lancio +1~
+@20 = ~Nato originariamente come attrezzo da fabbro, questo semplice martello è composto da una testa in acciaio montata su un manico di legno di 15 centimetri. È stato equilibrato per schiacciare le ossa all'impatto quando viene lanciato. Inoltre è stato anche incantato, rendendolo più rapido ed efficace in combattimento. Dal momento che il martello da lancio è stato progettato in modo diverso dal martello normale, è meno efficace come arma da mischia.
+
+STATISTICHE:
+
+THAC0: +1
+Danno: 1D4 +2 (1D3 +2 in mischia)
+Tipo di danno: proiettile (schiacciamento)
+Peso: 2
+Fattore Velocità: 1
+Tipo di Competenza: Martello da Guerra
+Tipo: A 1 mano
+Richiede: Forza 9
+
+Non utilizzabile da:
+ Druido
+ Mago
+ Ladro~
+@21 = ~Accetta +1~
+@22 = ~L'ascia da lancio è conosciuta anche con il nome di accetta. La lama dell'accetta è molto affilata e controbilanciata da un gancio appuntito. L'impugnatura è corta e termina con una punta e talvolta in cima c'è anche una sorta di spunzone. Questa ascia da lancio è equilibrata e incantata, rendendola più precisa e dannosa. Dal momento che l'accetta è stata progettata in modo diverso da un'ascia normale, è meno efficace come arma da mischia.
+
+STATISTICHE:
+
+THAC0: +1
+Danno: 1D6 +2 (1D6 +1 in mischia)
+Tipo di danno: proiettile (taglio)
+Peso: 2
+Fattore Velocità: 3
+Tipo di Competenza: Ascia
+Tipo: A 1 mano
+Richiede: Forza 4
+
+Non utilizzabile da:
+ Druido
+ Chierico 
+ Mago
+ Ladro~
+@23 = ~Pugnale da lancio +1~
+@24 = ~Il tipico pugnale da lancio ha una lama appuntita e di solito a doppio taglio, al contrario del coltello che ha la lama affilata solo da un lato ed è un po' più corto del pugnale. A differenza del pugnale normale, questo ha un'impugnatura più piccola ed è bilanciato per il lancio. Inoltre è stato incantato per renderlo più efficace in combattimento. Dal momento che il pugnale da lancio è stato progettato in modo diverso dal pugnale normale, è meno efficace come arma da mischia.
+
+STATISTICHE:
+
+THAC0: +1
+Danno: 1D4 +1 (1D3 +1 in mischia)
+Tipo di danno: proiettile (perforazione)
+Fattore Velocità: 1
+Tipo di Competenza: Pugnale
+Tipo: A 1 mano
+Richiede: Forza 3
+
+Non utilizzabile da:
+ Chierico~
+@25 = ~Lanciatore Nanico +3~
