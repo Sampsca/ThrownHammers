@@ -1,21 +1,24 @@
 @1 = ~Thrown Hammers~
 @2 = ~This mod is not compatible with your game: check your install folder.~
 @3 = ~Meraera's Dagger +2~
-@4 = ~Dagger of Returning +2: "Meraera's Dagger"
-An elven scholar-mage of the Olin Gisiae ("secret keepers") enchanted this dagger. She bound it with the essense of a minor demon and charged it to return to its thrower. Arcane runes wind around the hilt, but whatever meaning they possess is a well-guarded secret, like so much of Olin Gisir lore.
+@4 = ~An elven scholar-mage of the Olin Gisiae ("secret keepers") enchanted this dagger. She bound it with the essense of a minor demon and charged it to return to its thrower. Arcane runes wind around the hilt, but whatever meaning they possess is a well-guarded secret, like so much of Olin Gisir lore.
 
 STATISTICS:
 
+Combat abilities:
+– Returns to the wielder's hand when thrown
+– 1 extra attack per round
+
 THAC0: +2
-Damage: 1D6 + 2
-Special: Returns to hand once thrown
-Equipped Ability: +1 attack per round
-Damage type: piercing
-Weight: 3
+Damage: 1d6+2 (1d6+2 melee)
+Damage type:  missile (piercing)
 Speed Factor: 2
 Proficiency Type: Dagger
-Type: 1-handed
-Requires: 4 Strength
+Type: One-handed
+Requires:
+ 4 Strength
+Weight: 3
+
 Not Usable By:
  Cleric~
 
@@ -24,19 +27,26 @@ Not Usable By:
 
 STATISTICS:
 
+Equipped abilities:
+- Electrical Resistance: +20%
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
+Charge abilities:
+- Lightning Bolt three times per day
+- Call Lightning three times per day
+
 THAC0: +2
-Damage: 2D4 + 2
-Special:
- Returns to thrower
- Lightning Bolt 3 times per day
- Call Lightning 3 times per day
-Equipped Ability: Electrical Resistance +20%
-Damage type: crushing
-Weight: 4
+Damage: 2d4+2 (1d4+3 melee)
+Damage type:  missile (crushing)
 Speed Factor: 2
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 15 Strength
+Type: One-handed
+Requires:
+ 15 Strength
+Weight: 4
+
 Not Usable By:
  Druid
  Mage
@@ -48,17 +58,19 @@ Not Usable By:
 
 STATISTICS:
 
+Combat abilities:
+- 5% chance to knock unconscious
+- 10% chance to cause Horror
+
 THAC0: +2
-Damage: 1D8 + 2
-Special:
- 5% chance to knock unconscious
- 10% chance to cause Horror
-Damage type: crushing/piercing
-Weight: 8
+Damage: 1d8+2 (crushing/piercing)
 Speed Factor: 7
 Proficiency Type: War Hammer
-Type: 2-handed
-Requires: 9 Strength
+Type: Two-handed
+Requires:
+ 9 Strength
+Weight: 8
+
 Not Usable By:
  Druid
  Mage
@@ -67,72 +79,82 @@ Not Usable By:
 
 @9 = ~Aegis-Fang +3~
 @10 = ~Aegis-Fang +5~
-@11 = ~War Hammer +5: "Aegis-Fang"
-Bruenor Battlehammer specifically made this weapon for Wulfgar, and the strongest of its enchantments only functions while in the young warrior's hands, where it is a +5 hammer. Anyone else wields Aegis-Fang as a +3 weapon.
+@11 = ~Bruenor Battlehammer specifically made this weapon for Wulfgar, and the strongest of its enchantments only functions while in the young warrior's hands, where it is a +5 hammer. Anyone else wields Aegis-Fang as a +3 weapon.
 
 STATISTICS:
+
+Combat abilities:
+– Returns to the wielder's hand when thrown
 
 THAC0: +5
-Damage: 2D4 + 5
-Special: Returns to thrower
-Damage type: crushing
-Weight: 3
+Damage: 2d4+5 (2d4+7 melee)
+Damage type: missile (crushing)
 Speed Factor: 1
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 18 strength
+Type: One-handed
+Requires:
+ 18 strength
+Weight: 3
+
 Only Usable By:
  Wulfgar~
-@12 = ~War Hammer +3: "Aegis-Fang"
-Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
+@12 = ~Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
 
 STATISTICS:
 
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
 THAC0: +3
-Damage: 2D4 + 3
-Special: Returns to thrower
-Damage type: crushing
-Weight: 3
+Damage: 2d4+3 (2d4+3 melee)
+Damage type: missile (crushing)
 Speed Factor: 2
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 18 strength
+Type: One-handed
+Requires:
+ 18 strength
+Weight: 3
+
 Not Usable By:
  Druid
  Mage
  Thief
  Monk~
 @13 = ~Aegis-Fang +4~
-@14 = ~War Hammer +4: "Aegis-Fang"
-Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
+@14 = ~Bruenor Battlehammer specifically made this weapon for Wulfgar, and placed a strong enchantment on it to return to its wielder when thrown. Bruenor takes great pride in this weapon - it is his finest work.
 
 STATISTICS:
 
 THAC0: +4
-Damage: 2D4 + 4
-Damage type: crushing
-Weight: 3
+Damage: 2d4+4 (crushing)
 Speed Factor: 5
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 18 strength
+Type: One-handed
+Requires:
+ 18 strength
+Weight: 3
+
 Only Usable By:
  Fighter
  Barbarian~
-@15 = ~War Hammer +3: "Dwarven Thrower"
-This hammer - not to be confused with the elven-made Dwarf Thrower - is only usable by dwarves. In the capable hands of a dwarven warrior or priest, the hammer may be thrown at an opponent. The magic in the hammer draws it back to the hand of its wielder. If it hits an opponent, it does double the damage that a thrown hammer would normally do. Against giants and ogres, the hammer does an additional +8 damage due to the special hatred dwarves hold for these races.
+@15 = ~This hammer - not to be confused with the elven-made Dwarf Thrower - is only usable by dwarves. In the capable hands of a dwarven warrior or priest, the hammer may be thrown at an opponent. The magic in the hammer draws it back to the hand of its wielder. If it hits an opponent, it does double the damage that a thrown hammer would normally do. Against giants and ogres, the hammer does an additional +8 damage due to the special hatred dwarves hold for these races.
 
 STATISTICS:
 
+Combat abilities:
+– Returns to the wielder's hand when thrown
+
 THAC0: +3
-Damage: 2D4 + 3, +8 vs. giants and ogres
-Special: Returns to thrower
-Damage type: crushing
-Weight: 4
+Damage: 2d4+3, +8 extra vs. giants and ogres
+Damage type (melee): Crushing
+Damage type (thrown): Missile
 Speed Factor: 1
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 9 Strength
+Type: One-handed
+Requires:
+ 9 Strength
+Weight: 4
+
 Only Usable By:
  Dwarves
  Cleric
@@ -142,13 +164,15 @@ Only Usable By:
 
 STATISTICS:
 
-Damage: 1D4 + 1 (1D3 + 1 melee)
-Damage type: crushing
-Weight: 4
+Damage: 1d4+1 (1d3+1 melee)
+Damage type: missile (crushing)
 Speed Factor: 3
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 9 Strength
+Type: One-handed
+Requires:
+ 9 Strength
+Weight: 4
+
 Not Usable By:
  Druid
  Mage
@@ -158,13 +182,15 @@ Not Usable By:
 STATISTICS:
 
 THAC0: +1
-Damage: 1D4 + 1
+Damage: 1d4+1 (1d3+1 melee)
 Damage type: missile (crushing)
-Weight: 4
 Speed Factor: 1
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 9 Strength
+Type: One-handed
+Requires:
+ 9 Strength
+Weight: 4
+
 Not Usable By:
  Druid
  Mage
@@ -175,13 +201,15 @@ Not Usable By:
 STATISTICS:
 
 THAC0: +1
-Damage: 1D4 + 2 (1D3 + 2 melee)
+Damage: 1d4+2 (1d3+2 melee)
 Damage type: missile (crushing)
-Weight: 2
 Speed Factor: 1
 Proficiency Type: War Hammer
-Type: 1-handed
-Requires: 9 Strength
+Type: One-handed
+Requires:
+ 9 Strength
+Weight: 2
+
 Not Usable By:
  Druid
  Mage
@@ -192,13 +220,15 @@ Not Usable By:
 STATISTICS:
 
 THAC0: +1
-Damage: 1D6 + 2 (1D6 + 1 melee)
+Damage: 1d6+2 (1d6+1 melee)
 Damage type: missile (slashing)
-Weight: 2
 Speed Factor: 3
 Proficiency Type: Axe
-Type: 1-handed
-Requires: 4 Strength
+Type: One-handed
+Requires:
+ 4 Strength
+Weight: 2
+
 Not Usable By:
  Druid
  Cleric
@@ -210,12 +240,14 @@ Not Usable By:
 STATISTICS:
 
 THAC0: +1
-Damage: 1D4 + 1 (1D3 + 1 melee)
+Damage: 1d4+1 (1d3+1 melee)
 Damage type:  missile (piercing)
 Speed Factor: 1
 Proficiency Type: Dagger
-Type: 1-handed
-Requires: 3 Strength
+Type: One-handed
+Requires:
+ 3 Strength
+
 Not Usable By:
  Cleric~
 @25 = ~Dwarven Thrower +3~
