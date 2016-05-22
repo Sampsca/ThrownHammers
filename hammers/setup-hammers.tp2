@@ -3,6 +3,8 @@ AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
 VERSION ~v5.0~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
+MODDER
+
 ALWAYS
  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee~ BEGIN
    ACTION_DEFINE_ASSOCIATIVE_ARRAY charsetsTable BEGIN
@@ -63,20 +65,24 @@ ALWAYS
     END ELSE ACTION_IF GAME_IS ~ca~ BEGIN //Classic Adventures
       OUTER_SPRINT plt ~ca~
       OUTER_SPRINT pva ~bg2~
-    END ELSE ACTION_IF GAME_IS ~bg2 tob~ BEGIN //BG2
+    END ELSE ACTION_IF GAME_IS ~bg2 tob bg2ee~ BEGIN //BG2 ToB BG2EE
       OUTER_SPRINT plt ~bg2~
       OUTER_SPRINT pva ~bg2~
-    END ELSE ACTION_IF GAME_IS ~iwd how~ BEGIN //IWD
+    END ELSE ACTION_IF GAME_IS ~iwd how totlm~ BEGIN //IWD
       OUTER_SPRINT plt ~iwd~
       OUTER_SPRINT pva ~ibg~
     END ELSE ACTION_IF GAME_IS ~iwdee~ BEGIN //IWD:EE
-      OUTER_SPRINT plt ~iwdee~
+      OUTER_SPRINT plt ~iwd~
       OUTER_SPRINT pva ~bg2~
     END ELSE ACTION_IF GAME_IS ~iwd2~ BEGIN //IWD2
       OUTER_SPRINT plt ~iwd2~
       OUTER_SPRINT ipth ~iwd2~
       OUTER_SPRINT pva ~iwd2~
-    END ELSE ACTION_IF GAME_IS ~bg1~ BEGIN //BG1
+    END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE SoD
+      OUTER_SPRINT plt ~bg1~
+      OUTER_SPRINT pva ~bg2~
+	  OUTER_SPRINT ttc ~totsc~
+    END ELSE ACTION_IF GAME_IS ~bg1 totsc~ BEGIN //BG1 TotSC
       OUTER_SPRINT plt ~bg1~
       OUTER_SPRINT pva ~ibg~
       ACTION_IF GAME_IS ~totsc~ BEGIN //TotSC
@@ -137,7 +143,7 @@ COPY ~hammers/bams/pshamma.bam~ ~override~
      ~hammers/bams/t-aegist.bam~ ~override~
      ~hammers/bams/t-tham06.bam~ ~override~
      ~hammers/bams/t-tshm01.bam~ ~override~
-  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
@@ -156,6 +162,22 @@ ACTION_IF t-psn < 1 BEGIN
 END
 ACTION_IF t-pso < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMO.pro~
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshamma.pro~ BEGIN
+  COPY ~hammers/pros/pshamma.pro~ ~override~
+END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammb.pro~ BEGIN
+  COPY ~hammers/pros/pshammb.pro~ ~override~
+END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammg.pro~ BEGIN
+  COPY ~hammers/pros/pshammg.pro~ ~override~
+END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammn.pro~ BEGIN
+  COPY ~hammers/pros/pshammn.pro~ ~override~
+END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammo.pro~ BEGIN
+  COPY ~hammers/pros/pshammo.pro~ ~override~
 END
 
 COPY_EXISTING ~missile.ids~ ~override~
@@ -473,7 +495,7 @@ COPY ~hammers/bams/t-dham03.bam~ ~override~
      ~hammers/bams/t-gham03.bam~ ~override~
      ~hammers/bams/t-iham03.bam~ ~override~
      ~hammers/bams/t-tham03.bam~ ~override~
-  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
@@ -544,7 +566,7 @@ COPY ~hammers/bams/t-dham04.bam~ ~override~
      ~hammers/bams/t-taxe01.bam~ ~override~
      ~hammers/bams/t-tdag03.bam~ ~override~
      ~hammers/bams/t-tham04.bam~ ~override~
-  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
@@ -756,7 +778,7 @@ COPY ~hammers/bams/t-idag02.bam~ ~override~
      ~hammers/bams/t-iham02.bam~ ~override~
      ~hammers/bams/t-tdag02.bam~ ~override~
      ~hammers/bams/t-tham01.bam~ ~override~
-  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+  PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
@@ -835,7 +857,7 @@ COPY ~hammers/%ipth%/t-hamm02.itm~ ~override~ //Essembra Hammer +2
 
 ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) OR ((~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%ttc%~ STRING_EQUAL ~totsc~ = 1)) BEGIN
   COPY ~hammers/bams/t-iham06.bam~ ~override~
-    PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) BEGIN
+    PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
       READ_LONG 0x8 dl //Uncompressed data length
       DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
     END
@@ -848,7 +870,24 @@ ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) OR ((~%plt%~ STRING_EQUAL ~bg1~ = 1) 
       WRITE_BYTE 0x26 12 //Strength
       WRITE_BYTE 0x2c 6 //Dexterity
     END
-  APPEND ~tooltip.2da~ ~T-HAMM06          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM06~
+    PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+      WRITE_BYTE 0x31 0 //Proficiency
+    END
+    READ_LONG 0x64 hf //Extended header offset
+    READ_SHORT 0x68 hc //Extended header count
+    FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
+      READ_BYTE (0x38 * i1 + hf) pt //Attack type
+      PATCH_IF pt = 2 BEGIN
+        PATCH_IF (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
+          WRITE_SHORT (0x38 * i1 + hf + 0x2c) 0 //Melee animation 1
+          WRITE_SHORT (0x38 * i1 + hf + 0x36) 1 //Misc. projectile
+        END
+        PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
+          WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psg%~ //Projectile animation
+        END
+      END
+    END
+	APPEND ~tooltip.2da~ ~T-HAMM06          15527        15529       -1 -1%cz%~ UNLESS ~^T-HAMM06~
 END
 
 APPEND ~tooltip.2da~ ~T-DAGG02          15527        15529       -1 -1%cz%~ UNLESS ~^T-DAGG02~
