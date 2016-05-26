@@ -3,7 +3,6 @@ AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
 VERSION ~v5.0~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
-
 ALWAYS
  ACTION_IF ENGINE_IS ~bgee bg2ee iwdee~ BEGIN
    ACTION_DEFINE_ASSOCIATIVE_ARRAY charsetsTable BEGIN
@@ -143,6 +142,7 @@ COPY ~hammers/bams/pshamma.bam~ ~override~
      ~hammers/bams/t-dham06.bam~ ~override~
      ~hammers/bams/t-tham06.bam~ ~override~
      ~hammers/bams/t-tham03.bam~ ~override~
+     ~hammers/bams/t-gham03.bam~ ~override~
      ~hammers/bams/t-tshm01.bam~ ~override~ //does not appear to be used - PS
   PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
@@ -218,6 +218,7 @@ ACTION_FOR_EACH hn IN ~aegis~ ~aegis2~ BEGIN
         END
         WRITE_BYTE 0x31 0x61 //Proficiency (War Hammer)
         WRITE_ASCII 0x3a ~t-aegisi~ #8 //Inventory icon
+        WRITE_ASCII 0x44 ~t-gham03~ #8 //Ground icon
         WRITE_LONG 0x60 3 //Enchantment
         READ_LONG 0x64 hf //Extended header offset
         READ_SHORT 0x68 hc //Extended header count
@@ -299,6 +300,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~aegisfa.itm~ BEGIN //Aegis-Fang +4 (RoT)
     PATCH_IF SOURCE_SIZE > 0x71 BEGIN
       SAY NAME2 @13
       SAY DESC @14
+      WRITE_ASCII 0x44 ~t-gham03~ #8 //Ground icon
       READ_LONG 0x64 hf //Extended header offset
       READ_SHORT 0x68 hc //Extended header count
       FOR (i1 = 0; i1 < hc; i1 += 1) BEGIN //Cycle through headers
@@ -333,12 +335,12 @@ ACTION_FOR_EACH hn IN ~bhmo01_e~ ~bhmo01_h~ ~cbmtthhm~ ~cmhaq02~ ~dshamm04~ ~dsh
       PATCH_IF SOURCE_SIZE > 0x71 BEGIN
         PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~hamm06~ = 1) OR (~%SOURCE_RES%~ STRING_EQUAL_CASE ~w#hamm06~ = 1) BEGIN
           SAY DESC @15 //Dwarven Thrower +3
-          WRITE_ASCII 0x58 ~t-dham06~ #8 //Description icon
         END
         PATCH_IF (~%SOURCE_RES%~ STRING_EQUAL_CASE ~cbmtthhm~ = 1) BEGIN //Masterwork Throwing Hammer
           SAY UNIDENTIFIED_DESC @17
           SAY DESC @18
         END
+        WRITE_ASCII 0x44 ~t-gham03~ #8 //Ground icon
         READ_LONG 0x64 hf //Extended header offset
         READ_SHORT 0x68 hc //Extended header count
         READ_LONG 0x6a fb //Equipping effect offset
@@ -379,6 +381,9 @@ ACTION_FOR_EACH hn IN ~bhmo01_e~ ~bhmo01_h~ ~cbmtthhm~ ~cmhaq02~ ~dshamm04~ ~dsh
       END
     PATCH_IF GAME_IS ~iwdee~ BEGIN
       WRITE_ASCII 0x58 ~~ #8 //Description icon
+    END ELSE READ_ASCII 0x3a t-bam
+    PATCH_IF (~%t-bam%~ STRING_EQUAL_CASE ~ihamm06~ = 1) OR (~%t-bam%~ STRING_EQUAL_CASE ~t-iham06~ = 1) BEGIN
+      WRITE_ASCII 0x58 ~t-dham06~ #8 //Description icon
     END
     BUT_ONLY
     ACTION_IF hc > 1 BEGIN
@@ -412,7 +417,7 @@ ACTION_FOR_EACH ~hn~ IN ~shamme1~ ~shamme2~ ~shamme3~ ~shammn~ ~shammn2~ ~shammn
         PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
           WRITE_BYTE 0x31 0x61 //Proficiency (war hammer)
         END
-        WRITE_ASCII 0x44 ~ghamm01~ #8 //Ground icon
+        WRITE_ASCII 0x44 ~t-gham03~ #8 //Ground icon
         //PATCH_IF (~%plt%~ STRING_EQUAL ~iwd2~ = 0)  BEGIN
         //  WRITE_ASCII 0x58 ~chamm03~ #8 //Description icon
         //END
