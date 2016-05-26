@@ -76,10 +76,13 @@ ALWAYS
       OUTER_SPRINT plt ~iwd2~
       OUTER_SPRINT ipth ~iwd2~
       OUTER_SPRINT pva ~iwd2~
-    END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE SoD
+    END ELSE ACTION_IF GAME_IS ~bgee~ BEGIN //BGEE
       OUTER_SPRINT plt ~bg1~
       OUTER_SPRINT pva ~bg2~
       OUTER_SPRINT ttc ~totsc~
+      ACTION_IF FILE_EXISTS_IN_GAME ~bd1000.are~ BEGIN //SoD
+        OUTER_SPRINT darktheme ~1~
+      END
     END ELSE ACTION_IF GAME_IS ~bg1 totsc~ BEGIN //BG1 TotSC
       OUTER_SPRINT plt ~bg1~
       OUTER_SPRINT pva ~ibg~
@@ -148,6 +151,10 @@ COPY ~hammers/bams/pshamma.bam~ ~override~
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~chamm07.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY_EXISTING ~chamm07.bam~ ~override/t-dham06.bam~
+END
 
 ACTION_IF t-psa < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMA.pro~
@@ -510,6 +517,10 @@ COPY ~hammers/bams/t-dham03.bam~ ~override~
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~bddham03.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY_EXISTING ~bddham03.bam~ ~override/t-dham03.bam~
+END
+
 COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
   READ_SHORT 0x38 sk //Stack amount
 BUT_ONLY
@@ -584,6 +595,10 @@ COPY ~hammers/bams/t-dham04.bam~ ~override~
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~bddham04.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY_EXISTING ~bddham04.bam~ ~override/t-dham04.bam~
+END
 
 COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
   READ_SHORT 0x38 sk //Stack amount
@@ -894,6 +909,9 @@ ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) OR ((~%plt%~ STRING_EQUAL ~bg1~ = 1) 
     PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
       READ_LONG 0x8 dl //Uncompressed data length
       DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
+    END
+    ACTION_IF FILE_EXISTS_IN_GAME ~chamm07.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+      COPY_EXISTING ~chamm07.bam~ ~override/t-dham06.bam~
     END
   COPY ~hammers/items/t-hamm06.eff~ ~override~
   COPY ~hammers/items/t-hamm06.itm~ ~override~ //Dwarven Thrower +3
