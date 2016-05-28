@@ -146,7 +146,6 @@ COPY ~hammers/bams/pshamma.bam~ ~override~
      ~hammers/bams/t-tham06.bam~ ~override~
      ~hammers/bams/t-tham03.bam~ ~override~
      ~hammers/bams/t-gham03.bam~ ~override~
-     ~hammers/bams/t-tshm01.bam~ ~override~ //does not appear to be used - PS
   PATCH_IF (~%plt%~ STRING_EQUAL ~bg1~ = 1) AND (~%pva%~ STRING_EQUAL ~ibg~ = 1) BEGIN
     READ_LONG 0x8 dl //Uncompressed data length
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
@@ -172,20 +171,10 @@ ACTION_IF t-pso < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMO.pro~
 END
 
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshamma.pro~ BEGIN
-  COPY ~hammers/pros/pshamma.pro~ ~override~
-END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammb.pro~ BEGIN
-  COPY ~hammers/pros/pshammb.pro~ ~override~
-END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammg.pro~ BEGIN
-  COPY ~hammers/pros/pshammg.pro~ ~override~
-END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammn.pro~ BEGIN
-  COPY ~hammers/pros/pshammn.pro~ ~override~
-END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~pshammo.pro~ BEGIN
-  COPY ~hammers/pros/pshammo.pro~ ~override~
+ACTION_FOR_EACH fn IN ~pshamma~ ~pshammb~ ~pshammg~ ~pshammn~ ~pshammo~ BEGIN
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~%fn%.pro~ BEGIN
+    COPY ~hammers/pros/%fn%.pro~ ~override~
+  END
 END
 
 COPY_EXISTING ~missile.ids~ ~override~
