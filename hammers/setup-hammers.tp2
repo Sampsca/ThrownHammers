@@ -110,7 +110,7 @@ ALWAYS
         SPRINT rz ~%rz%~ ^ ~%rx%~ ^ ~%ry%~
       END
     END ELSE BEGIN
-      FOR (i = 3; i < (cl - 1); i += 1) BEGIN //Cycle through columns
+      FOR (i = 4; i < (cl - 1); i += 1) BEGIN //Cycle through columns
         SPRINT cz ~%cz%~ ^ ~%rx%~ ^ ~%ry%~
       END
     END
