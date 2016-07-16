@@ -1,6 +1,6 @@
 BACKUP ~hammers/backup~
 AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
-VERSION ~v6.0~
+VERSION ~v6.0.1~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
 ALWAYS
