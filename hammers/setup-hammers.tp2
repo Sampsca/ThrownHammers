@@ -1,6 +1,6 @@
 BACKUP ~hammers/backup~
 AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
-VERSION ~v6.0.1~
+VERSION ~v6.0.2~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
 ALWAYS
@@ -157,18 +157,23 @@ END
 
 ACTION_IF t-psa < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMA.pro~
+  OUTER_SET t-psa = ~%PSHAMMA%~
 END
 ACTION_IF t-psb < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMB.pro~
+    OUTER_SET t-psb = ~%PSHAMMB%~
 END
 ACTION_IF t-psg < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMG.pro~
+    OUTER_SET t-psg = ~%PSHAMMG%~
 END
 ACTION_IF t-psn < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMN.pro~
+    OUTER_SET t-psn = ~%PSHAMMN%~
 END
 ACTION_IF t-pso < 1 BEGIN
   ADD_PROJECTILE ~hammers/pros/PSHAMMO.pro~
+    OUTER_SET t-pso = ~%PSHAMMO%~
 END
 
 ACTION_FOR_EACH fn IN ~pshamma~ ~pshammb~ ~pshammg~ ~pshammn~ ~pshammo~ BEGIN
@@ -178,11 +183,11 @@ ACTION_FOR_EACH fn IN ~pshamma~ ~pshammb~ ~pshammg~ ~pshammn~ ~pshammo~ BEGIN
 END
 
 COPY_EXISTING ~missile.ids~ ~override~
-  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMA~ ~Hammer Green~
-  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMB~ ~Hammer Blue~
-  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMG~ ~Hammer Grey~
-  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMN~ ~Hammer Brown~
-  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMO~ ~Hammer Orange~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMA~ ~Hammer_Green~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMB~ ~Hammer_Blue~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMG~ ~Hammer_Grey~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMN~ ~Hammer_Brown~
+  REPLACE_TEXTUALLY CASE_INSENSITIVE ~PSHAMMO~ ~Hammer_Orange~
 BUT_ONLY
 
 ACTION_IF cl < 5 BEGIN
@@ -230,7 +235,7 @@ ACTION_FOR_EACH hn IN ~aegis~ ~aegis2~ BEGIN
             pz = 1
             SET $j(~%i1%~) = 15527 //Thrown
             WRITE_ASCII (0x38 * i1 + hf + 4) ~t-aegist~ #8 //Use icon 1
-            WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%PSHAMMA%~ //Projectile animation
+            WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psa%~ //Projectile animation
           END ELSE PATCH_IF pt = 1 BEGIN
             py = 1
             SET $j(~%i1%~) = 15529 //Melee
@@ -243,7 +248,7 @@ ACTION_FOR_EACH hn IN ~aegis~ ~aegis2~ BEGIN
             INT_VAR
             t-atk_type = 2
             t-range    = 30
-            t-projectl = %PSHAMMA%
+            t-projectl = ~%t-psa%~
             STR_VAR
             t-bam      = ~t-aegist~
             RET t1 = t-tool_1 t2 = t-tool_2 t3 = t-tool_3
@@ -303,7 +308,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~aegisfa.itm~ BEGIN //Aegis-Fang +4 (RoT)
         READ_BYTE (0x38 * i1 + hf) pt //Attack type
         PATCH_IF pt = 2 BEGIN
           WRITE_ASCII (0x38 * i1 + hf + 4) ~t-aegist~ #8 //Use icon 1
-          WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%PSHAMMA%~ //Projectile animation
+          WRITE_SHORT (0x38 * i1 + hf + 0x2a) ~%t-psa%~ //Projectile animation
           WRITE_SHORT (0x38 * i1 + hf + 0x2c) 100 //Overhand
           WRITE_SHORT (0x38 * i1 + hf + 0x2e) 0 //Backhand
         END ELSE PATCH_IF pt = 1 BEGIN
@@ -355,7 +360,7 @@ ACTION_FOR_EACH hn IN ~bhmo01_e~ ~bhmo01_h~ ~cbmtthhm~ ~cmhaq02~ ~dshamm04~ ~dsh
               WRITE_ASCII (0x38 * i + hf + 4) ~t-tham03~ #8
             END
             PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
-              WRITE_SHORT (0x38 * i + hf + 0x2a) ~%PSHAMMG%~ //Projectile animation
+              WRITE_SHORT (0x38 * i + hf + 0x2a) ~%t-psg%~ //Projectile animation
             END
           END
           READ_SHORT (0x38 * i + hf + 0xe) rg //Range
@@ -465,7 +470,7 @@ ACTION_FOR_EACH ~hn~ IN ~shamme1~ ~shamme2~ ~shamme3~ ~shammn~ ~shammn2~ ~shammn
         END
         WRITE_BYTE (hf + 0x26) 0 //Use strength
         PATCH_IF (~%pva%~ STRING_EQUAL ~bg2~ = 1) BEGIN
-          WRITE_SHORT (hf + 0x2a) t-psb //Projectile animation
+          WRITE_SHORT (hf + 0x2a) ~%t-psb%~ //Projectile animation
         END
         WRITE_SHORT (hf + 0x2c) 100 //Overhand
         WRITE_SHORT (hf + 0x2e) 0 //Backhand
