@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <style type="text/css">
@@ -102,13 +102,13 @@
         font-weight: bold;
         text-decoration: underline;
         background-color: transparent;
-        color: #eaeaea;
+        color: #eaeaea !important;
         padding-right: 5px;
         padding-left: 6px;
       }
       #maindiv address a:visited {
         background-color: transparent;
-        color: #eaeaea;
+        color: #eaeaea !important;
       }
       #maindiv address a:focus,
       #maindiv address a:hover {
@@ -272,8 +272,8 @@
         </p>
         <p class="about">
           <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">Forum du mod</a> &#8226;
-          <a href="https://github.com/Sampsca/ThrownHammers">Téléchargement</a> &#8226;
-          Version 6.0
+          <a href="http://www.shsforums.net/files/file/654-thrown-hammers-v4/">Téléchargement</a> &#8226;
+          Version 5.0
         </p>
         <hr>
         <p class="menu">
@@ -292,19 +292,25 @@
         <a id="intro"></a>
         <div class="content">
           <h2>Introduction</h2>
-          <p>Dans les jeux basés sur l'Infinity engine, plusieurs marteaux de guerre peuvent être lancés, dont le marteau des nains +3 et Aegis-Fang. Bien qu'ils soient des marteaux, lorsqu'il sont lancés, ils apparaissent à l'écran comme des haches fendant l'air. Cette modification rajoute des animations pour que les marteaux lancés apparaissent vraiment comme tels et pas comme des haches. Tout marteau de jet créé par un autre mod bénéficiera également d'une animation appropriée.</p>
-          <p><img src="images/hammer.gif" width="420" height="120" alt="Marteau Spirituel"></p>
-          <p>Un composant optionnel ajoute une animation spécifique au sort Marteau Spirituel, voir ci-dessus. D'autres composants optionnels ajoutent des marteaux de jet normaux, des armes de jet +1 et quelques objets magiques dont la dague de Meraera, le marteau de Gethlun et le marteau d'Essembra. Ce sont des objets uniques qui seront mis en vente dans des magasins tirés au hasard, si vous installez le composant "objets magiques supplémentaires".</p>
           <p>
-            <img src="images/t-aegisi.gif" width="51" height="45" alt="Aegis-Fang">
-            <img src="images/t-iham06.gif" width="58" height="53" alt="Marteau des Nains +3">
-            <img src="images/t-iham03.gif" width="45" height="34" alt="Marteau de jet">
-            <img src="images/t-iham04.gif" width="43" height="37" alt="Marteau de jet +1">
-            <img src="images/t-iaxe01.gif" width="48" height="45" alt="Hache de jet +1">
-            <img src="images/t-tdag03.gif" width="30" height="28" alt="Dague de jet +1">
-            <img src="images/t-idag02.gif" width="34" height="32" alt="Dague de Meraera">
-            <img src="images/t-iham01.gif" width="53" height="50" alt="Marteau de Gethlun">
-            <img src="images/t-iham02.gif" width="62" height="62" alt="Marteau d'Essembra">
+            Dans les jeux basés sur l'Infinity engine, plusieurs marteaux de guerre peuvent être lancés, dont le marteau des nains +3 et Aegis-Fang. Bien qu'ils soient des marteaux, lorsqu'il sont lancés, ils apparaissent à l'écran comme des haches fendant l'air. Cette modification rajoute des animations pour que les marteaux lancés apparaissent vraiment comme tels et pas comme des haches. Tout marteau de jet créé par un autre mod bénéficiera également d'une animation appropriée.
+          </p>
+          <p class="c1">
+            <img src="hammers/hammer.gif" width="420" height="120" alt="Marteau Spirituel">
+          </p>
+          <p>
+            Un composant optionnel ajoute une animation spécifique au sort Marteau Spirituel, voir ci-dessus. D'autres composants optionnels ajoutent des marteaux de jet normaux, des armes de jet +1 et quelques objets magiques dont la dague de Meraera, le marteau de Gethlun et le marteau d'Essembra. Ce sont des objets uniques qui seront mis en vente dans des magasins tirés au hasard, si vous installez le composant "objets magiques supplémentaires".
+          </p>
+          <p>
+            <img src="hammers/t-aegisi.gif" width="51" height="45" alt="Aegis-Fang">
+            <img src="hammers/t-iham06.gif" width="58" height="53" alt="Marteau des Nains +3">
+            <img src="hammers/t-iham03.gif" width="45" height="34" alt="Marteau de jet">
+            <img src="hammers/t-iham04.gif" width="43" height="37" alt="Marteau de jet +1">
+            <img src="hammers/t-iaxe01.gif" width="48" height="45" alt="Hache de jet +1">
+            <img src="hammers/t-tdag03.gif" width="30" height="28" alt="Dague de jet +1">
+            <img src="hammers/t-idag02.gif" width="34" height="32" alt="Dague de Meraera">
+            <img src="hammers/t-iham01.gif" width="53" height="50" alt="Marteau de Gethlun">
+            <img src="hammers/t-iham02.gif" width="62" height="62" alt="Marteau d'Essembra">
          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Introduction</span> &#8226;<a href="#top">Haut de page</a>
@@ -315,10 +321,18 @@
         <a id="compat"></a>
         <div class="content">
           <h2>Compatibilité</h2>
-          <p>Ce mod fonctionne avec n'importe quel jeu utilisant l'Infinity Engine, hormis <abbr title="Planescape: Torment">PS:T</abbr>. Les nouveaux marteaux de jet n'apparaîtront toutefois que dans les jeux fonctionnant avec le moteur de <abbr title="Baldur's Gate II">BG2</abbr>, car les identificateurs de projectiles semblent être codés "en dur" dans les autres jeux. Assurez-vous que vous avez installé le patch le plus récent. Vérifiez les fichiers lisez-moi relatifs au patch dans le répertoire de votre jeu, et sur le site web de <a href="http://www.bioware.com/en/games/">BioWare</a> ou de  <a href="http://www.beamdog.com/">Beamdog</a> si nécessaire.</p>
-          <p>Ce mod est également compatible avec les autres mods, y compris <a href="http://www.pocketplane.net/tutu/">Baldur's Gate Tutu</a> (et EasyTutu), <a href="http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate Trilogy</a> et <a href="http://gibberlings3.net/forums/index.php?showforum=195">Enhanced Edition Trilogy</a>. Marteaux de jet est également compatible avec le méga-mod <a href="http://classicadventuresmod.com/">Classic Adventures</a>. Vous pouvez installer ce mod pendant une partie en cours, mais certains objets risquent d'être inaccessibles ; il faudra commencer une nouvelle partie pour les obtenir.</p>
-          <p>Ce mod doit être installé après les autres mods qui ajoutent ou modifient les marteaux (y compris le sort Marteau Spirituel) et avant les procédures finales de "biffing". Il faut également l'installer après les mods qui remplacent les ressources du jeu au lieu de les modifier.</p>
-          <p>Si vous souhaitez que les armes de ce mod utilisent les modifications de règles du mod <a href="http://www.pocketplane.net/aoe/">Ashes of Embers</a>, installer Marteaux de jet avant ou après <abbr title="Ashes of Embers">AoE</abbr> n'a aucune importance. Si toutefois vous souhaitez que les modifications des armes du mod <a href="http://www.gibberlings3.net/level1npcs/">Level 1 NPCs</a> s'appliquent, alors installez ce mod après Marteaux de jet.</p>
+          <p>
+            Ce mod fonctionne avec n'importe quel jeu utilisant l'Infinity Engine, hormis <abbr title="Planescape: Torment">PS:T</abbr>. Les nouveaux marteaux de jet n'apparaîtront toutefois que dans les jeux fonctionnant avec le moteur de <abbr title="Baldur's Gate II">BG2</abbr>, car les identificateurs de projectiles semblent être codés "en dur" dans les autres jeux. Assurez-vous que vous avez installé le patch le plus récent. Vérifiez les fichiers lisez-moi relatifs au patch dans le répertoire de votre jeu, et sur le site web de <a href="http://www.bioware.com/support/games/">BioWare</a> ou de  <a href="http://www.beamdog.com/">Beamdog</a> si nécessaire.
+          </p>
+          <p>
+            Ce mod est également compatible avec les autres mods, y compris <a href="http://www.pocketplane.net/tutu/">Baldur's Gate Tutu</a> (et EasyTutu), <a href="http://www.shsforums.net/forum/261-bgt-weidu/">Baldur's Gate Trilogy</a> et <a href="http://gibberlings3.net/forums/index.php?showforum=195">Enhanced Edition Trilogy</a>. Marteaux de jet est également compatible avec le méga-mod <a href="http://classicadventuresmod.com/">Classic Adventures</a>. Vous pouvez installer ce mod pendant une partie en cours, mais certains objets risquent d'être inaccessibles ; il faudra commencer une nouvelle partie pour les obtenir.
+          </p>
+          <p>
+            Ce mod doit être installé après les autres mods qui ajoutent ou modifient les marteaux (y compris le sort Marteau Spirituel) et avant les procédures finales de "biffing". Il faut également l'installer après les mods qui remplacent les ressources du jeu au lieu de les modifier.
+          </p>
+          <p>
+            Si vous souhaitez que les armes de ce mod utilisent les modifications de règles du mod <a href="http://www.pocketplane.net/aoe/">Ashes of Embers</a>, installer Marteaux de jet avant ou après <abbr title="Ashes of Embers">AoE</abbr> n'a aucune importance. Si toutefois vous souhaitez que les modifications des armes du mod <a href="http://www.gibberlings3.net/level1npcs/">Level 1 NPCs</a> s'appliquent, alors installez ce mod après Marteaux de jet.
+          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Compatibilité</span> &#8226;<a href="#top">Haut de page</a>
           </address>
@@ -328,18 +342,40 @@
         <a id="installation"></a>
         <div class="content">
           <h2>Installation</h2>
-          <p><em><strong>Remarque:</strong> si une ancienne version de ce mod est déjà installée, désinstallez-la avant d'extraire la nouvelle version. Pour cela, lancez <strong>setup-hammers.exe</strong> (ou .command), désinstallez tous les composants déjà présents et supprimez le répertoire "hammers". Lorsque vous installez ou désinstallez, ne fermez pas la fenêtre <abbr title="Disk Operating System">DOS</abbr> en cliquant sur le bouton <strong>X</strong>! Au lieu de cela, appuyez sur la touche <strong>Entrée</strong> quand cette option vous est proposée.</em></p>
-          <p><strong>Important:</strong> si vous souhaitez insaller des composants optionnels, <em>il vous faut</em> les installer immédiatement après le composant principal afin que <abbr title="Weimer Dialogue Utility">WeiDU</abbr> puisse reconnaître les nouveaux projectiles. Si vous décidez d'ajouter des composants optionnels ultérieurement, il vous faudra commencer par désinstaller et réinstaller le composant principal.</p>
-          <p>Vous pouvez extraire les fichiers de l'archive avec <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.7-zip.org/">7-Zip</a>, ou n'importe quel autre logiciel capable de décompacter les fichiers .rar.</p>
+          <p>
+            <em>
+              <strong>Remarque :</strong> si une ancienne version de ce mod est déjà installée, désinstallez-la avant d'extraire la nouvelle version. Pour cela, lancez <strong>setup-hammers.exe</strong> (ou .command), désinstallez tous les composants déjà présents et supprimez le répertoire "hammers". Lorsque vous installez ou désinstallez, ne fermez pas la fenêtre <acronym title="Disk Operating System">DOS</acronym> en cliquant sur le bouton <strong>X</strong>&nbsp;! Au lieu de cela, appuyez sur la touche <strong>Entrée</strong> quand cette option vous est proposée.
+            </em>
+          </p>
+          <p>
+            <strong>Important :</strong> si vous souhaitez installer des composants optionnels, <em>il vous faut</em> les installer immédiatement après le composant principal afin que <abbr title="Weimer Dialogue Utility">WeiDU</abbr> puisse reconnaître les nouveaux projectiles. Si vous décidez d'ajouter des composants optionnels ultérieurement, il vous faudra commencer par désinstaller et réinstaller le composant principal.
+          </p>
+          <p>
+            Vous pouvez extraire les fichiers de l'archive avec <a href="http://www.rarlab.com/download.htm">WinRAR</a>, <a href="http://www.7-zip.org/">7-Zip</a>, ou n'importe quel autre logiciel capable de décompresser les fichiers .rar.
+          </p>
           <h4>Windows</h4>
-          <p>Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Si l'extraction s'est déroulée correctement, un répertoire "hammers" et un fichier setup-hammers.exe doivent être apparus dans le répertoire du jeu. Pour installer le mod, double-cliquez sur <strong>setup-hammers.exe</strong> et suivez les instructions apparaissant à l'écran.</p>
-          <p>Pour réinstaller, désinstaller ou changer certains composants, lancez <strong>setup-hammers.exe</strong> dans votre répertoire du jeu.</p>
+          <p>
+            Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Si l'extraction s'est déroulée correctement, un répertoire "hammers" et un fichier setup-hammers.exe doivent être apparus dans le répertoire du jeu. Pour installer le mod, double-cliquez sur <strong>setup-hammers.exe</strong> et suivez les instructions apparaissant à l'écran.
+          </p>
+          <p>
+            Pour réinstaller, désinstaller ou changer certains composants, lancez <strong>setup-hammers.exe</strong> dans votre répertoire du jeu.
+          </p>
           <h4>Mac OS X</h4>
-          <p>Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Si l'extraction s'est déroulée correctement, un sous-répertoire "hammers" doit être apparu dans le répertoire du jeu. Téléchargez la version OS X de <a href="http://weidu.org/~thebigg/"><abbr title="Weimer Dialogue Utility">WeiDU</abbr></a> (ou alors copiez un autre installateur de mods) et renommez-le <strong>setup-hammers</strong>. Placez ce fichier ainsi que le fichier <strong>setup-hammers.command</strong> dans le sous-répertoire "hammers". Pour installer le mod, double-cliquez sur <strong>setup-hammers.command</strong> et suivez les instructions apparaissant à l'écran.</p>
+          <p>
+            Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Si l'extraction s'est déroulée correctement, un sous-répertoire "hammers" doit être apparu dans le répertoire du jeu. Téléchargez la version OS X de <a href="http://weidu.org/~thebigg/"><abbr title="Weimer Dialogue Utility">WeiDU</abbr></a> (ou alors copiez un autre installateur de mods) et renommez-le <strong>setup-hammers</strong>. Placez ce fichier ainsi que le fichier <strong>setup-hammers.command</strong> dans le sous-répertoire "hammers". Pour installer le mod, double-cliquez sur <strong>setup-hammers.command</strong> et suivez les instructions apparaissant à l'écran.
+          </p>
           <h4>Linux</h4>
-          <p>Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Téléchargez la dernière version Linux de <a href="http://weidu.org/~thebigg/"><abbr title="Weimer Dialogue Utility">WeiDU</abbr></a>, puis copiez WeiDU et WeInstall dans /usr/bin. Lancez ensuite une console et allez (<strong>cd</strong>) dans le répertoire d'installation de votre jeu.</p>
-          <p><em>Facultatif : lancez 'tolower' et répondez oui ("Y") aux deux requêtes. Il n'est pas nécessaire d'exécuter la deuxième option (linux.ini) si vous l'avez déjà exécutée une fois dans le même répertoire. Pour gagner du temps, l'archive est déjà "tolower-isée", il n'y a donc pas non plus besoin d'exécuter la première option (passage des noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé des noms de fichiers en minuscules. Si vous n'êtes pas certain, il vaut mieux exécuter tolower et accepter les deux options.</em></p>
-          <p>Pour installer le mod, exécutez <strong>WeInstall setup-hammers</strong> dans le répertoire de votre jeu. Exécutez ensuite <strong>wine BGMain.exe</strong>, puis commencez votre partie.</p>
+          <p>
+            Extrayez le contenu du mod dans le répertoire du jeu que vous souhaitez modifier. Téléchargez la dernière version Linux de <a href="http://weidu.org/~thebigg/"><abbr title="Weimer Dialogue Utility">WeiDU</abbr></a>, puis copiez WeiDU et WeInstall dans /usr/bin. Lancez ensuite une console et allez (<strong>cd</strong>) dans le répertoire d'installation de votre jeu.
+          </p>
+          <p>
+            <em>
+              Facultatif : lancez 'tolower' et répondez oui ("Y") aux deux requêtes. Il n'est pas nécessaire d'exécuter la deuxième option (linux.ini) si vous l'avez déjà exécutée une fois dans le même répertoire. Pour gagner du temps, l'archive est déjà "tolower-isée", il n'y a donc pas non plus besoin d'exécuter la première option (passage des noms de fichiers en minuscules) si vous n'avez extrait que ce mod depuis la dernière fois que vous avez passé des noms de fichiers en minuscules. Si vous n'êtes pas certain, il vaut mieux exécuter tolower et accepter les deux options.
+            </em>
+          </p>
+          <p>
+            Pour installer le mod, exécutez <strong>WeInstall setup-hammers</strong> dans le répertoire de votre jeu. Exécutez ensuite <strong>wine BGMain.exe</strong>, puis commencez votre partie.
+          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Installation</span> &#8226;<a href="#top">Haut de page</a>
           </address>
@@ -348,18 +384,32 @@
         <!-- =================== C o m p o n e n t s ==================== -->
         <a id="compon"></a>
         <div class="content">
-          <h2>Composants</h2>
-          <p>Tous les composants nécessitent le composant principal, car c'est lui qui installe les animations des marteaux. Tous les autres composants sont optionnels.</p>
+          <h2>
+            Composants
+          </h2>
+          <p>
+            Tous les composants nécessitent le composant principal, car c'est lui qui installe les animations des marteaux. Tous les autres composants sont optionnels.
+          </p>
           <h4>Thrown Hammers (marteaux de jet)</h4>
-          <p>Il s'agit du composant principal. Il installe les animations des marteaux (il existe des versions bleue, verte, grise, marron ou orange). Il patche également Aegis-Fang, le Marteau des nains, les marteaux spirituels ainsi que tout marteau de jet créé par un mod, et leur applique la nouvelle animation chaque fois que c'est nécessaire.</p>
+          <p>            
+            Il s'agit du composant principal. Il installe les animations des marteaux (il existe des versions bleue, verte, grise, marron ou orange). Il patche également Aegis-Fang, le Marteau des nains, les marteaux spirituels ainsi que tout marteau de jet créé par un mod, et leur applique la nouvelle animation chaque fois que c'est nécessaire.
+          </p>
           <h4>Thrown Spiritual Hammers (marteaux spirituels lancés)</h4>
-          <p>Ce composant corrige les projectiles produits par le sort Marteau Spirituel et les affiche sous la forme de marteaux bleutés laissant fumée et étincelles dans leur sillage. Certes, c'est surtout pour le plaisir des yeux...</p>
+          <p>            
+            Ce composant corrige les projectiles produits par le sort Marteau Spirituel et les affiche sous la forme de marteaux bleutés laissant fumée et étincelles dans leur sillage. Certes, c'est surtout pour le plaisir des yeux...
+          </p>
           <h4>Normal throwing hammers (marteaux de jet normaux)</h4>
-          <p>Ce composant introduit des marteaux de jet normaux (non magiques) dans les magasins qui vendent aussi des haches de jet. Ces marteaux sont assez courants.</p>
+          <p>            
+            Ce composant introduit des marteaux de jet normaux (non magiques) dans les magasins qui vendent aussi des haches de jet. Ces marteaux sont assez courants.
+          </p>
           <h4>+1 throwing weapons (armes de jet +1)</h4>
-          <p>Ce composant introduit des marteaux de jet +1, haches +1 et dagues +1 dans les magasins qui vendent des armes magiques et des armes de jet. Ces armes sont assez peu courantes dans la plupart des jeux, et plutôt rares dans <abbr title="Baldur's Gate 'To Two'">Tutu</abbr>/<abbr title="Baldur's Gate">BG1</abbr>.</p>
+          <p>            
+            Ce composant introduit des marteaux de jet +1, haches +1 et dagues +1 dans les magasins qui vendent des armes magiques et des armes de jet. Ces armes sont assez peu courantes dans la plupart des jeux, et plutôt rares dans <abbr title="Baldur's Gate 'To Two'">Tutu</abbr>/<abbr title="Baldur's Gate">BG1</abbr>.
+          </p>
           <h4>Additional magic items (objets magiques supplémentaires)</h4>
-          <p>Ce composant introduit quelques objets magiques uniques dans des magasins tirés au sort. La plupart de ces magasins n'est accessible qu'à un stade assez avancé du jeu. Ces objets incluent la dague de Meraera, le marteau de Gethlun, le marteau d'Essembra et le Marteau des nains pour Icewind Dale, <abbr title="Baldur's Gate 'To Two'">Tutu</abbr> et <abbr title="Baldur's Gate">BG1</abbr>.</p>
+          <p>
+            Ce composant introduit quelques objets magiques uniques dans des magasins tirés au sort. La plupart de ces magasins n'est accessible qu'à un stade assez avancé du jeu. Ces objets incluent la dague de Meraera, le marteau de Gethlun, le marteau d'Essembra et le Marteau des nains pour Icewind Dale, <abbr title="Baldur's Gate 'To Two'">Tutu</abbr> et <abbr title="Baldur's Gate">BG1</abbr>.
+          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Composants</span> &#8226;<a href="#top">Haut de page</a>
           </address>
@@ -368,11 +418,19 @@
         <!-- ============== T r o u b l e s h o o t i n g =============== -->
         <a id="trouble"></a>
         <div class="content">
-          <h2>Dépannage</h2>
-          <p>Voici quelques astuces classiques si vous avez des difficultés à faire fonctionner le jeu, avec ou sans ce mod (ou d'autres mods). Les erreurs sont souvent causées par le moteur du jeu lui-même, la méthode utilisée pour installer jeu et mods, ou la façon de jouer. Avant d'essayer quoi que ce soit d'autre, Il est recommandé d'effacer tous les fichiers dans les sous-répertoires /cache, /temp et /tempsave du répertoire de votre jeu pour voir si cela résout le problème.</p>
+          <h2>
+            Dépannage
+          </h2>
+          <p>
+            Voici quelques astuces classiques si vous avez des difficultés à faire fonctionner le jeu, avec ou sans ce mod (ou d'autres mods). Les erreurs sont souvent causées par le moteur du jeu lui-même, la méthode utilisée pour installer jeu et mods, ou la façon de jouer. Avant d'essayer quoi que ce soit d'autre, Il est recommandé d'effacer tous les fichiers dans les sous-répertoires /cache, /temp et /tempsave du répertoire de votre jeu pour voir si cela résout le problème.
+          </p>
           <h4>Symptôme : le jeu se bloque ou provoque un retour sur le bureau de Windows</h4>
-          <p>Quand ceci se produit, le jeu affiche parfois une erreur d'assertion ("assertion error") dans une fenêtre pop-up mais ce n'est pas toujours le cas. Pour que le message d'erreur complet s'affiche, ouvrez le fichier <strong>baldur.ini</strong> (qui se trouve dans le répertoire du jeu) avec un éditeur de texte (par exemple le bloc-notes). Si vous êtes sous Windows Vista, ou un système d'exploitation plus récent, et n'arrivez pas à éditer ce fichier ou à sauvegarder vos modifications, consultez <a href="http://www.shsforums.net/topic/41036-faq-for-the-megamods/#entry504045">ce sujet</a> pour de plus amples informations. [NdT : vous pouvez aussi consulter <a href="http://www.baldursgateworld.fr/lacouronne/la-taverne-damkethran-baldurs-gate-2/19928-guide-installation-de-baldurs-gate-ii-et-de-throne-bhaal-faq.html#post212903">cette FAQ</a> en français.]</p>
-          <p>Dans la section [Program Options] de ce fichier, tapez <strong>Logging On=1</strong> (à moins que cette instruction ne soit déjà présente). Il est également intéressant de vérifier que l'instruction <strong>Debug Mode=1</strong> est bien présente, ce qui permet d'activer la <a href="https://gibberlings3.github.io/iesdp/appendices/clua/bg2.htm">Console CLUA</a> pour déboguer et effectuer des tests. Sauvegardez le fichier et refermez-le. Lancez à nouveau le jeu et tentez de reproduire l'erreur. Cherchez ensuite dans le répertoire du jeu le fichier <strong>Baldur.err</strong> et ouvrez-le avec un éditeur de texte de façon à analyser son contenu.</p>
+          <p>
+            Quand ceci se produit, le jeu affiche parfois une erreur d'assertion ("assertion error") dans une fenêtre pop-up mais ce n'est pas toujours le cas. Pour que le message d'erreur complet s'affiche, ouvrez le fichier <strong>baldur.ini</strong> (qui se trouve dans le répertoire du jeu) avec un éditeur de texte (par exemple le bloc-notes). Si vous êtes sous Windows Vista, ou un système d'exploitation plus récent, et n'arrivez pas à éditer ce fichier ou à sauvegarder vos modifications, consultez <a href="http://www.shsforums.net/topic/41036-faq-for-the-megamods/#entry504045">ce sujet</a> pour de plus amples informations. [NdT : vous pouvez aussi consulter <a href="http://www.baldursgateworld.fr/lacouronne/la-taverne-damkethran-baldurs-gate-2/19928-guide-installation-de-baldurs-gate-ii-et-de-throne-bhaal-faq.html#post212903">cette FAQ</a> en français.]
+          </p>
+          <p>
+            Dans la section [Program Options] de ce fichier, tapez <strong>Logging On=1</strong> (à moins que cette instruction ne soit déjà présente). Il est également intéressant de vérifier que l'instruction <strong>Debug Mode=1</strong> est bien présente, ce qui permet d'activer la <a href="http://gibberlings3.net/iesdp/appendices/clua/bg2.htm">Console CLUA</a> pour déboguer et effectuer des tests. Sauvegardez le fichier et refermez-le. Lancez à nouveau le jeu et tentez de reproduire l'erreur. Cherchez ensuite dans le répertoire du jeu le fichier <strong>Baldur.err</strong> et ouvrez-le avec un éditeur de texte de façon à analyser son contenu.
+          </p>
           <h4>Assertion failed in ChDimm.cpp at line #7641</h4>
           <div class="important">
             <p>
@@ -380,9 +438,13 @@
               Msg: c:\{path}\bg2\cd#\DATA\BIFNAME.BIF: attempted to use compressed BIF from CD, check free hard drive space [NdT : "le jeu essaie d'utiliser le fichier BIF compacté depuis le CD, vérifier la quantité d'espace libre sur votre disque dur"]
             </p>
           </div>
-          <p>Le fichier BIF auquel il est fait référence existe parfois, mais le jeu s'attend à le trouver dans le dossier \data ou \cache\data du répertoire principal de votre jeu. Recopiez-le dans data à partir du répertoire cd# (ou à partir du CD lui-même), cela résout parfois le problème. Sinon, il est possible que vous ayez besoin du logiciel <a href="http://www.gibberlings3.net/tools/dltcep.php"><abbr title="Dragonlance Total Conversion Editor Pro">DLTCEP</abbr></a> pour décompacter le fichier BIF. Pour cela, allez dans le menu <strong>Extraction &gt; Uncompress BIF</strong>. Le fichier BIF décompacté devrait se trouver dans le dossier \data du répertoire principal. Lancez à nouveau le jeu pour voir si cette manipulation a permis de résoudre le problème.</p>
+          <p>
+            Le fichier BIF auquel il est fait référence existe parfois, mais le jeu s'attend à le trouver dans le dossier \data ou \cache\data du répertoire principal de votre jeu. Recopiez-le dans data à partir du répertoire cd# (ou à partir du CD lui-même), cela résout parfois le problème. Sinon, il est possible que vous ayez besoin du logiciel <a href="http://www.gibberlings3.net/tools/dltcep.php"><abbr title="Dragonlance Total Conversion Editor Pro">DLTCEP</abbr></a> pour décompacter le fichier BIF. Pour cela, allez dans le menu <strong>Extraction &gt; Uncompress BIF</strong>. Le fichier BIF décompacté devrait se trouver dans le dossier \data du répertoire principal. Lancez à nouveau le jeu pour voir si cette manipulation a permis de résoudre le problème.
+          </p>
           <h4>Autres problèmes</h4>
-          <p>Si vous avez plus d'un "mégamod" installé, consultez la FAQ <a href="http://www.shsforums.net/topic/41036-faq-for-the-megamods/">Megamod FAQ</a> pour y trouver des informations supplémentaires au niveau du dépannage. Si vous n'arrivez toujours pas à résoudre votre problème ou si votre problème est lié à un mod bien précis, signalez le problème sur le <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">forum du mod</a>. Incluez dans votre sujet le contenu de votre fichier <abbr title="Weimer Dialogue Utility">WeiDU</abbr>.log (mis entre les balises <strong>[spoiler][/spoiler]</strong> s'il vous plaît !), ou alors ajoutez-le en pièce jointe s'il est volumineux.</p>
+          <p>
+            Si vous avez plus d'un "mégamod" installé, consultez la FAQ <a href="http://www.shsforums.net/topic/41036-faq-for-the-megamods/">Megamod FAQ</a> pour y trouver des informations supplémentaires au niveau du dépannage. Si vous n'arrivez toujours pas à résoudre votre problème ou si votre problème est lié à un mod bien précis, signalez le problème sur le <a href="http://www.shsforums.net/topic/34099-thrown-hammers/">forum du mod</a>. Incluez dans votre sujet le contenu de votre fichier <abbr title="Weimer Dialogue Utility">WeiDU</abbr>.log (mis entre les balises <strong>[spoiler][/spoiler]</strong> s'il vous plaît !), ou alors ajoutez-le en pièce jointe s'il est volumineux.
+          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Dépannage</span> &#8226;<a href="#top">Haut de page</a>
           </address>
@@ -391,30 +453,32 @@
         <!-- ================== C r e d i t s ================== -->
         <a id="credits"></a>
         <div class="content">
-          <h2>Remerciements</h2>
-          <span class="t1">Animations:</span> <span class="t2">Sam.</span><br>
-          <span class="t1">Programmation:</span> <span class="t2">Miloch</span><br>
-          <span class="t1">Mises à jour du code:</span> <span class="t2">K4thos</span><br>
-          <span class="t1">Idées d'objets:</span> <span class="t2">Lord Delekhan</span><br>
-          <span class="t1">Traduction allemande:</span> <span class="t2">R&uuml;bezahl et Leomar</span><br>
-          <span class="t1">Traduction française:</span> <span class="t2">Le Marquis (des d'Oghmatiques)</span><br>
-          <span class="t1">Traduction espagnole:</span> <span class="t2">Ancalagon el Negro</span><br>
-          <span class="t1">Traduction italienne:</span> <span class="t2">Stoneangel et ilot</span><br>
-          <span class="t1">Traduction russe:</span> <span class="t2">prowler, noiseless, hawkmoon, et nikzy</span><br>
-          <span class="t1">Traduction polonaise:</span> <span class="t2">yarpen et Lava Del'Vortel</span><br>
-          <span class="t1">Hébergement:</span> <span class="t2"><a href="http://www.spellholdstudios.net/">Spellhold Studios</a> (<a href="http://www.shsforums.net">Forums</a>)</span><br>
-          <hr class="floatfix"><!-- Don't remove the <hr> unless you have text following the last "t2" in this <div>! -->
-          <h4>Logiciels et outils utilisés pour la création de ce mod:</h4>
+          <h2>
+            Remerciements
+          </h2>
+          <span class="t1">Animations :</span> <span class="t2">Sam.</span><br>
+          <span class="t1">Programmation :</span> <span class="t2">Miloch</span><br>
+          <span class="t1">Mises à jour du code :</span> <span class="t2">K4thos et Sam.</span><br>
+          <span class="t1">Idées d'objets :</span> <span class="t2">Lord Delekhan</span><br>
+          <span class="t1">Traduction allemande :</span> <span class="t2">R&uuml;bezahl et Leomar</span><br>
+          <span class="t1">Traduction française :</span> <span class="t2">Le Marquis (des d'Oghmatiques) et Gwendolyne</span><br>
+          <span class="t1">Traduction espagnole :</span> <span class="t2">Ancalagon el Negro</span><br>
+          <span class="t1">Traduction italienne :</span> <span class="t2">Stoneangel et ilot</span><br>
+          <span class="t1">Traduction russe :</span> <span class="t2">prowler, noiseless, hawkmoon, et nikzy</span><br>
+          <span class="t1">Traduction polonaise :</span> <span class="t2">yarpen et Lava Del'Vortel</span><br>
+          <span class="t1">Hébergement :</span> <span class="t2"><a href="http://www.spellholdstudios.net/">Spellhold Studios</a> (<a href="http://www.shsforums.net">Forums</a>)</span><br>
+          <hr class="floatfix">
+          <h4>Logiciels et outils utilisés pour la création de ce mod :</h4>
           <br>
-          <ul>
+          <ul class="version-list c1">
             <li>
               <a href="http://www.shsforums.net/topic/57564-bamworkshop/">BAM Workshop</a> par Glenn Flansburg
             </li>
             <li>
-              <a href="https://sourceforge.net/projects/gemrb/files/Utilities/"><abbr title="Dragonlance Total Conversion Editor Pro">DLTCEP</abbr></a> par Avenger
+              <a href="http://sourceforge.net/projects/gemrb/files/Utilities/"><abbr title="Dragonlance Total Conversion Editor Pro">DLTCEP</abbr></a> par Avenger
             </li>
             <li>
-              <a href="https://gibberlings3.github.io/iesdp/"><abbr title="Infinity Engine Structures Description Project">IESDP</abbr></a> maintenu par igi
+              <a href="http://gibberlings3.net/iesdp/"><abbr title="Infinity Engine Structures Description Project">IESDP</abbr></a> maintenu par igi
             </li>
             <li>
               <a href="http://www.shsforums.net/topic/45358-nearinfinity/">Near Infinity</a> par Jon Olav Hauglid et d'autres
@@ -423,7 +487,9 @@
               <a href="http://www.weidu.org/~thebigg/"><abbr title="Weimer Dialogue Utility">WeiDU</abbr></a> par Wes Weimer, the bigg, et Wisp
             </li>
           </ul>
-          <p>Thrown Hammers (Marteaux de jet) est copyright &copy; 2010 par Miloch et Sam. Ce mod (y compris tout le code et la documentation) est sous licence <a href="https://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial 3.0 Unported License</a>. Vous êtes libre de partager (copier, distribuer et transmettre) et d'adapter ce mod, sauf pour une utilisation commerciale. Pour tout renseignement, consultez la licence <a href="https://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative Commons Public License</a>. Vous pouvez utiliser le contenu de ce mod dans d'autres mods en citant ou en ne citant pas la source (mais il est plus correct de créditer les auteurs).</p>
+          <p>
+            Thrown Hammers (Marteaux de jet) est copyright © 2010 par Miloch et Sam. Ce mod (y compris tout le code et la documentation) est sous licence <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-Noncommercial 3.0 Unported License</a>. Vous êtes libre de partager (copier, distribuer et transmettre) et d'adapter ce mod, sauf pour une utilisation commerciale. Pour tout renseignement, consultez la licence <a href="http://creativecommons.org/licenses/by-nc/3.0/legalcode">Creative Commons Public License</a>. Vous pouvez utiliser le contenu de ce mod dans d'autres mods en citant ou en ne citant pas la source (mais il est plus correct de créditer les auteurs).
+          </p>
           <address>
             <span class="footer">Marteaux de jet &gt; Remerciements</span> &#8226;<a href="#top">Haut de page</a>
           </address>
@@ -432,55 +498,63 @@
         <!-- ================== V e r s i o n   H i s t o r y ================== -->
         <a id="version"></a>
         <div class="content">
-          <h2>Historique</h2>
-          <h6>Version 6.0: <a href="https://github.com/Sampsca/ThrownHammers">on GitHub</a></h6>
+          <h2>
+            Historique
+          </h2>
+          <h6>Version 6.0 : sur <a href="https://github.com/Sampsca/ThrownHammers">GitHub</a></h6>
           <ul>
-            <li>Modified BAM trans and shadow colors to conform to standard</li>
-            <li>Corrected errors in game+engine identification routines</li>
-            <li>Corrected many description icon errors</li>
-            <li>Ensure all BAMs are installed when used</li>
-            <li>Throwing hammers now use proper ground icon</li>
-            <li>Throwing hammers using Dwarven Thrower icon now use proper description icon</li>
-            <li>SoD now uses dark themed description icons</li>
-            <li>Improved BAM compression</li>
-            <li>Other minor tweaks to code and content</li>
+            <li>Modification des couleurs de transparence et d'ombre des fichiers BAM pour les rendre conformes aux standards du jeu.</li>
+            <li>Correction d'erreurs dans les procédures d'identification du jeu ou du moteur.</li>
+            <li>Correction de nombreuses erreurs concernant les icônes de description.</li>
+            <li>Le mod s'assure que les fichiers BAM sont bien installés lorsqu'ils sont nécessaires.</li>
+            <li>Les marteaux de jets disposent dorénavant d'une icône au sol spécifique.</li>
+            <li>Les marteaux de jet utilisant l'icône du Marteau des Nain disposent désormais d'une icône de description appropriée.</li>
+            <li>Si SoD est installé, le mod utilise désormais ses icônes de description foncées .</li>
+            <li>Amélioration de l'algorithme de compression des fichiers BAM.</li>
+            <li>Et d'autres modifications mineures apportées au code et au contenu du mod.</li>
           </ul>
-          <h6>Version 5.0: <a href="https://github.com/Sampsca/ThrownHammers">on GitHub</a></h6>
+          <h6>Version 5.0 : sur <a href="https://github.com/Sampsca/ThrownHammers">GitHub</a></h6>
           <ul>
-            <li>Added compatibility for EE-based games</li>
-            <li>Updated French translation</li>
+            <li>Ajout de la compatibilité avec les versions Édition Améliorée des jeux.</li>
+            <li>Mise à jour de la traduction française.</li>
           </ul>
-          <h6>Version 4.1: 15 Sep 2014</h6>
+          <h6>Version 4.1 : 15 Septembre 2014</h6>
           <ul>
-            <li>Fixed a critical patching error on BG1 and IWD games</li>
+            <li>Correction d'une erreur critique de "patching" intervenant avec les jeux BG1 et IWD</li>
           </ul>
-          <h6>Version 4: 17 Aug 2014</h6>
+          <h6>Version 4 : 17 Août 2014</h6>
           <ul>
-            <li>Updated Polish translation</li>
-            <li>Updated WeiDU</li>
+            <li>Mise à jour de la traduction polonaise.</li>
+            <li>Mise à jour de WeiDU.</li>
           </ul>
-          <h6>Version 3: 31 Oct 2010</h6>
+          <h6>
+            Version 3 : 31 Octobre 2010
+          </h6>
           <ul>
-            <li>Fixed a bug in spiritual hammers not appearing as ranged weapons properly</li>
-            <li>Split "Thrown Spiritual Hammers" from the main component into a separate component</li>
-            <li>Tweaked compatibility to allow optional components to be installed in separate batch sessions</li>
+            <li>Correction d'un bogue empêchant d'utiliser les marteaux spirituels comme armes de jet.</li>
+            <li>Les "Marteaux spirituels lancés" ont été transférés du composant principal dans un composant optionnel.</li>
+            <li>Modification de la vérification de compatibilité pour permettre d'installer les composants optionnels sur plusieurs sessions.</li>
           </ul>
-          <h6>Version 2: 1 Feb 2010</h6>
+          <h6>
+            Version 2 : 1er Février 2010
+          </h6>
           <ul>
-            <li>Added German, French, Spanish, Italian and Russian translations</li>
-            <li>Added compatibility for all <abbr title="Infinity Engine">IE</abbr> games (except <abbr title="Planescape: Torment">PS:T</abbr>)</li>
-            <li>Added Classic Adventures compatibility</li>
-            <li>Added install order-independent Ashes of Embers compatibility</li>
-            <li>Added component to make throwing hammers available at shops that sell throwing axes</li>
-            <li>Added component to make +1 throwing weapons available at shopsthat sell magical projectiles</li>
-            <li>Made extra magical items separate component</li>
-            <li>Patched Spiritual Hammers and Aegis-Fang to add ranged abilities if not present</li>
-            <li>Changed item names to avoid conflict with Dark Horizons</li>
-            <li>Added compatibility with <abbr title="Baldur's Gate Trilogy">BGT</abbr>/<abbr title="BiG World Project">BWP</abbr> and all mods</li>
+            <li>Ajout des traductions allemande, française, espagnole, italienne et russe.</li>
+            <li>Le mod est rendu compatible avec tous les jeux <abbr title="Infinity Engine">IE</abbr> (sauf <abbr title="Planescape: Torment">PS:T</abbr>).</li>
+            <li>Ajout de la compatibilité avec Classic Adventures.</li>
+            <li>Ajout d'une procédure d'installation indépendante de la présence ou nom de Ashes of Embers.</li>
+            <li>Ajout du composant optionnel "Marteaux de jet normaux" qui introduit des marteaux de jet dans les magasins qui vendent aussi des haches de jet.</li>
+            <li>Ajout du composant optionnel "Armes de jet +1" qui introduit des marteaux de jet +1 dans les magasins qui vendent des projectiles magiques.</li>
+            <li>Les "Objets magiques supplémentaires" ont été transférés dans un composant optionnel.</li>
+            <li>Ajout de la possibilité de lancer les Marteaux spirituels et à Aegis-Fang si leur fichier n'en dispose pas.</li>
+            <li>Modification du nom de certains objets pour éviter des conflits avec Dark Horizons.</li>
+            <li>Ajout de la compatibilité avec <abbr title="Baldur's Gate Trilogy">BGT</abbr>/<abbr title="BiG World Project">BWP</abbr> et les autres mods.</li>
           </ul>
-          <h6>Version 1: 11 June 2008</h6>
+          <h6>
+            Version 1 : 11 Juin 2008
+          </h6>
           <ul>
-            <li>Initial release</li>
+            <li>Sortie initiale.</li>
           </ul>
           <address>
             <span class="footer">Marteaux de jet &gt; Historique</span> &#8226;<a href="#top">Haut de page</a>
