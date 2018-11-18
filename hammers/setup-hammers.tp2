@@ -1,6 +1,6 @@
 BACKUP ~hammers/backup~
 AUTHOR ~www.shsforums.net/topic/34099-thrown-hammers/~
-VERSION ~v6.0.3~
+VERSION ~v6.1.0~
 README ~hammers/hammers-%LANGUAGE%.html~ ~hammers/hammers-english.html~
 
 ALWAYS
@@ -80,7 +80,7 @@ ALWAYS
       OUTER_SPRINT plt ~bg1~
       OUTER_SPRINT pva ~bg2~
       OUTER_SPRINT ttc ~totsc~
-      ACTION_IF FILE_EXISTS_IN_GAME ~bd1000.are~ BEGIN //SoD
+      ACTION_IF GAME_INCLUDES ~sod~ AND NOT (MOD_IS_INSTALLED ~LeUI-BG1EE.tp2~ ~0~) BEGIN //SoD
         OUTER_SPRINT darktheme ~1~
       END
     END ELSE ACTION_IF GAME_IS ~bg1 totsc~ BEGIN //BG1 TotSC
@@ -151,8 +151,8 @@ COPY ~hammers/bams/pshamma.bam~ ~override~
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~chamm07.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
-  COPY_EXISTING ~chamm07.bam~ ~override/t-dham06.bam~
+ACTION_IF (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY ~hammers/bams/chamm07.bam~ ~override/t-dham06.bam~
 END
 
 ACTION_IF t-psa < 1 BEGIN
@@ -511,8 +511,8 @@ COPY ~hammers/bams/t-dham03.bam~ ~override~
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~bddham03.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
-  COPY_EXISTING ~bddham03.bam~ ~override/t-dham03.bam~
+ACTION_IF (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY ~hammers/bams/bddham03.bam~ ~override/t-dham03.bam~
 END
 
 COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
@@ -590,8 +590,8 @@ COPY ~hammers/bams/t-dham04.bam~ ~override~
     DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
   END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~bddham04.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
-  COPY_EXISTING ~bddham04.bam~ ~override/t-dham04.bam~
+ACTION_IF (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+  COPY ~hammers/bams/bddham04.bam~ ~override/t-dham04.bam~
 END
 
 COPY_EXISTING ~%tsu%ax1h04.itm~ ~override~ //Throwing Axe
@@ -904,8 +904,8 @@ ACTION_IF (~%plt%~ STRING_EQUAL ~iwd~ = 1) OR ((~%plt%~ STRING_EQUAL ~bg1~ = 1) 
       READ_LONG 0x8 dl //Uncompressed data length
       DECOMPRESS_REPLACE_FILE 0xc (SOURCE_SIZE - 0xc) dl
     END
-    ACTION_IF FILE_EXISTS_IN_GAME ~chamm07.bam~ AND (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
-      COPY_EXISTING ~chamm07.bam~ ~override/t-dham06.bam~
+    ACTION_IF (~%darktheme%~ STRING_EQUAL ~1~ = 1) BEGIN
+      COPY ~hammers/bams/chamm07.bam~ ~override/t-dham06.bam~
     END
   COPY ~hammers/items/t-hamm06.eff~ ~override~
   COPY ~hammers/items/t-hamm06.itm~ ~override~ //Dwarven Thrower +3
