@@ -121,14 +121,15 @@ END
 
 LANGUAGE ~English~  ~english~ ~hammers/translations/english/setup.tra~
 LANGUAGE ~Deutsch~  ~german~  ~hammers/translations/german/setup.tra~
-LANGUAGE ~Fran‡ais~ ~french~  ~hammers/translations/french/setup.tra~
-LANGUAGE ~Espa¤ol~  ~spanish~ ~hammers/translations/spanish/setup.tra~
+LANGUAGE ~Franâ€¡ais~ ~french~  ~hammers/translations/french/setup.tra~
+LANGUAGE ~EspaÂ¤ol~  ~spanish~ ~hammers/translations/spanish/setup.tra~
 LANGUAGE ~Italiano~ ~italian~ ~hammers/translations/italian/setup.tra~
 LANGUAGE ~Russian~  ~russian~ ~hammers/translations/russian/setup.tra~
 LANGUAGE ~Polski~   ~polish~  ~hammers/translations/polish/setup.tra~
 
 //! Main component //////////////////////////////////////////////////////////
 BEGIN @1 //Thrown Hammers
+DESIGNATED 0 LABEL ~ThrownHammers-Main~
 REQUIRE_PREDICATE NOT (GAME_IS ~pst~) @2 //This mod is not compatible with your game
 
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~missile.ids~ BEGIN
@@ -395,7 +396,7 @@ END
 
 //! Thrown Spiritual Hammers ////////////////////////////////////////////////
 BEGIN @31 //Thrown Spiritual Hammers
-DESIGNATED 15
+DESIGNATED 15 LABEL ~ThrownHammers-Spiritual-Throwing-Hammers~
 REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
 
 ACTION_FOR_EACH ~hn~ IN ~shamme1~ ~shamme2~ ~shamme3~ ~shammn~ ~shammn2~ ~shammn3~ ~shammr~ ~shammr2~ ~shammr3~ ~shammr4~ ~shammr5~ BEGIN //Spiritual Hammers
@@ -498,7 +499,7 @@ END
 
 //! Normal throwing hammers /////////////////////////////////////////////////
 BEGIN @28 //Normal throwing hammers
-DESIGNATED 25
+DESIGNATED 25 LABEL ~ThrownHammers-Add-Normal-Throwing-Hammers~
 REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
 REQUIRE_PREDICATE NOT (GAME_IS ~iwd2~) @27 //IWD2 already has such items
 
@@ -568,7 +569,7 @@ BUT_ONLY
 
 //! +1 throwing weapons /////////////////////////////////////////////////////
 BEGIN @29 //+1 throwing weapons
-DESIGNATED 35
+DESIGNATED 35 LABEL ~ThrownHammers-1-Throwing-Weapons~
 REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
 REQUIRE_PREDICATE NOT (GAME_IS ~iwd2~) @27 //IWD2 already has such items
 
@@ -796,7 +797,7 @@ END
 
 //! Additional magic items //////////////////////////////////////////////////
 BEGIN @30 //Additional magic items
-DESIGNATED 50
+DESIGNATED 50 LABEL ~ThrownHammers-Additional-Magic-Items~
 REQUIRE_COMPONENT ~setup-hammers.tp2~ 0 @26 //This component requires the main component
 
 ACTION_IF (~%plt%~ STRING_EQUAL ~tutu~ = 1) BEGIN
